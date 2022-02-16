@@ -11,6 +11,17 @@
 		06D00F5F27BDA95100044550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5E27BDA95100044550 /* ContentView.swift */; };
 		06D00F6127BDA95400044550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6027BDA95400044550 /* Assets.xcassets */; };
 		06D00F6427BDA95400044550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6327BDA95400044550 /* Preview Assets.xcassets */; };
+		06D00F6C27BDAA6700044550 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */; };
+		06D00F6D27BDAA6700044550 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */; };
+		06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F6F27BDAC0A00044550 /* HomePage.swift */; };
+		06D00F7227BDAC1300044550 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7127BDAC1300044550 /* SettingsPage.swift */; };
+		06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7427BDAE1100044550 /* ProductPostView.swift */; };
+		06D00F7827BDAE5600044550 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7727BDAE5500044550 /* Database.swift */; };
+		06D00F7B27BDAE8800044550 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7A27BDAE8800044550 /* Util.swift */; };
+		06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */; };
+		06D00F7F27BDAF9000044550 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7E27BDAF9000044550 /* SearchResultView.swift */; };
+		06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F8027BDAFA000044550 /* SearchBarView.swift */; };
+		06D00F8427BDAFDB00044550 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F8327BDAFDB00044550 /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,18 @@
 		06D00F5E27BDA95100044550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		06D00F6027BDA95400044550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06D00F6327BDA95400044550 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		06D00F6E27BDAAA800044550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		06D00F6F27BDAC0A00044550 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		06D00F7127BDAC1300044550 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		06D00F7427BDAE1100044550 /* ProductPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductPostView.swift; sourceTree = "<group>"; };
+		06D00F7727BDAE5500044550 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		06D00F7A27BDAE8800044550 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProductScrollView.swift; sourceTree = "<group>"; };
+		06D00F7E27BDAF9000044550 /* SearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		06D00F8027BDAFA000044550 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		06D00F8327BDAFDB00044550 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +74,12 @@
 		06D00F5B27BDA95100044550 /* Traverse-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				06D00F6E27BDAAA800044550 /* Info.plist */,
+				06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */,
+				06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */,
+				06D00F7327BDAC2400044550 /* Tabs */,
+				06D00F7627BDAE3400044550 /* Views */,
+				06D00F7927BDAE7600044550 /* Utility */,
 				06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */,
 				06D00F5E27BDA95100044550 /* ContentView.swift */,
 				06D00F6027BDA95400044550 /* Assets.xcassets */,
@@ -65,6 +94,44 @@
 				06D00F6327BDA95400044550 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06D00F7327BDAC2400044550 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F7127BDAC1300044550 /* SettingsPage.swift */,
+				06D00F6F27BDAC0A00044550 /* HomePage.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		06D00F7627BDAE3400044550 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F8227BDAFA500044550 /* Subviews */,
+				06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */,
+				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		06D00F7927BDAE7600044550 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F8327BDAFDB00044550 /* Search.swift */,
+				06D00F7727BDAE5500044550 /* Database.swift */,
+				06D00F7A27BDAE8800044550 /* Util.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		06D00F8227BDAFA500044550 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F7427BDAE1100044550 /* ProductPostView.swift */,
+				06D00F7E27BDAF9000044550 /* SearchResultView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +192,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D00F6C27BDAA6700044550 /* Poppins-SemiBold.ttf in Resources */,
 				06D00F6427BDA95400044550 /* Preview Assets.xcassets in Resources */,
 				06D00F6127BDA95400044550 /* Assets.xcassets in Resources */,
+				06D00F6D27BDAA6700044550 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D00F8427BDAFDB00044550 /* Search.swift in Sources */,
+				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
+				06D00F7827BDAE5600044550 /* Database.swift in Sources */,
+				06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
+				06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */,
+				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
+				06D00F7B27BDAE8800044550 /* Util.swift in Sources */,
 				06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */,
+				06D00F7F27BDAF9000044550 /* SearchResultView.swift in Sources */,
+				06D00F7227BDAC1300044550 /* SettingsPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +350,7 @@
 				DEVELOPMENT_TEAM = C72D493DTH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Traverse-SwiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +380,7 @@
 				DEVELOPMENT_TEAM = C72D493DTH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Traverse-SwiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
