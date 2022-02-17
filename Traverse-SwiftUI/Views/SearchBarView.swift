@@ -12,22 +12,19 @@ struct SearchBarView: View {
     @State var productSearchString: String = ""
     @State var isAnimationEnabled: Bool = false
     @State var beginSearch: Bool = false
-    @State var showResults: Bool = false
-
+    @EnvironmentObject var settings: UserInterfaceSettings
     
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 30, content: {
-            if !showResults{
+            HStack(){
                 //MARK: TOP LEFT ICON
                 Button(action: {
-                    withAnimation(.easeInOut(duration: 0.50)){
-                        showResults.toggle()
+                    withAnimation(.easeInOut(duration: 0.50)){   //MARK: The Magic Line of Code
+                        settings.showSearchBarResults.toggle()
                     }
                 }, label:{
-                    
                     HStack(){
-                        if showResults == true{
+                        if settings.showSearchBarResults == true{
                             Image(systemName: "chevron.left")
                             .frame(width: 25, height: 25, alignment: .center)
                             .foregroundColor(.gray)
@@ -35,60 +32,24 @@ struct SearchBarView: View {
                             Image(systemName: "magnifyingglass")
                             .frame(width: 25, height: 25, alignment: .center)
                         }
-                        
-                        
-                        //MARK: SEARCH FIELD
-                        
-                        TextField("Search for products...", text: $productSearchString)
-                            .font(.custom("Poppins-Regular", size: 20))
-                            .multilineTextAlignment(.leading)
-                            .accentColor(.gray)
-                            .frame(width: UIScreen.main.bounds.width * 0.7)
-
                     }
                         .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 0))
                 })
+                
+                //MARK: SEARCH FIELD
+                
+                TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
+                        beginSearch = true
+                })
+                    .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+                    .font(.custom("Poppins-Regular", size: 20))
+                    .multilineTextAlignment(.leading)
+                    .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+                    .padding(EdgeInsets(top: isAnimationEnabled ? 350 : 0, leading: 0, bottom: 0, trailing: 0))
             }
             
-            
             //MARK: RESULTS
-            if showResults{ //showResults is toggled every time the search icon is tapped
-                
-                HStack(){
-                    //MARK: TOP LEFT ICON
-                    Button(action: {
-                        withAnimation(.easeInOut(duration: 0.50)){   //MARK: The Magic Line of Code
-                            showResults.toggle()
-                        }
-                    }, label:{
-                        HStack(){
-                            if showResults == true{
-                                Image(systemName: "chevron.left")
-                                .frame(width: 25, height: 25, alignment: .center)
-                                .foregroundColor(.gray)
-                            }else{
-                                Image(systemName: "magnifyingglass")
-                                .frame(width: 25, height: 25, alignment: .center)
-                            }
-                        }
-                            .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 0))
-                    })
-                    
-                    //MARK: SEARCH FIELD
-                    
-                    TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
-                            beginSearch = true
-                        
-                    })
-                        .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
-                        .font(.custom("Poppins-Regular", size: 20))
-                        .multilineTextAlignment(.leading)
-                        .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
-                        .padding(EdgeInsets(top: isAnimationEnabled ? 350 : 0, leading: 0, bottom: 0, trailing: 0))
-                    
-                }
-                
-                
+            if settings.showSearchBarResults{ //showResults is toggled every time the search icon is tapped
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 0, content: {
                         let searchResults = Search.getSearchResults(search: productSearchString)
@@ -105,10 +66,8 @@ struct SearchBarView: View {
                         ForEach(exampleData, id: \.self){ recommendedResult in
                             SearchResultView(searchResult: recommendedResult)
                         }
-                        
                     })
                 }
-                
             }
         })
             .background(.white)

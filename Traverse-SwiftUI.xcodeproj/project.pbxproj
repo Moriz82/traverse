@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */; };
 		06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */; };
 		06D00F5F27BDA95100044550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5E27BDA95100044550 /* ContentView.swift */; };
 		06D00F6127BDA95400044550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6027BDA95400044550 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceSettings.swift; sourceTree = "<group>"; };
 		06D00F5927BDA95100044550 /* Traverse-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traverse-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traverse_SwiftUIApp.swift; sourceTree = "<group>"; };
 		06D00F5E27BDA95100044550 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		06D00F7927BDAE7600044550 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */,
 				06D00F8327BDAFDB00044550 /* Search.swift */,
 				06D00F7727BDAE5500044550 /* Database.swift */,
 				06D00F7A27BDAE8800044550 /* Util.swift */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D00F8427BDAFDB00044550 /* Search.swift in Sources */,
+				06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */,
 				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
 				06D00F7827BDAE5600044550 /* Database.swift in Sources */,
 				06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */,

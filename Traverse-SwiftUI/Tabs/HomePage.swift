@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct HomePage: View {
+    @StateObject var settings = UserInterfaceSettings()
+    
     var body: some View {
         VStack{
             SearchBarView()
-            HorizontalProductScrollView()
+            if !settings.showSearchBarResults{
+                HorizontalProductScrollView()
+            }
         }
-        .background(.black)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.9)
+        .environmentObject(settings)
+        .background(settings.showSearchBarResults ? .blue : .black)
     }
 }
 
