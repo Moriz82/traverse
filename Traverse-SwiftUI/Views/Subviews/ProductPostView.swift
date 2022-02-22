@@ -5,12 +5,11 @@
 //  Created by Aiden Seibel on 12/5/21.
 //
 
-
-
-//constructs a post in swiftUI with 2 : 1 pixel ratio to Figma design guidelines
 import SwiftUI
 
 struct ProductPostView: View {
+    
+    @State var UISettings: UserInterfaceSettings
     @State var post: listing
     
     var body: some View {
@@ -22,18 +21,20 @@ struct ProductPostView: View {
                 Image(post.imageName)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 250, height: 230, alignment: .center) //image pixel sizes
-                    .cornerRadius(28) //rounded corners on picture
-                .shadow(color: .gray, radius: 10, x: 0, y: 0)
+                    .frame(width: UISettings.hScrollViewPostWidth, height: UISettings.hScrollViewPostHeight, alignment: .center)
+                    .cornerRadius(28)
+                //.shadow(color: .gray, radius: 10, x: 0, y: 0)
                 
-                Text("$\(String(format: "%.0f", post.price))") //Price tag
-                    .frame(width: 80, height: 40, alignment: .center)   //frame
+                //MARK: PRICE
+                
+                Text("$\(String(format: "%.0f", post.price))")
+                    .frame(width: 80, height: 40, alignment: .center)
                     .background(.gray)
                     .opacity(0.9)
                     .foregroundColor(.white)
-                    .cornerRadius(30)                   //rounded corners
-                    .padding(.bottom, 175)              //overlay padding to get in top right
-                    .padding(.trailing, 8)              //overlay padding
+                    .cornerRadius(30)
+                    .padding(.bottom, UISettings.hScrollViewPostHeight * 0.65)
+                    .padding(.trailing, 8)
                     .font(.custom("Poppins-SemiBold", size: 20).bold())
             }
             
@@ -43,7 +44,7 @@ struct ProductPostView: View {
                 
                 //MARK: PRODUCT TITLE
                 Text(Util.formatStringLength(title: post.name))
-                    .font(.custom("Poppins-SemiBold", size: 22)) //from imported font, changed info.plist to use
+                    .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostTitleFont))
                     .foregroundColor(.primary)
 
             
@@ -51,45 +52,44 @@ struct ProductPostView: View {
                     
                     //MARK: VERIFICATION
                     Text(post.verified ? "  Verified  " : "  Not Verified  ")
-                        .font(.custom("Poppins-SemiBold", size: 14))
-                        .background(post.verified ? .green : .red) //from assets folder, imported custom color
+                        .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostBodyFont - 2))
+                        .background(post.verified ? .green : .red)
                         .foregroundColor(.white)
-                        .cornerRadius(3) //rounded corners
+                        .cornerRadius(3)
                     
                     //MARK: STAR
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 15, height: 15, alignment: .center)
                         .foregroundColor(.blue)
-                        .padding(.leading, 7) //that small gap between verification
+                        .padding(.leading, 7)
                         .padding(.bottom, 2) //small correction to vertical center
                     
                     
                     //MARK: RATING
-                    Text("\(String(format: "%.2f", post.rating))") //cuts double to two decimal places
-                        .font(.custom("Poppins-SemiBold", size: 16))
+                    Text("\(String(format: "%.2f", post.rating))")
+                        .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostBodyFont))
                         .foregroundColor(.primary)
 
                 })
-                    .padding(.trailing, 6) //spacing between verification/star/rating
+                    .padding(.trailing, 6)
             })
-                .padding(.leading, 10) //the small offset between the image and the data
+                .padding(.leading, 10)
         })
-            .padding(.all, 10)      //general spacing
-            .padding(.bottom, 20)   //small space at bottom
-            .background(.white)     //ensures BG not transparent
-            .cornerRadius(36)       //should theoretically round corners
+            .padding(.all, 10)
+            .padding(.bottom, 20)
+            .background(.white)
+            .cornerRadius(36)
 
     }
 }
 
 struct ProductPostView_Previews: PreviewProvider {
     
-    //example post
     static var post1: listing = listing(price: 17.00, rating: 4.75, name: "Power Washer", description: "Small but loud", address: "1600 Pennsylvania", imageName: "01", verified: false)
     
     static var previews: some View {
-        ProductPostView(post: post1)
+        ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 18.0, hScrollViewPostBodyFont: 12.0), post: post1)
             .previewLayout(.sizeThatFits)
             
     }
