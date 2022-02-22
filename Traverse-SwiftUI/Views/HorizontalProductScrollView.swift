@@ -16,11 +16,11 @@ struct HorizontalProductScrollView: View {
                 
                 //for each post in the array called "data", creates a new post view
                 ForEach(exampleData, id: \.self){ newpost in
-                    ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 150.0, hScrollViewPostTitleFont: 22.0, hScrollViewPostBodyFont: 16.0), post: newpost)
+                    ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120.0, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
                         .shadow(color: .gray, radius: 10, x: 0, y: 0)
                 }
             })
-                .frame(height: UIScreen.main.bounds.height * 0.4)
+                .frame(height: UIScreen.main.bounds.height * 0.3)
         }
     }
 }

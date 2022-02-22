@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct HomePage: View {
-    @StateObject var settings = UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 18.0, hScrollViewPostBodyFont: 12.0)
+    @StateObject var settings = UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 14.0, hScrollViewPostBodyFont: 10.0)
     
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
@@ -20,7 +20,7 @@ struct HomePage: View {
             }
             if !settings.showSearchBarResults{
                 Map(coordinateRegion: $region)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.85)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             }
             VStack{
                 SearchBarView()
@@ -32,7 +32,6 @@ struct HomePage: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.9)
             .environmentObject(settings)
-            //.background(settings.showSearchBarResults ? .blue : .black)
         }
     }
 }

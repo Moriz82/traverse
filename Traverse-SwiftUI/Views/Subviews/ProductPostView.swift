@@ -28,14 +28,14 @@ struct ProductPostView: View {
                 //MARK: PRICE
                 
                 Text("$\(String(format: "%.0f", post.price))")
-                    .frame(width: 80, height: 40, alignment: .center)
+                    .frame(width: UISettings.hScrollViewPostWidth * 0.4, height: UISettings.hScrollViewPostHeight * 0.25, alignment: .center)
                     .background(.gray)
                     .opacity(0.9)
                     .foregroundColor(.white)
                     .cornerRadius(30)
                     .padding(.bottom, UISettings.hScrollViewPostHeight * 0.65)
                     .padding(.trailing, 8)
-                    .font(.custom("Poppins-SemiBold", size: 20).bold())
+                    .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostTitleFont).bold())
             }
             
             
@@ -77,7 +77,7 @@ struct ProductPostView: View {
                 .padding(.leading, 10)
         })
             .padding(.all, 10)
-            .padding(.bottom, 20)
+            .padding(.bottom, UISettings.hScrollViewPostHeight * 0.1)
             .background(.white)
             .cornerRadius(36)
 
