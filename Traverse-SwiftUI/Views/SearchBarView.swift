@@ -12,14 +12,14 @@ struct SearchBarView: View {
     @State var productSearchString: String = ""
     @State var isAnimationEnabled: Bool = false
     @State var beginSearch: Bool = false
-    @EnvironmentObject var settings: UserInterfaceSettings
+    @EnvironmentObject var settings: showBarResults
     
     var body: some View {
         VStack(alignment: .leading, spacing: 30, content: {
             HStack(){
                 //MARK: TOP LEFT ICON
                 Button(action: {
-                    withAnimation(.easeInOut(duration: 0.50)){   //MARK: The Magic Line of Code
+                    withAnimation(.easeInOut(duration: 0.50)){
                         settings.showSearchBarResults.toggle()
                     }
                 }, label:{
@@ -37,7 +37,6 @@ struct SearchBarView: View {
                 })
                 
                 //MARK: SEARCH FIELD
-                
                 TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
                         beginSearch = true
                 })

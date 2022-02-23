@@ -7,8 +7,8 @@
 
 import Foundation
 
+//allows for UI customization of ProductPostView
 class UserInterfaceSettings: ObservableObject{
-    @Published var showSearchBarResults: Bool = false
     var hScrollViewPostWidth: Double
     var hScrollViewPostHeight: Double
     var hScrollViewPostTitleFont: Double
@@ -20,4 +20,9 @@ class UserInterfaceSettings: ObservableObject{
         self.hScrollViewPostTitleFont = hScrollViewPostTitleFont
         self.hScrollViewPostBodyFont = hScrollViewPostBodyFont
     }
+}
+
+//allows access to whether search bar is toggled for ContentView/HomePage state changes
+class showBarResults: ObservableObject{
+    @Published var showSearchBarResults: Bool = false
 }

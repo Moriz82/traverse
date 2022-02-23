@@ -8,8 +8,6 @@
 import Foundation
 
 class Search{
-    public static var showResults: Bool = false
-
     public static func getSearchResults(search: String) -> [listing] {
         // Returns an array of results based on search; sees if name, address, and description contains search word, case insensitive
         // Searches from example data in Database.swift

@@ -43,9 +43,9 @@ struct ProductPostView: View {
             VStack(alignment: .leading, spacing: 0, content: {
                 
                 //MARK: PRODUCT TITLE
-                Text(Util.formatStringLength(title: post.name))
+                Text(Util.formatStringLength(title: post.name, length: 14))
                     .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostTitleFont))
-                    .foregroundColor(.primary)
+                    .foregroundColor(.black)
 
             
                 HStack(spacing: 4, content: {
@@ -69,7 +69,7 @@ struct ProductPostView: View {
                     //MARK: RATING
                     Text("\(String(format: "%.2f", post.rating))")
                         .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostBodyFont))
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
 
                 })
                     .padding(.trailing, 6)

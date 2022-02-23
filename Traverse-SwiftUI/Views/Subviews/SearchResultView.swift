@@ -21,9 +21,10 @@ struct SearchResultView: View {
 
             
             VStack(alignment: .leading, spacing: 4, content: {
-                Text(Util.formatStringLength(title: searchResult.name))
+                Text(Util.formatStringLength(title: searchResult.name, length: 20))
                     .font(.custom("Poppins-SemiBold", size: 18))
                     .bold()
+                    .foregroundColor(.black)
                 Text("from $\(String(format: "%.2f", searchResult.price))")
                     .font(.custom("Poppins-Regular", size: 12))
                     .foregroundColor(.gray)

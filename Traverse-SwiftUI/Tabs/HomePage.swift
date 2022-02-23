@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct HomePage: View {
-    @StateObject var settings = UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 14.0, hScrollViewPostBodyFont: 10.0)
+    @StateObject var settings = showBarResults()
     
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     

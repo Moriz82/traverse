@@ -8,15 +8,13 @@
 import Foundation
 
 struct listing: Identifiable, Hashable {
-    
-    //in order to display listings in a feed, each listing must have a unique id
-    var id = UUID()
+        var id = UUID()
     
     var price, rating: Double
     var name, description, address, imageName: String
     var verified: Bool
     
-    //hashing is necessary to perform the ForEach function in Content.swift to display posts
+    //necessary for ForEach function in HorizontalProductScrollView.swift
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
