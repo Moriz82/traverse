@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535827C6E290007A01F5 /* LostConnectionScreen.swift */; };
+		0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */; };
+		062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */; };
 		06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */; };
 		06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */; };
 		06D00F5F27BDA95100044550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5E27BDA95100044550 /* ContentView.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0619535827C6E290007A01F5 /* LostConnectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostConnectionScreen.swift; sourceTree = "<group>"; };
+		0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabel.swift; sourceTree = "<group>"; };
+		062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabelScrollView.swift; sourceTree = "<group>"; };
 		06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceSettings.swift; sourceTree = "<group>"; };
 		06D00F5927BDA95100044550 /* Traverse-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traverse-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traverse_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 				06D00F8227BDAFA500044550 /* Subviews */,
 				06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */,
 				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
+				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
+				062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			children = (
 				06D00F7427BDAE1100044550 /* ProductPostView.swift */,
 				06D00F7E27BDAF9000044550 /* SearchResultView.swift */,
+				0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
 				06D00F7827BDAE5600044550 /* Database.swift in Sources */,
 				06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */,
+				0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */,
+				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
 				06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */,
+				062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */,
 				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
 				06D00F7B27BDAE8800044550 /* Util.swift in Sources */,
 				06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */,

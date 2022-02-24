@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchBarView: View {
     
     @State var productSearchString: String = ""
-    @State var isAnimationEnabled: Bool = false
     @State var beginSearch: Bool = false
     @EnvironmentObject var settings: showBarResults
     
@@ -44,7 +43,6 @@ struct SearchBarView: View {
                     .font(.custom("Poppins-Regular", size: 20))
                     .multilineTextAlignment(.leading)
                     .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
-                    .padding(EdgeInsets(top: isAnimationEnabled ? 350 : 0, leading: 0, bottom: 0, trailing: 0))
             }
             
             //MARK: RESULTS

@@ -25,6 +25,9 @@ struct HomePage: View {
             VStack{
                 SearchBarView()
                     .shadow(color: .gray, radius: 10, x: 0, y: 0)
+                if !settings.showSearchBarResults{
+                    MiniProductTypeLabelScrollView()
+                }
                 Spacer()
                 if !settings.showSearchBarResults{
                     HorizontalProductScrollView()
