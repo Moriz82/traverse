@@ -25,6 +25,11 @@ struct ContentView: View {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
+            LoginHome()
+                .tabItem{
+                    Image(systemName: "book")
+                    Text("Login")
+                }
         }
         .onAppear {
             if #available(iOS 15.0, *){

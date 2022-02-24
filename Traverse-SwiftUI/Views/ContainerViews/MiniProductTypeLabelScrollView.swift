@@ -16,7 +16,7 @@ struct MiniProductTypeLabelScrollView: View {
                         .padding(.leading, 15)
                 }
             })
-                .frame(height: UIScreen.main.bounds.height * 0.05)
+                .frame(height: 50)
 
         }
     }

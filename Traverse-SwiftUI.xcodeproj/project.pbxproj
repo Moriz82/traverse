@@ -10,6 +10,16 @@
 		0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535827C6E290007A01F5 /* LostConnectionScreen.swift */; };
 		0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */; };
 		062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */; };
+		067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACD27C81E4800A26801 /* SignUpView.swift */; };
+		067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACF27C81E4F00A26801 /* AddCardPage.swift */; };
+		067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD127C81E5900A26801 /* CardPaymentPage.swift */; };
+		067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD327C81E9300A26801 /* LoginHome.swift */; };
+		067B0ADC27C81EFE00A26801 /* TopRightLogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD627C81EFD00A26801 /* TopRightLogoImage.swift */; };
+		067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD727C81EFD00A26801 /* FilledInButton.swift */; };
+		067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD827C81EFD00A26801 /* orDividerImage.swift */; };
+		067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */; };
+		067B0AE027C81EFE00A26801 /* SignInWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */; };
+		067B0AE127C81EFE00A26801 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ADB27C81EFE00A26801 /* TextInputView.swift */; };
 		06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */; };
 		06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */; };
 		06D00F5F27BDA95100044550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5E27BDA95100044550 /* ContentView.swift */; };
@@ -32,6 +42,16 @@
 		0619535827C6E290007A01F5 /* LostConnectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostConnectionScreen.swift; sourceTree = "<group>"; };
 		0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabel.swift; sourceTree = "<group>"; };
 		062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabelScrollView.swift; sourceTree = "<group>"; };
+		067B0ACD27C81E4800A26801 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		067B0ACF27C81E4F00A26801 /* AddCardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardPage.swift; sourceTree = "<group>"; };
+		067B0AD127C81E5900A26801 /* CardPaymentPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPaymentPage.swift; sourceTree = "<group>"; };
+		067B0AD327C81E9300A26801 /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
+		067B0AD627C81EFD00A26801 /* TopRightLogoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRightLogoImage.swift; sourceTree = "<group>"; };
+		067B0AD727C81EFD00A26801 /* FilledInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledInButton.swift; sourceTree = "<group>"; };
+		067B0AD827C81EFD00A26801 /* orDividerImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orDividerImage.swift; sourceTree = "<group>"; };
+		067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextInputView.swift; sourceTree = "<group>"; };
+		067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleButton.swift; sourceTree = "<group>"; };
+		067B0ADB27C81EFE00A26801 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceSettings.swift; sourceTree = "<group>"; };
 		06D00F5927BDA95100044550 /* Traverse-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traverse-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traverse_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -63,6 +83,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		067B0ACB27C81DD700A26801 /* LoginViews */ = {
+			isa = PBXGroup;
+			children = (
+				067B0AD527C81EEB00A26801 /* LoginSubViews */,
+				067B0AE227C81F2100A26801 /* LoginContainerViews */,
+			);
+			path = LoginViews;
+			sourceTree = "<group>";
+		};
+		067B0ACC27C81DF600A26801 /* ContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */,
+				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
+				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
+				062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */,
+			);
+			path = ContainerViews;
+			sourceTree = "<group>";
+		};
+		067B0AD527C81EEB00A26801 /* LoginSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				067B0AD727C81EFD00A26801 /* FilledInButton.swift */,
+				067B0AD827C81EFD00A26801 /* orDividerImage.swift */,
+				067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */,
+				067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */,
+				067B0ADB27C81EFE00A26801 /* TextInputView.swift */,
+				067B0AD627C81EFD00A26801 /* TopRightLogoImage.swift */,
+			);
+			path = LoginSubViews;
+			sourceTree = "<group>";
+		};
+		067B0AE227C81F2100A26801 /* LoginContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				067B0ACD27C81E4800A26801 /* SignUpView.swift */,
+				067B0ACF27C81E4F00A26801 /* AddCardPage.swift */,
+				067B0AD127C81E5900A26801 /* CardPaymentPage.swift */,
+				067B0AD327C81E9300A26801 /* LoginHome.swift */,
+			);
+			path = LoginContainerViews;
+			sourceTree = "<group>";
+		};
 		06D00F5027BDA95100044550 = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +180,9 @@
 		06D00F7627BDAE3400044550 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				067B0ACB27C81DD700A26801 /* LoginViews */,
 				06D00F8227BDAFA500044550 /* Subviews */,
-				06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */,
-				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
-				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
-				062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */,
+				067B0ACC27C81DF600A26801 /* ContainerViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,16 +283,26 @@
 				06D00F8427BDAFDB00044550 /* Search.swift in Sources */,
 				06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */,
 				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
+				067B0ADC27C81EFE00A26801 /* TopRightLogoImage.swift in Sources */,
+				067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */,
 				06D00F7827BDAE5600044550 /* Database.swift in Sources */,
+				067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */,
 				06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */,
 				0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */,
 				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
+				067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
 				06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */,
 				062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */,
 				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
+				067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */,
+				067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */,
 				06D00F7B27BDAE8800044550 /* Util.swift in Sources */,
+				067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */,
 				06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */,
+				067B0AE127C81EFE00A26801 /* TextInputView.swift in Sources */,
+				067B0AE027C81EFE00A26801 /* SignInWithGoogleButton.swift in Sources */,
+				067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */,
 				06D00F7F27BDAF9000044550 /* SearchResultView.swift in Sources */,
 				06D00F7227BDAC1300044550 /* SettingsPage.swift in Sources */,
 			);

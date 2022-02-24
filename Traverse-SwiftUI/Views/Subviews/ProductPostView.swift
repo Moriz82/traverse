@@ -76,7 +76,7 @@ struct ProductPostView: View {
             })
                 .padding(.leading, 10)
         })
-            .padding(.all, 10)
+            .padding(.all, 7)
             .padding(.bottom, UISettings.hScrollViewPostHeight * 0.1)
             .background(.white)
             .cornerRadius(36)
