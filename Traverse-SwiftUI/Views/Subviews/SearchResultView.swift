@@ -12,31 +12,34 @@ struct SearchResultView: View {
     @State var searchResult: listing
     
     var body: some View {
-        HStack(alignment: .center, spacing: 20, content: {
-            Image(searchResult.imageName)
-                .resizable()
-                .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width * 0.157, height: UIScreen.main.bounds.width * 0.157, alignment: .center)
-                .cornerRadius(15)
+        Button(action: {}, label: {
+            HStack(alignment: .center, spacing: 20, content: {
+                Image(searchResult.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width * 0.157, height: UIScreen.main.bounds.width * 0.157, alignment: .center)
+                    .cornerRadius(15)
 
-            
-            VStack(alignment: .leading, spacing: 4, content: {
-                Text(Util.formatStringLength(title: searchResult.name, length: 20))
-                    .font(.custom("Poppins-SemiBold", size: 18))
-                    .bold()
-                    .foregroundColor(.black)
-                Text("from $\(String(format: "%.2f", searchResult.price))")
-                    .font(.custom("Poppins-Regular", size: 12))
-                    .foregroundColor(.gray)
+                
+                VStack(alignment: .leading, spacing: 4, content: {
+                    Text(Util.formatStringLength(title: searchResult.name, length: 20))
+                        .font(.custom("Poppins-SemiBold", size: 18))
+                        .bold()
+                        .foregroundColor(.black)
+                    Text("from $\(String(format: "%.2f", searchResult.price))")
+                        .font(.custom("Poppins-Regular", size: 12))
+                        .foregroundColor(.gray)
+                })
+                
+                Spacer()
+                
             })
-            
-            Spacer()
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+                .background(.white)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.10, alignment: .leading)
             
         })
-            .padding(.leading, 20)
-            .padding(.trailing, 20)
-            .background(.white)
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.10, alignment: .leading)
     }
 }
 

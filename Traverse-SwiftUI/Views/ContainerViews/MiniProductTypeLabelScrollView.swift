@@ -14,6 +14,7 @@ struct MiniProductTypeLabelScrollView: View {
                 ForEach(exampleProductTypes, id: \.self){ newpost in
                     MiniProductTypeLabel(productTypeString: newpost)
                         .padding(.leading, 15)
+                    
                 }
             })
                 .frame(height: 50)

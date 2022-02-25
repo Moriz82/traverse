@@ -12,12 +12,15 @@ struct MiniProductTypeLabel: View {
     
     //could honestly be removed for efficiency
     var body: some View {
-        Text(productTypeString)
-            .font(.custom("Poppins-Regular", size: 10))
-            .padding(7)
-            .background(.white)
-            .cornerRadius(40.0)
-            .shadow(color: .gray, radius: 5, x: 0, y: 0)
+        Button(action: {}, label: {
+            Text(productTypeString)
+                .font(.custom("Poppins-Regular", size: 10))
+                .padding(7)
+                .background(.white)
+                .cornerRadius(40.0)
+                .shadow(color: .gray, radius: 5, x: 0, y: 0)
+                .foregroundColor(.black)
+        })
     }
 }
 
