@@ -12,6 +12,7 @@ struct SearchBarView: View {
     @State var productSearchString: String = ""
     @State var beginSearch: Bool = false
     @EnvironmentObject var settings: showBarResults
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 30, content: {
@@ -20,6 +21,9 @@ struct SearchBarView: View {
                 Button(action: {
                     withAnimation(.easeInOut(duration: 0.50)){
                         settings.showSearchBarResults.toggle()
+                        if(settings.showSearchBarResults == false){
+                            hideKeyboard()
+                        }
                     }
                 }, label:{
                     HStack(){
@@ -35,14 +39,35 @@ struct SearchBarView: View {
                         .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 0))
                 })
                 
-                //MARK: SEARCH FIELD
-                TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
-                        beginSearch = true
-                })
-                    .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
-                    .font(.custom("Poppins-Regular", size: 20))
-                    .multilineTextAlignment(.leading)
-                    .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+               //MARK: SEARCH FIELD
+                if(settings.showSearchBarResults == true){
+                   TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
+                            beginSearch = true
+                    })
+                        .disabled(false)
+                        .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+                        .font(.custom("Poppins-Regular", size: 20))
+                        .multilineTextAlignment(.leading)
+                        .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+                        .focused($isFocused)
+                }
+                else{
+                    Button(action: {
+                        withAnimation(.easeInOut(duration: 0.50)){
+                            settings.showSearchBarResults.toggle()
+                            isFocused = true
+                        }
+                    }, label: {
+                       TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
+                                beginSearch = true
+                        })
+                            .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+                            .font(.custom("Poppins-Regular", size: 20))
+                            .multilineTextAlignment(.leading)
+                            .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
+                            .disabled(true)
+                    })
+                }
             }
             
             //MARK: RESULTS
@@ -52,7 +77,6 @@ struct SearchBarView: View {
                         let searchResults = Search.getSearchResults(search: productSearchString)
                         ForEach(searchResults, id: \.self){ newTerm in
                             SearchResultView(searchResult: newTerm)
-                            
                         }
                         Text("Recommended")
                             .font(.custom("Poppins-Regular", size: 18))
@@ -70,6 +94,13 @@ struct SearchBarView: View {
             .background(.white)
             .cornerRadius(30)
             .padding(.top, 30)
+            .padding(.top, settings.showSearchBarResults && isFocused ? UIScreen.main.bounds.height * 0.15 : 0)
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
