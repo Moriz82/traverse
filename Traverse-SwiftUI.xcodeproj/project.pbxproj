@@ -20,6 +20,9 @@
 		067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */; };
 		067B0AE027C81EFE00A26801 /* SignInWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */; };
 		067B0AE127C81EFE00A26801 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ADB27C81EFE00A26801 /* TextInputView.swift */; };
+		06853C9427CB0E9600C2F7EE /* ProductInformationScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06853C9327CB0E9600C2F7EE /* ProductInformationScrollView.swift */; };
+		06853C9627CB0ED900C2F7EE /* OwnerInformationSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06853C9527CB0ED900C2F7EE /* OwnerInformationSubView.swift */; };
+		06853C9827CB0EFD00C2F7EE /* ProductReviewSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */; };
 		06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */; };
 		06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */; };
 		06D00F5F27BDA95100044550 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5E27BDA95100044550 /* ContentView.swift */; };
@@ -52,6 +55,9 @@
 		067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextInputView.swift; sourceTree = "<group>"; };
 		067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleButton.swift; sourceTree = "<group>"; };
 		067B0ADB27C81EFE00A26801 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		06853C9327CB0E9600C2F7EE /* ProductInformationScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationScrollView.swift; sourceTree = "<group>"; };
+		06853C9527CB0ED900C2F7EE /* OwnerInformationSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerInformationSubView.swift; sourceTree = "<group>"; };
+		06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewSubView.swift; sourceTree = "<group>"; };
 		06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceSettings.swift; sourceTree = "<group>"; };
 		06D00F5927BDA95100044550 /* Traverse-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traverse-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traverse_SwiftUIApp.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 				06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */,
 				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
 				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
+				06853C9327CB0E9600C2F7EE /* ProductInformationScrollView.swift */,
 				062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */,
 			);
 			path = ContainerViews;
@@ -204,6 +211,8 @@
 				06D00F7427BDAE1100044550 /* ProductPostView.swift */,
 				06D00F7E27BDAF9000044550 /* SearchResultView.swift */,
 				0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */,
+				06853C9527CB0ED900C2F7EE /* OwnerInformationSubView.swift */,
+				06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -281,9 +290,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				06D00F8427BDAFDB00044550 /* Search.swift in Sources */,
+				06853C9827CB0EFD00C2F7EE /* ProductReviewSubView.swift in Sources */,
 				06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */,
 				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
 				067B0ADC27C81EFE00A26801 /* TopRightLogoImage.swift in Sources */,
+				06853C9427CB0E9600C2F7EE /* ProductInformationScrollView.swift in Sources */,
 				067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */,
 				06D00F7827BDAE5600044550 /* Database.swift in Sources */,
 				067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */,
@@ -301,6 +312,7 @@
 				067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */,
 				06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */,
 				067B0AE127C81EFE00A26801 /* TextInputView.swift in Sources */,
+				06853C9627CB0ED900C2F7EE /* OwnerInformationSubView.swift in Sources */,
 				067B0AE027C81EFE00A26801 /* SignInWithGoogleButton.swift in Sources */,
 				067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */,
 				06D00F7F27BDAF9000044550 /* SearchResultView.swift in Sources */,
