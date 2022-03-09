@@ -12,7 +12,11 @@ struct ProductInformationScrollView: View {
     var exampleInclusions = ["Inclusion 1", "Inclusion 2", "Inclusion 3", "Inclusion 4", "Inclusion 5"]
     
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-
+    
+    var locationFontSize = 15.0
+    var titleFontSize = 30.0
+    var headingFontSize = 25.0
+    var bodyFontSize = 12.0
     
     var body: some View {
         VStack {
@@ -25,66 +29,85 @@ struct ProductInformationScrollView: View {
                         .clipped()
                     HStack{
                         VStack(alignment: .leading, spacing: 5, content: {
-                            Text("LOCATION")
-                                .font(.body)
+                            Text("CITY, STATE")
+                                .font(.custom("Poppins-SemiBold", size: locationFontSize))
                                 .foregroundColor(.gray)
                             Text("Product Name")
-                                .font(.title)
-                            HStack{
+                                .font(.custom("Poppins-SemiBold", size: titleFontSize))
+                            HStack(alignment: .center, spacing: 2, content:{
                                 Image(systemName: "star.fill")
-                                Text("Rating")
-                                Text("(Reviews #)")
-                            }
+                                    .tint(.blue)
+                                    .padding(.trailing, 2)
+                                Text("-.--")
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize+5))
+                                Text("(--)")
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize+5))
+                                    .foregroundColor(.gray)
+                            })
                         })
                         Spacer()
                     }
                     VStack(alignment: .center, spacing: 0, content: {
                         HStack(alignment: .center, spacing: 0, content: {
-                            VStack{
+                            VStack(alignment: .center, spacing: 0, content: {
                                 Text("Percent")
-                                    .font(.title2)
-                                    .frame(width: 100, height: 40, alignment: .center)
-                                    .background(.green)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                                    .frame(width: 75, height: 30, alignment: .center)
+                                    .background(Color("product-info-green"))
                                     .foregroundColor(.white)
+                                    .cornerRadius(5.0)
                                 Text("Owner's response rate")
-                            }.frame(width: 200, height: 100, alignment: .center)
-                            VStack {
+                                    .frame(width: 120, height: 50)
+                                    .multilineTextAlignment(.center)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                            }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
+                            VStack(alignment: .center, spacing: 0, content: {
                                 Text("Time")
-                                    .font(.title2)
-                                    .frame(width: 100, height: 40, alignment: .center)
-                                    .background(.green)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                                    .frame(width: 75, height: 30, alignment: .center)
+                                    .background(Color("product-info-green"))
                                     .foregroundColor(.white)
-                                Text("Cancelation Time")
-                            }.frame(width: 200, height: 100, alignment: .center)
-
+                                    .cornerRadius(5.0)
+                                Text("Cancelation time")
+                                    .frame(width: 120, height: 50)
+                                    .multilineTextAlignment(.center)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                            }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
                         })
                         HStack(alignment: .center, spacing: 0, content: {
-                            VStack{
+                            VStack(alignment: .center, spacing: 0, content: {
                                 Text("Minutes")
-                                    .font(.title2)
-                                    .frame(width: 100, height: 40, alignment: .center)
-                                    .background(.green)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                                    .frame(width: 75, height: 30, alignment: .center)
+                                    .background(Color("product-info-green"))
                                     .foregroundColor(.white)
+                                    .cornerRadius(5.0)
                                 Text("Owner's response time")
-                            }.frame(width: 200, height: 100, alignment: .center)
-                            VStack {
+                                    .frame(width: 120, height: 50)
+                                    .multilineTextAlignment(.center)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                            }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
+                            VStack(alignment: .center, spacing: 0, content: {
                                 Text("Level")
-                                    .font(.title2)
-                                    .frame(width: 100, height: 40, alignment: .center)
-                                    .background(.green)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                                    .frame(width: 75, height: 30, alignment: .center)
+                                    .background(Color("product-info-green"))
                                     .foregroundColor(.white)
+                                    .cornerRadius(5.0)
                                 Text("Verified Owner")
-                            }.frame(width: 200, height: 100, alignment: .center)
-
+                                    .frame(width: 120, height: 50)
+                                    .multilineTextAlignment(.center)
+                                    .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                            }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
                         })
                     })
-                        .border(.black, width: 2)
-                    
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     HStack{
                         VStack(alignment: .leading, spacing: 0, content: {
                             Text("Description")
-                                .font(.title)
+                                .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Text("Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description")
+                                .font(.custom("Poppins-Regular", size: bodyFontSize))
                                 .foregroundColor(.gray)
                         })
                         Spacer()
@@ -92,9 +115,10 @@ struct ProductInformationScrollView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 5, content: {
                             Text("Inclusions")
-                                .font(.title)
+                                .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             ForEach(exampleInclusions, content: { inclusion in
                                 Text(String(inclusion))
+                                    .font(.custom("Poppins-Regular", size: bodyFontSize))
                                     .foregroundColor(.gray)
                             })
                         })
@@ -103,9 +127,10 @@ struct ProductInformationScrollView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 0, content: {
                             Text("Delivery")
-                                .font(.title)
+                                .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Map(coordinateRegion: $region)
                                 .frame(height: 200, alignment: .center)
+                                .cornerRadius(20.0)
                         })
                         Spacer()
                     }
@@ -113,30 +138,30 @@ struct ProductInformationScrollView: View {
                     VStack(alignment: .leading, spacing: 10, content: {
                         HStack{
                             Text("Reviews")
-                                .font(.title)
+                                .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Spacer()
                         }
                         ScrollView(.horizontal){
                             HStack{
                                 ProductReviewSubView()
-                                    .border(.black, width: 2)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                                 ProductReviewSubView()
-                                    .border(.black, width: 2)
-
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                             }
                         }
                         Text("see all")
-                            .font(.body)
+                            .font(.custom("Poppins-Regular", size: bodyFontSize))
                             .foregroundColor(.blue)
                     })
                     
                     VStack(alignment: .center, spacing: 0, content: {
                         HStack {
                             Text("Owner")
-                                .font(.title)
+                                .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Spacer()
                         }
                         OwnerInformationSubView()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     })
 
                 })
@@ -144,10 +169,10 @@ struct ProductInformationScrollView: View {
             }
             HStack(alignment: .center, spacing: 10, content: {
                 HStack(alignment: .bottom, spacing: 5, content: {
-                    Text("$Price")
-                        .font(.title)
+                    Text("$--")
+                        .font(.custom("Poppins-SemiBold", size: headingFontSize))
                     Text("per day")
-                        .font(.body)
+                        .font(.custom("Poppins-SemiBold", size: bodyFontSize-2))
                         .padding(.bottom, 2)
                 })
                 Spacer()
@@ -155,11 +180,11 @@ struct ProductInformationScrollView: View {
                     //MARK: RENT PRODUCT ACTION
                 }, label: {
                     Text("Rent Now")
-                        .font(.title)
-                        .frame(width: 200, height: 50, alignment: .center)
+                        .font(.custom("Poppins-SemiBold", size: headingFontSize - 7))
+                        .frame(width: 100, height: 50, alignment: .center)
                         .background(.blue)
                         .foregroundColor(.white)
-                        .cornerRadius(15)
+                        .cornerRadius(10)
                 })
             })
                 .padding()
