@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    //just to use the bool
-    @StateObject var settings = UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 14.0, hScrollViewPostBodyFont: 10.0)
-
-    
     var body: some View {
         TabView{
             HomePage()

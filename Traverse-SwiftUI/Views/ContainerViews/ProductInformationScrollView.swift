@@ -147,6 +147,7 @@ struct ProductInformationScrollView: View {
                     Text("$Price")
                         .font(.title)
                     Text("per day")
+                        .font(.body)
                         .padding(.bottom, 2)
                 })
                 Spacer()
@@ -163,6 +164,7 @@ struct ProductInformationScrollView: View {
             })
                 .padding()
         }
+        .navigationTitle("Product Information")
     }
 }
 

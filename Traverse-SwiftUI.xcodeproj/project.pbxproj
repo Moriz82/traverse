@@ -126,10 +126,10 @@
 		067B0AE227C81F2100A26801 /* LoginContainerViews */ = {
 			isa = PBXGroup;
 			children = (
+				067B0AD327C81E9300A26801 /* LoginHome.swift */,
 				067B0ACD27C81E4800A26801 /* SignUpView.swift */,
 				067B0ACF27C81E4F00A26801 /* AddCardPage.swift */,
 				067B0AD127C81E5900A26801 /* CardPaymentPage.swift */,
-				067B0AD327C81E9300A26801 /* LoginHome.swift */,
 			);
 			path = LoginContainerViews;
 			sourceTree = "<group>";

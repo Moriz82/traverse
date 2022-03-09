@@ -25,4 +25,9 @@ class UserInterfaceSettings: ObservableObject{
 //allows access to whether search bar is toggled for ContentView/HomePage state changes
 class showBarResults: ObservableObject{
     @Published var showSearchBarResults: Bool = false
+    @Published var showProductInformationView: Bool = false
+}
+
+class checkIfLoggedIn: ObservableObject{
+    @Published var isLoggedIn: Bool = false
 }

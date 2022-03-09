@@ -12,7 +12,6 @@ struct CardPaymentPage: View {
     private var cardHolderName: String = ""
     private var date: String = ""
     private var cvv: String = ""
-    @State private var willMoveToHomePage = false
     
     var body: some View {
         VStack {
@@ -58,15 +57,21 @@ struct CardPaymentPage: View {
                       .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1.5))
                 }
                 Spacer()
-                FilledInButton(title: "Submit", size: 1, action: {willMoveToHomePage = true})
-                Button(action: {willMoveToHomePage = true}){
+                FilledInButton(title: "Submit", size: 1, action: {
+                    
+                    
+                })
+                Button(action: {
+                    
+                    
+                }){
                     Text("Skip for now")
                         .font(.system(.callout, design: .default).bold())
                         .foregroundColor(Color.black)
                 }.padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
             }
             Spacer()
-        }.navigate(to: HomePage(), when: $willMoveToHomePage)
+        }
     }
 }
 

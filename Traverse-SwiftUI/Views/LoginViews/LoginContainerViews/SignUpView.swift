@@ -14,12 +14,14 @@ struct SignUpView: View {
     private var password: String = ""
     private var confirmPassword: String = ""
     @ScaledMetric var size: CGFloat = 1
-    @State private var willMoveToCardPage = false
-    @State private var willMoveToLogInPage = false
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @EnvironmentObject var checkLoginStatus: checkIfLoggedIn
     
     var body: some View {
+        ScrollView{
             VStack(alignment: .leading) {
-                
                 // Top Logo
                 if !shouldShowLogo {
                     TopRightLogoImage()
@@ -45,42 +47,35 @@ struct SignUpView: View {
                 
                 let passwordTextField = SecureTextInputView(title: "Password...", size: self.size, password: self.password)
                 passwordTextField.focused($shouldShowLogo)
+                
+                // Confirm Password Text Field
+                let confirmPasswordTextField = SecureTextInputView(title: "Confirm Password...", size: self.size, password: self.confirmPassword)
+                confirmPasswordTextField.focused($shouldShowLogo)
+                
+                
+                // Sign Up Button
+                FilledInButton(title: "Sign Up", size: size, action: {
+                    withAnimation(.easeIn(duration: 0.5)){
+                        checkLoginStatus.isLoggedIn = true
+                    }
+                    //MARK: CREATE ACCOUNT REQUEST
+                    self.presentationMode.wrappedValue.dismiss()
+                })
             
                 VStack(spacing: UIScreen.main.bounds.width * 0.031) {
                     
-                    // Confirm Password Text Field
-                    let confirmPasswordTextField = SecureTextInputView(title: "Confirm Password...", size: self.size, password: self.confirmPassword)
-                    confirmPasswordTextField.focused($shouldShowLogo)
-                    
-                    // Sign Up Button
-                    FilledInButton(title: "Next", size: size, action: {willMoveToCardPage = true})
-                    
                     // Or divider
                     orDividerImage()
-                    
                     
                     VStack(spacing: UIScreen.main.bounds.height * 0.07) {
                         
                         // Sign in with Google Button
                         SignInWithGoogleButton(size: size)
-                        
-                        
-                        // Already have an account? Log In
-                        HStack{
-                            Text("Already have an account?")
-                                .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
-                            Button(action: {willMoveToLogInPage = true}){
-                                Text("Log In")
-                                .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
-                            }
-                        }
                     }
                 }
-                Spacer()
             }.padding()
             .background(ignoresSafeAreaEdges: Edge.Set.top)
-            .navigate(to: LoginHome(), when: $willMoveToLogInPage)
-            .navigate(to: AddCardPage(), when: $willMoveToCardPage)
+        }
     }
 }
 
