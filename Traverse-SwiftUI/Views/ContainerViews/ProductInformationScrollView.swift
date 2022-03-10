@@ -22,15 +22,15 @@ struct ProductInformationScrollView: View {
     var body: some View {
         VStack {
             ScrollView(.vertical){
+                Image(listing.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .center)
+                    .clipped()
                 VStack(spacing: 20, content: {
-                    Image(listing.imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .center)
-                        .clipped()
                     HStack{
                         VStack(alignment: .leading, spacing: 5, content: {
-                            Text("CITY, STATE")
+                            Text(listing.address)
                                 .font(.custom("Poppins-SemiBold", size: locationFontSize))
                                 .foregroundColor(.gray)
                             Text("\(listing.name)")
@@ -183,7 +183,7 @@ struct ProductInformationScrollView: View {
             }
             
             //MARK: RENT NOW
-            HStack(alignment: .center, spacing: 10, content: {
+            HStack(alignment: .center, spacing: 0, content: {
                 HStack(alignment: .bottom, spacing: 5, content: {
                     Text("$\(String(format: "%.0f", listing.price))")
                         .font(.custom("Poppins-SemiBold", size: headingFontSize + 5))

@@ -33,5 +33,6 @@ struct FilledInButton: View {
 struct FilledInButton_Previews: PreviewProvider {
     static var previews: some View {
         FilledInButton(title: "", size: 1, action: {})
+            .previewLayout(.sizeThatFits)
     }
 }
