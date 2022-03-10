@@ -43,7 +43,13 @@ struct OwnerInformationSubView: View {
             }).frame(width: UIScreen.main.bounds.width * 0.8, alignment: .center)
 
             Button(action: {
-                //MARK: SEND MESSAGE ACTION
+                if let phoneNumber = ownerAccountInfo.phoneNumber{
+                    let sms: String = "sms:+1\(phoneNumber)&body="
+                    let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                    UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
+                }else{
+                    print("alert: no phone number found")
+                }
             }, label: {
                 Text("Send Message")
                     .frame(width: UIScreen.main.bounds.width * 0.8, height: 40, alignment: .center)
@@ -53,9 +59,8 @@ struct OwnerInformationSubView: View {
                     .cornerRadius(10)
             })
             
-            Button(action: {
-                //MARK: VIEW PROFILE ACTION
-            }, label: {
+            //MARK: VIEW PROFILE ACTION
+            NavigationLink(destination: ProfilePage(account: ownerAccountInfo), label: {
                 Text("View Profile")
                     .frame(width: UIScreen.main.bounds.width * 0.9, height: 30, alignment: .center)
                     .font(.custom("Poppins-Regular", size: bodyFontSize + 3))

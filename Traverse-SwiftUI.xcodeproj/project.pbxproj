@@ -12,6 +12,8 @@
 		062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */; };
 		06450D1927D9423200AB8E39 /* MapLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06450D1827D9423200AB8E39 /* MapLocationModel.swift */; };
 		06450D1B27D9C2E100AB8E39 /* annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06450D1A27D9C2E100AB8E39 /* annotation.swift */; };
+		0650A47D27DA8B70009BA304 /* ReviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650A47C27DA8B70009BA304 /* ReviewPage.swift */; };
+		0650A47F27DA8B82009BA304 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650A47E27DA8B82009BA304 /* ProfilePage.swift */; };
 		067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACD27C81E4800A26801 /* SignUpView.swift */; };
 		067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACF27C81E4F00A26801 /* AddCardPage.swift */; };
 		067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD127C81E5900A26801 /* CardPaymentPage.swift */; };
@@ -49,6 +51,8 @@
 		062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabelScrollView.swift; sourceTree = "<group>"; };
 		06450D1827D9423200AB8E39 /* MapLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationModel.swift; sourceTree = "<group>"; };
 		06450D1A27D9C2E100AB8E39 /* annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotation.swift; sourceTree = "<group>"; };
+		0650A47C27DA8B70009BA304 /* ReviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPage.swift; sourceTree = "<group>"; };
+		0650A47E27DA8B82009BA304 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		067B0ACD27C81E4800A26801 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		067B0ACF27C81E4F00A26801 /* AddCardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardPage.swift; sourceTree = "<group>"; };
 		067B0AD127C81E5900A26801 /* CardPaymentPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPaymentPage.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				06D00F7C27BDAF1500044550 /* HorizontalProductScrollView.swift */,
+				0650A47C27DA8B70009BA304 /* ReviewPage.swift */,
+				0650A47E27DA8B82009BA304 /* ProfilePage.swift */,
 				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
 				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
 				06853C9327CB0E9600C2F7EE /* ProductInformationScrollView.swift */,
@@ -313,6 +319,7 @@
 				06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */,
 				062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */,
 				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
+				0650A47F27DA8B82009BA304 /* ProfilePage.swift in Sources */,
 				06450D1927D9423200AB8E39 /* MapLocationModel.swift in Sources */,
 				067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */,
 				067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */,
@@ -323,6 +330,7 @@
 				06853C9627CB0ED900C2F7EE /* OwnerInformationSubView.swift in Sources */,
 				067B0AE027C81EFE00A26801 /* SignInWithGoogleButton.swift in Sources */,
 				067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */,
+				0650A47D27DA8B70009BA304 /* ReviewPage.swift in Sources */,
 				06D00F7F27BDAF9000044550 /* SearchResultView.swift in Sources */,
 				06D00F7227BDAC1300044550 /* SettingsPage.swift in Sources */,
 			);

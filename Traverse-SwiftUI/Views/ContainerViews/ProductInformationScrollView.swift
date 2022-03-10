@@ -163,9 +163,12 @@ struct ProductInformationScrollView: View {
                                 }
                             }
                         }
-                        Text("see all")
-                            .font(.custom("Poppins-Regular", size: bodyFontSize))
-                            .foregroundColor(.blue)
+                        NavigationLink(destination: ReviewPage(listing: listing), label: {
+                            Text("see all")
+                                .font(.custom("Poppins-Regular", size: bodyFontSize))
+                                .foregroundColor(.blue)
+
+                        })
                     })
                     //MARK: OWNER GRAPHIC
                     VStack(alignment: .center, spacing: 0, content: {
@@ -174,7 +177,7 @@ struct ProductInformationScrollView: View {
                                 .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Spacer()
                         }
-                        OwnerInformationSubView(ownerAccountInfo: exampleAccounts[2])
+                        OwnerInformationSubView(ownerAccountInfo: listing.owner)
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     })
 
@@ -206,7 +209,7 @@ struct ProductInformationScrollView: View {
                 .padding()
                 .border(.gray, width: 1)
         }
-        .navigationTitle("Product Information")
+        .navigationTitle("Product Info")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ProductReviewSubView: View {
-    var nameFontSize = 14.0
-    var bodyFontSize = 10.0
     
     let formatter1 = DateFormatter()
     
     @State var reviewInfo: review
+        
+    var nameFontSize = 14.0
+    var bodyFontSize = 10.0
+
     
     var body: some View {
         

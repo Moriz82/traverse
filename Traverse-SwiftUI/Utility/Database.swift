@@ -35,7 +35,7 @@ struct account: Identifiable, Hashable{
     var email: String
     var dateJoined: Date
     
-    var phoneNumber: Int?
+    var phoneNumber: String?
     var profilePicture: String?
     
     var responseRate: Double?
@@ -61,7 +61,7 @@ struct review: Identifiable, Hashable{
 
 
 var exampleAccounts: [account] = [
-    account(firstName: "Yash", lastName: "Shah", verification: true, email: "yash.shah@ys.com", dateJoined: Date()),
+    account(firstName: "Yash", lastName: "Shah", verification: true, email: "yash.shah@ys.com", dateJoined: Date(), phoneNumber: "5129276152"),
     account(firstName: "Jay", lastName: "Kannam", verification: true, email: "jay.kannam@jk.com", dateJoined: Date()),
     account(firstName: "Alan", lastName: "Reyes", verification: true, email: "alan.reyes@ar.com", dateJoined: Date()),
     account(firstName: "Miles", lastName: "Belknap", verification: true, email: "miles.belknap@mb.com", dateJoined: Date()),
