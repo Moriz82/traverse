@@ -16,7 +16,7 @@ class Search{
         var count = 0
         let maximumSearchResultCount = 10
         
-        for listing in exampleData {
+        for listing in exampleListings {
             if((listing.name.range(of: search, options: .caseInsensitive)) != nil){
                 searchResults.append(listing)
                 count += 1

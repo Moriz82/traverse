@@ -76,7 +76,9 @@ struct SearchBarView: View {
                     VStack(alignment: .leading, spacing: 0, content: {
                         let searchResults = Search.getSearchResults(search: productSearchString)
                         ForEach(searchResults, id: \.self){ newTerm in
-                            SearchResultView(searchResult: newTerm)
+                            NavigationLink(destination: ProductInformationScrollView(listing: newTerm), label: {
+                                SearchResultView(searchResult: newTerm)
+                            })
                         }
                         Text("Recommended")
                             .font(.custom("Poppins-Regular", size: 18))
@@ -84,8 +86,10 @@ struct SearchBarView: View {
                             .padding(.leading, 20)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
 
-                        ForEach(exampleData, id: \.self){ recommendedResult in
-                            SearchResultView(searchResult: recommendedResult)
+                        ForEach(exampleListings, id: \.self){ recommendedResult in
+                            NavigationLink(destination: ProductInformationScrollView(listing: recommendedResult), label: {
+                                SearchResultView(searchResult: recommendedResult)
+                            })
                         }
                     })
                 }

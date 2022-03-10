@@ -10,9 +10,8 @@ import MapKit
 
 struct HomePage: View {
     @StateObject var settings = showBarResults()
-    
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-    
+    @StateObject private var mapViewModel = MapLocationModel()
+        
     var body: some View {
         NavigationView{
             ZStack{
@@ -20,8 +19,25 @@ struct HomePage: View {
                     Color.blue.ignoresSafeArea()
                 }
                 if !settings.showSearchBarResults{
-                    Map(coordinateRegion: $region)
+                    Map(coordinateRegion: $mapViewModel.region, annotationItems: exampleAnnotations){ place in
+                        MapAnnotation(coordinate: place.coordinate, content: {
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("$"+String(format: "%.0f", place.price))
+                                    .font(.custom("Poppins-SemiBold", size: 16.0))
+                                    .frame(width: 65, height: 30, alignment: .center)
+                                    .background(Color("traverse-blue"))
+                                    .accentColor(.white)
+                                    .cornerRadius(15.0)
+                                    .overlay(RoundedRectangle(cornerRadius: 15.0).stroke(Color.white, lineWidth: 1))
+                            })
+                        })
+                    }
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                        .onAppear{
+                            mapViewModel.checkIfLocationisEnabled()
+                        }
                 }
                 VStack{
                     SearchBarView()

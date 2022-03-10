@@ -12,6 +12,7 @@ struct ProductInformationScrollView: View {
     var exampleInclusions = ["Inclusion 1", "Inclusion 2", "Inclusion 3", "Inclusion 4", "Inclusion 5"]
     
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    @State var listing: listing
     
     var locationFontSize = 15.0
     var titleFontSize = 30.0
@@ -22,7 +23,7 @@ struct ProductInformationScrollView: View {
         VStack {
             ScrollView(.vertical){
                 VStack(spacing: 20, content: {
-                    Image("01")
+                    Image(listing.imageName)
                         .resizable()
                         .scaledToFill()
                         .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .center)
@@ -32,25 +33,29 @@ struct ProductInformationScrollView: View {
                             Text("CITY, STATE")
                                 .font(.custom("Poppins-SemiBold", size: locationFontSize))
                                 .foregroundColor(.gray)
-                            Text("Product Name")
+                            Text("\(listing.name)")
                                 .font(.custom("Poppins-SemiBold", size: titleFontSize))
                             HStack(alignment: .center, spacing: 2, content:{
                                 Image(systemName: "star.fill")
-                                    .tint(.blue)
+                                    .resizable()
+                                    .foregroundColor(.blue)
+                                    .frame(width: 14, height: 14, alignment: .center)
                                     .padding(.trailing, 2)
-                                Text("-.--")
+                                Text("\(String(format: "%.2f", listing.rating))")
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize+5))
-                                Text("(--)")
+                                Text("("+String(listing.reviews?.count ?? 0)+")")
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize+5))
                                     .foregroundColor(.gray)
                             })
                         })
                         Spacer()
                     }
+                    
+                    //MARK: OWNER QUICK INFO
                     VStack(alignment: .center, spacing: 0, content: {
                         HStack(alignment: .center, spacing: 0, content: {
                             VStack(alignment: .center, spacing: 0, content: {
-                                Text("Percent")
+                                Text(String(format: "%.0f",(listing.owner.responseRate ?? 0.0)*100)+"%")
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                                     .frame(width: 75, height: 30, alignment: .center)
                                     .background(Color("product-info-green"))
@@ -62,7 +67,7 @@ struct ProductInformationScrollView: View {
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                             }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
                             VStack(alignment: .center, spacing: 0, content: {
-                                Text("Time")
+                                Text(String(listing.cancelationTimeInHours ?? 0)+" hours")
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                                     .frame(width: 75, height: 30, alignment: .center)
                                     .background(Color("product-info-green"))
@@ -73,10 +78,10 @@ struct ProductInformationScrollView: View {
                                     .multilineTextAlignment(.center)
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                             }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
-                        })
+                        }).padding(.top, 5)
                         HStack(alignment: .center, spacing: 0, content: {
                             VStack(alignment: .center, spacing: 0, content: {
-                                Text("Minutes")
+                                Text(String(listing.owner.responseTimeInMinutes ?? 0)+" minutes")
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                                     .frame(width: 75, height: 30, alignment: .center)
                                     .background(Color("product-info-green"))
@@ -88,13 +93,13 @@ struct ProductInformationScrollView: View {
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                             }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
                             VStack(alignment: .center, spacing: 0, content: {
-                                Text("Level")
+                                Text(listing.owner.verification ? "Verified" : "Not Verified")
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                                     .frame(width: 75, height: 30, alignment: .center)
                                     .background(Color("product-info-green"))
                                     .foregroundColor(.white)
                                     .cornerRadius(5.0)
-                                Text("Verified Owner")
+                                Text("Owner Verification")
                                     .frame(width: 120, height: 50)
                                     .multilineTextAlignment(.center)
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
@@ -102,21 +107,24 @@ struct ProductInformationScrollView: View {
                         })
                     })
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                    
+                    //MARK: DESCRIPTION
                     HStack{
                         VStack(alignment: .leading, spacing: 0, content: {
                             Text("Description")
                                 .font(.custom("Poppins-SemiBold", size: headingFontSize))
-                            Text("Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description Multiline description")
+                            Text("\(listing.description)")
                                 .font(.custom("Poppins-Regular", size: bodyFontSize))
                                 .foregroundColor(.gray)
                         })
                         Spacer()
                     }
+                    //MARK: INCLUSIONS
                     HStack {
                         VStack(alignment: .leading, spacing: 5, content: {
                             Text("Inclusions")
                                 .font(.custom("Poppins-SemiBold", size: headingFontSize))
-                            ForEach(exampleInclusions, content: { inclusion in
+                            ForEach(listing.inclusions ?? ["None provided"], content: { inclusion in
                                 Text(String(inclusion))
                                     .font(.custom("Poppins-Regular", size: bodyFontSize))
                                     .foregroundColor(.gray)
@@ -124,6 +132,7 @@ struct ProductInformationScrollView: View {
                         })
                         Spacer()
                     }
+                    //MARK: DELIVERY
                     HStack {
                         VStack(alignment: .leading, spacing: 0, content: {
                             Text("Delivery")
@@ -134,7 +143,7 @@ struct ProductInformationScrollView: View {
                         })
                         Spacer()
                     }
-                    
+                    //MARK: REVIEWS
                     VStack(alignment: .leading, spacing: 10, content: {
                         HStack{
                             Text("Reviews")
@@ -143,37 +152,44 @@ struct ProductInformationScrollView: View {
                         }
                         ScrollView(.horizontal){
                             HStack{
-                                ProductReviewSubView()
-                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                                ProductReviewSubView()
-                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                                if listing.reviews != nil{
+                                    ForEach(listing.reviews!, content: { eachReview in
+                                        ProductReviewSubView(reviewInfo: eachReview)
+                                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                                    })
+                                } else{
+                                    Text("No reviews yet on this product.")
+                                        .font(.custom("Poppins-Regular", size: bodyFontSize))
+                                }
                             }
                         }
                         Text("see all")
                             .font(.custom("Poppins-Regular", size: bodyFontSize))
                             .foregroundColor(.blue)
                     })
-                    
+                    //MARK: OWNER GRAPHIC
                     VStack(alignment: .center, spacing: 0, content: {
                         HStack {
                             Text("Owner")
                                 .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Spacer()
                         }
-                        OwnerInformationSubView()
+                        OwnerInformationSubView(ownerAccountInfo: exampleAccounts[2])
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     })
 
                 })
                     .frame(width: UIScreen.main.bounds.width * 0.9)
             }
+            
+            //MARK: RENT NOW
             HStack(alignment: .center, spacing: 10, content: {
                 HStack(alignment: .bottom, spacing: 5, content: {
-                    Text("$--")
-                        .font(.custom("Poppins-SemiBold", size: headingFontSize))
+                    Text("$\(String(format: "%.0f", listing.price))")
+                        .font(.custom("Poppins-SemiBold", size: headingFontSize + 5))
                     Text("per day")
-                        .font(.custom("Poppins-SemiBold", size: bodyFontSize-2))
-                        .padding(.bottom, 2)
+                        .font(.custom("Poppins-SemiBold", size: bodyFontSize))
+                        .padding(.bottom, 6)
                 })
                 Spacer()
                 Button(action: {
@@ -181,21 +197,23 @@ struct ProductInformationScrollView: View {
                 }, label: {
                     Text("Rent Now")
                         .font(.custom("Poppins-SemiBold", size: headingFontSize - 7))
-                        .frame(width: 100, height: 50, alignment: .center)
-                        .background(.blue)
+                        .frame(width: 150, height: 40, alignment: .center)
+                        .background(Color("traverse-blue"))
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 })
             })
                 .padding()
+                .border(.gray, width: 1)
         }
         .navigationTitle("Product Information")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ProductInformationScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductInformationScrollView()
+        ProductInformationScrollView(listing: listing(id: UUID(), price: 35.00, rating: 4.78, name: "Power Washer", description: "Lorem ipsum lorem ipsum", address: "1600 Pennsylvania Avenue", imageName: "01", verified: true, owner: account(firstName: "", lastName: "", verification: false, email: "", dateJoined: Date()), reviews: [exampleReviews[1], exampleReviews[2], exampleReviews[3]]))
             .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 1700))
     }
 }

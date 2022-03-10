@@ -11,33 +11,42 @@ struct ProductReviewSubView: View {
     var nameFontSize = 14.0
     var bodyFontSize = 10.0
     
-    var numberOfStars: Int = 4
+    let formatter1 = DateFormatter()
+    
+    @State var reviewInfo: review
     
     var body: some View {
+        
+        //MARK: HEADER
         VStack(alignment: .leading, spacing: 6, content: {
             HStack(alignment: .center, spacing: 7, content: {
-                Image(systemName: "circle")
+                Image(systemName: "circle.fill")
                     .resizable()
+                    .foregroundColor(.gray)
                     .frame(width: 32, height: 32, alignment: .center)
                     .cornerRadius(16.0)
                 VStack(alignment: .leading, spacing: 0, content: {
-                    Text("Profile Name")
+                    Text("\(reviewInfo.reviewAccount.firstName) \(reviewInfo.reviewAccount.lastName)")
                         .font(.custom("Poppins-SemiBold", size: nameFontSize))
-                    Text("Date of review")
+                    Text("\(reviewInfo.dateReviewed.formatted())")
                         .font(.custom("Poppins-Regular", size: bodyFontSize - 2))
                         .foregroundColor(.gray)
                 })
             })
+            
+            //MARK: STARS
             HStack(alignment: .center, spacing: 3, content: {
-                ForEach((1...numberOfStars), id: \.self){_ in
+                ForEach((1...reviewInfo.numberOfStars), id: \.self){_ in
                     Image(systemName: "star.fill")
                         .resizable()
                         .frame(width: 13, height: 13, alignment: .center)
                         .foregroundColor(Color("traverse-blue"))
                 }
             })
+            
+            //MARK: DESCRIPTION
             HStack(alignment: .center, spacing: 0, content: {
-                Text("Review body text")
+                Text("\(reviewInfo.description)")
                     .font(.custom("Poppins-Regular", size: bodyFontSize))
                     .foregroundColor(.gray)
                 Spacer()
@@ -52,7 +61,7 @@ struct ProductReviewSubView: View {
 
 struct ProductInformationReviewSubView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductReviewSubView()
+        ProductReviewSubView(reviewInfo: exampleReviews[0])
             .previewLayout(.sizeThatFits)
     }
 }

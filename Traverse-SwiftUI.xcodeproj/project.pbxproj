@@ -10,6 +10,9 @@
 		0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535827C6E290007A01F5 /* LostConnectionScreen.swift */; };
 		0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */; };
 		062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */; };
+		06450D1927D9423200AB8E39 /* MapLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06450D1827D9423200AB8E39 /* MapLocationModel.swift */; };
+		06450D1B27D9C2E100AB8E39 /* annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06450D1A27D9C2E100AB8E39 /* annotation.swift */; };
+		06450D1D27D9C8C700AB8E39 /* CustomMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06450D1C27D9C8C700AB8E39 /* CustomMapAnnotation.swift */; };
 		067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACD27C81E4800A26801 /* SignUpView.swift */; };
 		067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACF27C81E4F00A26801 /* AddCardPage.swift */; };
 		067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD127C81E5900A26801 /* CardPaymentPage.swift */; };
@@ -45,6 +48,9 @@
 		0619535827C6E290007A01F5 /* LostConnectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostConnectionScreen.swift; sourceTree = "<group>"; };
 		0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabel.swift; sourceTree = "<group>"; };
 		062F3B6A27C72E200008333A /* MiniProductTypeLabelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniProductTypeLabelScrollView.swift; sourceTree = "<group>"; };
+		06450D1827D9423200AB8E39 /* MapLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationModel.swift; sourceTree = "<group>"; };
+		06450D1A27D9C2E100AB8E39 /* annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotation.swift; sourceTree = "<group>"; };
+		06450D1C27D9C8C700AB8E39 /* CustomMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapAnnotation.swift; sourceTree = "<group>"; };
 		067B0ACD27C81E4800A26801 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		067B0ACF27C81E4F00A26801 /* AddCardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardPage.swift; sourceTree = "<group>"; };
 		067B0AD127C81E5900A26801 /* CardPaymentPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPaymentPage.swift; sourceTree = "<group>"; };
@@ -198,9 +204,11 @@
 			isa = PBXGroup;
 			children = (
 				06BD1FD127BEE4D7008851FC /* UserInterfaceSettings.swift */,
+				06450D1A27D9C2E100AB8E39 /* annotation.swift */,
 				06D00F8327BDAFDB00044550 /* Search.swift */,
 				06D00F7727BDAE5500044550 /* Database.swift */,
 				06D00F7A27BDAE8800044550 /* Util.swift */,
+				06450D1827D9423200AB8E39 /* MapLocationModel.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 				0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */,
 				06853C9527CB0ED900C2F7EE /* OwnerInformationSubView.swift */,
 				06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */,
+				06450D1C27D9C8C700AB8E39 /* CustomMapAnnotation.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06450D1D27D9C8C700AB8E39 /* CustomMapAnnotation.swift in Sources */,
 				06D00F8427BDAFDB00044550 /* Search.swift in Sources */,
 				06853C9827CB0EFD00C2F7EE /* ProductReviewSubView.swift in Sources */,
 				06BD1FD227BEE4D7008851FC /* UserInterfaceSettings.swift in Sources */,
@@ -300,12 +310,14 @@
 				067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */,
 				06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */,
 				0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */,
+				06450D1B27D9C2E100AB8E39 /* annotation.swift in Sources */,
 				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
 				067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
 				06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */,
 				062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */,
 				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
+				06450D1927D9423200AB8E39 /* MapLocationModel.swift in Sources */,
 				067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */,
 				067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */,
 				06D00F7B27BDAE8800044550 /* Util.swift in Sources */,
@@ -451,6 +463,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Traverse-SwiftUI/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"In order to find products near you.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +494,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Traverse-SwiftUI/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"In order to find products near you.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

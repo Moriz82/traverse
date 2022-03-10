@@ -11,18 +11,21 @@ struct OwnerInformationSubView: View {
     var nameFontSize = 15.0
     var bodyFontSize = 12.0
     
+    @State var ownerAccountInfo: account
+    
     var body: some View {
         VStack {
             HStack(alignment: .center, spacing: 0, content: {
                 HStack(alignment: .center, spacing: 7, content: {
-                    Image(systemName: "circle")
+                    Image(systemName: "circle.fill")
                         .resizable()
+                        .foregroundColor(.gray)
                         .frame(width: 32, height: 32, alignment: .center)
                         .cornerRadius(16.0)
                     VStack(alignment: .leading, spacing: 0, content: {
-                        Text("Profile Name")
+                        Text("\(ownerAccountInfo.firstName) \(ownerAccountInfo.lastName)")
                             .font(.custom("Poppins-SemiBold", size: nameFontSize))
-                        Text("Date of review")
+                        Text("Joined \(ownerAccountInfo.dateJoined.formatted())")
                             .font(.custom("Poppins-Regular", size: bodyFontSize - 2))
                             .foregroundColor(.gray)
                     })
@@ -66,7 +69,7 @@ struct OwnerInformationSubView: View {
 
 struct OwnerInformationSubView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerInformationSubView()
+        OwnerInformationSubView(ownerAccountInfo: exampleAccounts[3])
             .previewLayout(.sizeThatFits)
     }
 }
