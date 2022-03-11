@@ -21,6 +21,7 @@ struct listing: Identifiable, Hashable {
     
     var inclusions: [String]?
     var reviews: [review]?
+    var category: String?
     
     //necessary for ForEach function in HorizontalProductScrollView.swift
     func hash(into hasher: inout Hasher) {
@@ -82,9 +83,9 @@ var exampleReviews: [review] = [
 ]
 
 var exampleListings: [listing] = [
-    listing(price: 27.00, rating: 4.76, name: "Power Washer", description: "I bought this two years ago new from Home Depot. It's sitting in my garage so I thought I'd post it. Only $27, barely used", address: "123 Easy St.", imageName: "01", verified: true, owner: exampleAccounts[0], inclusions: ["Soap compartment", "Extension cords", "PSI Comp", "Nozzle w trigger"], reviews: [exampleReviews[1], exampleReviews[2]]),
+    listing(price: 27.00, rating: 4.76, name: "Power Washer", description: "I bought this two years ago new from Home Depot. It's sitting in my garage so I thought I'd post it. Only $27, barely used", address: "123 Easy St.", imageName: "01", verified: true, owner: exampleAccounts[0], inclusions: ["Soap compartment", "Extension cords", "PSI Comp", "Nozzle w trigger"], reviews: [exampleReviews[1], exampleReviews[2]], category: "Power Tools"),
     
-    listing(price: 12.00, rating: 4.21, name: "Electric Skateboard", description: "Has stickers on bottom. Rechargable battery, it's about four years old but still in great condition", address: "123 Easy St.", imageName: "02", verified: false, owner: exampleAccounts[1], inclusions: ["Charging cable", "Extra battery"], reviews: [exampleReviews[3], exampleReviews[4]]),
+    listing(price: 12.00, rating: 4.21, name: "Electric Skateboard", description: "Has stickers on bottom. Rechargable battery, it's about four years old but still in great condition", address: "123 Easy St.", imageName: "02", verified: false, owner: exampleAccounts[1], inclusions: ["Charging cable", "Extra battery"], reviews: [exampleReviews[3], exampleReviews[4]], category: "Power Tools"),
     
     listing(price: 31.00, rating: 5.0, name: "Generator", description: "In electricity generation, a generator is a device that converts motive power into electrical power for use in an external circuit. Sources of mechanical energy include steam turbines, gas turbines, water turbines, internal combustion engines, wind turbines and even hand cranks. - Wikipedia", address: "123 Easy St.", imageName: "03", verified: true, owner: exampleAccounts[2], inclusions: ["Gasoline", "Extension cords", "all the works"], reviews: [exampleReviews[5], exampleReviews[0]]),
     

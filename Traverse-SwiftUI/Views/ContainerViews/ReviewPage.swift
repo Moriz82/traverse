@@ -23,7 +23,7 @@ struct ReviewPage: View {
                     .padding(.leading, 10)
                 Divider()
                 
-                ForEach(listing.reviews!, content    { eachReview in
+                ForEach(listing.reviews!, content:    { eachReview in
                     VStack(alignment: .leading, spacing: 18, content: {
                         HStack(alignment: .center, spacing: 7, content: {
                             Image(systemName: "circle.fill")
