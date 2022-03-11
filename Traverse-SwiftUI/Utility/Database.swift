@@ -112,13 +112,13 @@ var exampleAccounts: [account] = [
 ]
 
 var exampleReviews: [review] = [
-    review(id: UUID(), reviewAccount: exampleAccounts[1], dateReviewed: Date(), numberOfStars: 4, description: "Solid"),
-    review(id: UUID(), reviewAccount: exampleAccounts[2], dateReviewed: Date(), numberOfStars: 3, description: "I wouldn't recommend unless you're in a tight stint and really need it."),
-    review(id: UUID(), reviewAccount: exampleAccounts[3], dateReviewed: Date(), numberOfStars: 5, description: "Fantastic, worked perfect, owner is really nice guy"),
-    review(id: UUID(), reviewAccount: exampleAccounts[4], dateReviewed: Date(), numberOfStars: 4, description: "Meh it's okay"),
-    review(id: UUID(), reviewAccount: exampleAccounts[5], dateReviewed: Date(), numberOfStars: 5, description: "Didn't break, 10/10"),
-    review(id: UUID(), reviewAccount: exampleAccounts[6], dateReviewed: Date(), numberOfStars: 5, description: "Not shitty! Sometimes the experience is not the best, but this definitely was."),
-    review(id: UUID(), reviewAccount: exampleAccounts[6], dateReviewed: Date(), numberOfStars: 2, description: "Terrible, terrible product.")
+    review(reviewAccount: exampleAccounts[1], dateReviewed: Date(), numberOfStars: 4, description: "Solid"),
+    review(reviewAccount: exampleAccounts[2], dateReviewed: Date(), numberOfStars: 3, description: "I wouldn't recommend unless you're in a tight stint and really need it."),
+    review(reviewAccount: exampleAccounts[3], dateReviewed: Date(), numberOfStars: 5, description: "Fantastic, worked perfect, owner is really nice guy"),
+    review(reviewAccount: exampleAccounts[4], dateReviewed: Date(), numberOfStars: 4, description: "Meh it's okay"),
+    review(reviewAccount: exampleAccounts[5], dateReviewed: Date(), numberOfStars: 5, description: "Didn't break, 10/10"),
+    review(reviewAccount: exampleAccounts[6], dateReviewed: Date(), numberOfStars: 5, description: "Not shitty! Sometimes the experience is not the best, but this definitely was."),
+    review(reviewAccount: exampleAccounts[6], dateReviewed: Date(), numberOfStars: 2, description: "Terrible, terrible product.")
 
 ]
 
