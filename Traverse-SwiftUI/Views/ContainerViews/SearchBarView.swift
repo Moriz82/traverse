@@ -15,7 +15,7 @@ struct SearchBarView: View {
     @FocusState private var isFocused: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 30, content: {
+        VStack(alignment: .leading, spacing: 10, content: {
             HStack(){
                 //MARK: TOP LEFT ICON
                 Button(action: {
@@ -39,13 +39,12 @@ struct SearchBarView: View {
                         .padding(EdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 0))
                 })
                 
-               //MARK: SEARCH FIELD
+                //MARK: SEARCH FIELD
                 if(settings.showSearchBarResults == true){
                    TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
                             beginSearch = true
                     })
                         .disabled(false)
-                        .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
                         .font(.custom("Poppins-Regular", size: 20))
                         .multilineTextAlignment(.leading)
                         .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
@@ -61,7 +60,6 @@ struct SearchBarView: View {
                        TextField("Search for products...", text: $productSearchString, onEditingChanged: {_ in
                                 beginSearch = true
                         })
-                            .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
                             .font(.custom("Poppins-Regular", size: 20))
                             .multilineTextAlignment(.leading)
                             .frame(width: UIScreen.main.bounds.width * 0.829, height: UIScreen.main.bounds.height * 0.068, alignment: .leading)
@@ -75,16 +73,32 @@ struct SearchBarView: View {
                 ScrollView(.vertical) {
                     VStack(alignment: .leading, spacing: 0, content: {
                         let searchResults = Search.getSearchResults(search: productSearchString)
+                        if productSearchString != ""{
+                            Button(action: {
+                                withAnimation(.easeInOut(duration: 0.50)){
+                                    settings.showSearchBarResults = false
+                                }
+                            }, label: {
+                                Text(searchResults.isEmpty ? " No results. Search map for \"\(productSearchString)\"" : "Search map for \"\(productSearchString)\"")
+                                    .font(.custom("Poppins-SemiBold", size: 18))
+                                    .padding(20)
+                            })
+                        }
+                        //MARK: MATCHES TO STRING
+                        if productSearchString != "" && !searchResults.isEmpty{
+                            Text("Products Nearby")
+                                .font(.custom("Poppins-SemiBold", size: 18))
+                                .padding(20)
+                        }
                         ForEach(searchResults, id: \.self){ newTerm in
                             NavigationLink(destination: ProductInformationScrollView(listing: newTerm), label: {
                                 SearchResultView(searchResult: newTerm)
                             })
                         }
-                        Text("Recommended")
-                            .font(.custom("Poppins-Regular", size: 18))
-                            .bold()
-                            .padding(.leading, 20)
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                        //MARK: RECOMMENDED
+                        Text("Recommended Nearby")
+                            .font(.custom("Poppins-SemiBold", size: 18))
+                            .padding(20)
 
                         ForEach(exampleListings, id: \.self){ recommendedResult in
                             NavigationLink(destination: ProductInformationScrollView(listing: recommendedResult), label: {
