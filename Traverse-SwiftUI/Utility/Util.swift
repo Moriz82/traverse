@@ -18,4 +18,16 @@ class Util {
         
         return title
     }
+    
+    public static func getCategoryListings(category: String) -> [listing] {
+        var listingsInCategory: [listing] = []
+        
+        for listing in exampleListings {
+            if(listing.category == category){
+                listingsInCategory.append(listing)
+            }
+        }
+        
+        return listingsInCategory
+    }
 }

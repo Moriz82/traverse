@@ -12,7 +12,7 @@ struct MiniProductTypeLabel: View {
     
     //could honestly be removed for efficiency
     var body: some View {
-        Button(action: {}, label: {
+        NavigationLink(destination: ListingsInCategoryView(category: productTypeString), label: {
             Text(productTypeString)
                 .font(.custom("Poppins-Regular", size: 10))
                 .padding(7)
