@@ -30,11 +30,29 @@ struct CategoryListingView: View {
                 Text(categoryListing.address)
                     .font(.custom("Poppins-Regular", size: 15))
                     .foregroundColor(.gray)
-                Text(categoryListing.verified ? "  Verified  " : "  Not Verified  ")
-                    .font(.custom("Poppins-SemiBold", size: 15))
-                    .background(categoryListing.verified ? .green : .red)
-                    .foregroundColor(.white)
-                    .cornerRadius(3)
+                HStack{
+                    Text(categoryListing.verified ? "  Verified  " : "  Not Verified  ")
+                        .font(.custom("Poppins-SemiBold", size: 15))
+                        .background(categoryListing.verified ? .green : .red)
+                        .foregroundColor(.white)
+                        .cornerRadius(3)
+                    Spacer()
+                    
+                    //MARK: STAR
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .frame(width: 15, height: 15, alignment: .center)
+                        .foregroundColor(.blue)
+                        .padding(.leading, 7)
+                        .padding(.bottom, 2) //small correction to vertical center
+                    
+                    
+                    //MARK: RATING
+                    Text("\(String(format: "%.2f", categoryListing.rating))")
+                        .font(.custom("Poppins-SemiBold", size: 15))
+                        .foregroundColor(.black)
+                        
+                }
             })
             
             

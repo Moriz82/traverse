@@ -180,6 +180,32 @@ struct ProductInformationScrollView: View {
                         OwnerInformationSubView(ownerAccountInfo: listing.owner)
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     })
+                    let categoryListings = Util.getOtherItems(listingToBeRemoved: listing)
+                    if(categoryListings.count > 0){
+                        HStack{
+                            Text("Other items like this")
+                                .font(.custom("Poppins-SemiBold", size: headingFontSize))
+                            Spacer()
+                        }
+                        ScrollView(.horizontal, showsIndicators: false){
+                            LazyHStack(alignment: .center, spacing: 15, content: {
+                                ForEach(categoryListings, id: \.self){ categoryListing in
+                                    NavigationLink(destination: ProductInformationScrollView(listing: categoryListing), label: {
+                                        ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: categoryListing)
+                                            .shadow(color: .gray, radius: 10, x: 0, y: 0)
+                                    })
+                                }
+                                
+                                NavigationLink(destination: ListingsInCategoryView(category: listing.category!), label: {
+                                    Text("See All")
+                                        .font(.custom("Poppins-Regular", size: bodyFontSize + 5))
+                                        .foregroundColor(.blue)
+
+                                })
+                            })
+                        }
+                    }
+                    
 
                 })
                     .frame(width: UIScreen.main.bounds.width * 0.9)
@@ -213,6 +239,7 @@ struct ProductInformationScrollView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
+
 
 struct ProductInformationScrollView_Previews: PreviewProvider {
     static var previews: some View {

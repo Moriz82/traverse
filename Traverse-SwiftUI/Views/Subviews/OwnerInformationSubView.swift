@@ -42,23 +42,7 @@ struct OwnerInformationSubView: View {
                 })
             }).frame(width: UIScreen.main.bounds.width * 0.8, alignment: .center)
 
-            Button(action: {
-                if let phoneNumber = ownerAccountInfo.phoneNumber{
-                    let sms: String = "sms:+1\(phoneNumber)&body="
-                    let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-                    UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
-                }else{
-                    print("alert: no phone number found")
-                }
-            }, label: {
-                Text("Send Message")
-                    .frame(width: UIScreen.main.bounds.width * 0.8, height: 40, alignment: .center)
-                    .background(Color("traverse-blue"))
-                    .font(.custom("Poppins-SemiBold", size: nameFontSize + 3))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            })
-            
+           SendMessageButtonView(account: ownerAccountInfo)
             //MARK: VIEW PROFILE ACTION
             NavigationLink(destination: ProfilePage(account: ownerAccountInfo), label: {
                 Text("View Profile")

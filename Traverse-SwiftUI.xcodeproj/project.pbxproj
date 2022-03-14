@@ -45,6 +45,7 @@
 		06D00F8427BDAFDB00044550 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F8327BDAFDB00044550 /* Search.swift */; };
 		8A3340A527DAAC55008965E7 /* ListingsInCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */; };
 		8A3340A727DAC9E6008965E7 /* CategoryListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A627DAC9E6008965E7 /* CategoryListingView.swift */; };
+		8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		06D00F8327BDAFDB00044550 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsInCategoryView.swift; sourceTree = "<group>"; };
 		8A3340A627DAC9E6008965E7 /* CategoryListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListingView.swift; sourceTree = "<group>"; };
+		8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 				06853C9527CB0ED900C2F7EE /* OwnerInformationSubView.swift */,
 				06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */,
 				8A3340A627DAC9E6008965E7 /* CategoryListingView.swift */,
+				8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
 				067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
+				8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */,
 				8A3340A727DAC9E6008965E7 /* CategoryListingView.swift in Sources */,
 				06D00F7D27BDAF1500044550 /* HorizontalProductScrollView.swift in Sources */,
 				062F3B6B27C72E200008333A /* MiniProductTypeLabelScrollView.swift in Sources */,

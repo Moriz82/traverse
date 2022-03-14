@@ -30,4 +30,29 @@ class Util {
         
         return listingsInCategory
     }
+    
+    public static func getOtherItems(listingToBeRemoved: listing) -> [listing] {
+        let listings = getCategoryListings(category: listingToBeRemoved.category!)
+        var newListings: [listing] = []
+        
+        for listing in listings {
+            if(!(listing.id == listingToBeRemoved.id)){
+                newListings.append(listing)
+            }
+        }
+        
+        return newListings
+    }
+    
+    public static func getOwnerListings(owner: account) -> [listing] {
+        var ownerListings: [listing] = []
+        
+        for listing in exampleListings {
+            if(listing.owner.id == owner.id){
+                ownerListings.append(listing)
+            }
+        }
+        
+        return ownerListings
+    }
 }
