@@ -34,6 +34,8 @@ struct ProfilePage: View {
                 }).padding()
                 Divider()
                 
+                //MARK: OWNER INFO GRID
+                
                 LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), alignment: .center, spacing: 5, content: {
                     VStack(alignment: .center, spacing: 0, content: {
                         Text(String(format: "%.0f",(account.responseRate ?? 0.0)*100)+"%")
@@ -42,7 +44,7 @@ struct ProfilePage: View {
                             .background(Color("product-info-green"))
                             .foregroundColor(.white)
                             .cornerRadius(5.0)
-                        Text("Owner's response rate")
+                        Text("Response rate")
                             .frame(width: 120, height: 50)
                             .multilineTextAlignment(.center)
                             .font(.custom("Poppins-SemiBold", size: bodyFontSize))
@@ -54,7 +56,7 @@ struct ProfilePage: View {
                             .background(Color("product-info-green"))
                             .foregroundColor(.white)
                             .cornerRadius(5.0)
-                        Text("Owner's response time")
+                        Text("Response time")
                             .frame(width: 120, height: 50)
                             .multilineTextAlignment(.center)
                             .font(.custom("Poppins-SemiBold", size: bodyFontSize))
@@ -66,11 +68,12 @@ struct ProfilePage: View {
                             .background(Color("product-info-green"))
                             .foregroundColor(.white)
                             .cornerRadius(5.0)
-                        Text("Owner Verification")
+                        Text("Verification")
                             .frame(width: 120, height: 50)
                             .multilineTextAlignment(.center)
                             .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                     }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
+                    //MARK: LISTED / RENTED
                     HStack{
                         VStack(alignment: .center, spacing: 0, content: {
                             Text(String(account.numberOfItemsListed!))
@@ -98,6 +101,9 @@ struct ProfilePage: View {
                     }
                 }).padding(.top, 5)
                 
+                
+                //MARK: SEND MESSAGE BUTTON
+                
                 Divider()
                 HStack{
                     Spacer()
@@ -105,6 +111,8 @@ struct ProfilePage: View {
                     Spacer()
                 }
                 Divider()
+                
+                //MARK: LISTINGS
                 
                 HStack {
                     Text("Listings")
