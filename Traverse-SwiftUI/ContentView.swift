@@ -15,11 +15,17 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            SettingsPage()
+//            SettingsPage()
+//                .tabItem{
+//                    Image(systemName: "gear")
+//                    Text("Settings")
+//                }
+            UserAccountPage(account: exampleAccounts[0])
                 .tabItem{
-                    Image(systemName: "gear")
-                    Text("Settings")
+                    Image(systemName: "person.fill")
+                    Text("Account")
                 }
+
         }
         .onAppear {
             if #available(iOS 15.0, *){

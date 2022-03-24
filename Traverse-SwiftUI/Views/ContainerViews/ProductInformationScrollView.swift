@@ -180,6 +180,8 @@ struct ProductInformationScrollView: View {
                         OwnerInformationSubView(ownerAccountInfo: listing.owner)
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     })
+                    
+                    //MARK: SIMILAR ITEMS
                     let categoryListings = Util.getOtherItems(listingToBeRemoved: listing)
                     if(categoryListings.count > 0){
                         HStack{
@@ -192,7 +194,6 @@ struct ProductInformationScrollView: View {
                                 ForEach(categoryListings, id: \.self){ categoryListing in
                                     NavigationLink(destination: ProductInformationScrollView(listing: categoryListing), label: {
                                         ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: categoryListing)
-                                            .shadow(color: .gray, radius: 10, x: 0, y: 0)
                                     })
                                 }
                                 

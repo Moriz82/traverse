@@ -13,7 +13,7 @@ struct SendMessageButtonView: View {
     var body: some View {
             Button(action: {
                 if let phoneNumber = account.phoneNumber{
-                    let sms: String = "sms:+1\(account.phoneNumber)&body="
+                    let sms: String = "sms:+1\(phoneNumber)&body="
                     let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
                     UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
                 }else{
