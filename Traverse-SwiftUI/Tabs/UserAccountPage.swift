@@ -11,12 +11,15 @@ struct UserAccountPage: View {
     var account: account
     var nameFontSize = 28.0
     var bodyFontSize = 15.0
-    
+    var postHeight: Double = 120.0
+
     var body: some View {
         NavigationView{
             ScrollView{
-                VStack{
+                VStack(spacing: 20){
                     Divider()
+                    
+                    //MARK: IMAGE/NAME
                     HStack(alignment: .center, spacing: 20, content: {
                         Image(systemName: "circle.fill")
                             .resizable()
@@ -32,8 +35,8 @@ struct UserAccountPage: View {
                         })
                         Spacer()
                     }).padding()
-                    Spacer()
-                    
+                        
+                    Divider()
                     
                     //MARK: MY STATS
                     LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), alignment: .center, spacing: 5, content: {
@@ -104,17 +107,46 @@ struct UserAccountPage: View {
                     Divider()
                     
                     //MARK: MY PRODUCTS
-                    
+                    HStack{
+                        Text("My Products")
+                            .font(.title)
+                            .bold()
+                        Spacer()
+                    }
+                    .padding(.leading)
                     ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(alignment: .center, spacing: 0, content: {
-                            ForEach(exampleListings, id: \.self, content: {
-                                ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: postHeight, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
+                        LazyHStack(alignment: .center, spacing: 10, content: {
+                            ForEach(exampleListings, id: \.self, content: { newpost in
+                                NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: { //TODO: MAYBE CHANGE DESTINATION TO AddEditView or something
+                                    ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: postHeight, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
+                                        .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
+
+                                })
+                            })
+                            NavigationLink(destination: AccountListingsView(), label: {
+                                Text("see all")
+                                    .font(.custom("Poppins-Regular", size: bodyFontSize + 5))
+                                    .foregroundColor(.blue)
+
                             })
                         })
                     }
+                    .padding()
+                    
+                    Divider()
+                    
+                    //MARK: ADD PRODUCT
+                    NavigationLink(destination: AddProductView(), label: {
+                        Text("Add a Product")
+                            .frame(width: UIScreen.main.bounds.width * 0.9, height: 50, alignment: .center)
+                            .background(Color("traverse-blue"))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    })
                 }
+                .navigationTitle("Your Account")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationBarTitle("My Account")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     NavigationLink(destination: SettingsPage(), label: {

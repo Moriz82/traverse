@@ -194,6 +194,7 @@ struct ProductInformationScrollView: View {
                                 ForEach(categoryListings, id: \.self){ categoryListing in
                                     NavigationLink(destination: ProductInformationScrollView(listing: categoryListing), label: {
                                         ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: categoryListing)
+                                            .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
                                     })
                                 }
                                 
