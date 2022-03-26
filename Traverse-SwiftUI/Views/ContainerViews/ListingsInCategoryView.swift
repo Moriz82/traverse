@@ -12,7 +12,7 @@ struct ListingsInCategoryView: View {
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading, spacing: 0, content: {
+            VStack(alignment: .leading, spacing: 10, content: {
                 Text("")
                     .navigationTitle(category)
                     .padding(.leading, 10)

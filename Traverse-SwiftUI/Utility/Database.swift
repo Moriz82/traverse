@@ -62,6 +62,16 @@ struct review: Identifiable, Hashable{
     }
 }
 
+struct address: Identifiable, Hashable{
+    var id = UUID()
+    var streetAddress, city, country, zipCode: String
+    var usState: String?
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 
 var exampleAccounts: [account] = [
     account(firstName: "Yash", lastName: "Shah", verification: true, email: "yash.shah@ys.com", dateJoined: Date(), phoneNumber: "5129276152", numberOfItemsRented: 5, numberOfItemsListed: 3),
@@ -102,5 +112,8 @@ var exampleListings: [listing] = [
 
 
 var exampleProductTypes: [String] = ["Drones", "Power Tools", "Pool Equipment", "Outdoors", "Lighting", "Kitchen", "Basketball", "Drugs"]
-    
 
+
+var exampleAddresses: [address] = [
+    address(streetAddress: "1600 Pennsylvania Drive", city: "Washington", country: "United States", zipCode: "190101", usState: "District of Columbia")
+]

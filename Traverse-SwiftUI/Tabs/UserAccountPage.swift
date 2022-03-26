@@ -112,23 +112,24 @@ struct UserAccountPage: View {
                             .font(.title)
                             .bold()
                         Spacer()
+                        NavigationLink(destination: AccountListingsView(), label: {
+                            Text("see all")
+                                .font(.custom("Poppins-Regular", size: bodyFontSize + 5))
+                                .foregroundColor(.blue)
+                                .padding(.trailing, 10)
+                        })
                     }
                     .padding(.leading)
                     ScrollView(.horizontal, showsIndicators: false){
                         LazyHStack(alignment: .center, spacing: 10, content: {
                             ForEach(exampleListings, id: \.self, content: { newpost in
-                                NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: { //TODO: MAYBE CHANGE DESTINATION TO AddEditView or something
+                                NavigationLink(destination: ListingEditView(listing: newpost, listingPrice: String(newpost.price)), label: {
                                     ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: postHeight, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
                                         .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
 
                                 })
                             })
-                            NavigationLink(destination: AccountListingsView(), label: {
-                                Text("see all")
-                                    .font(.custom("Poppins-Regular", size: bodyFontSize + 5))
-                                    .foregroundColor(.blue)
-
-                            })
+                            
                         })
                     }
                     .padding()

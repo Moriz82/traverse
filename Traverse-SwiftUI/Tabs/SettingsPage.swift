@@ -12,32 +12,36 @@ struct SettingsPage: View {
     @State var goToAddCard = false
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                if !checkLoginStatus.isLoggedIn{
-                    LoginHome()
-                }else if goToAddCard{
-                    AddCardPage()
-                }else {
-                    VStack(alignment: .leading, spacing: 10, content: {
-                        Text("Settings")
-                            .font(.custom("Poppins-SemiBold", size: 50.0))
-                        ScrollView(.vertical){
-                            VStack(alignment: .leading, spacing: 20, content: {
-                                Text("Account")
-                                    .font(.custom("Poppins-SemiBold", size: 30.0))
-                                Text("We need your card in order to pay for products.")
-                                FilledInButton(title: "Log Out", size: 1.0, action: {
-                                    withAnimation(.easeInOut(duration: 0.5)){
-                                        checkLoginStatus.isLoggedIn = false
-                                    }
-                                })
-                            })
-                        }.frame(width: UIScreen.main.bounds.width * 0.95, alignment: .leading)
+        ScrollView(.vertical){
+            VStack(alignment: .leading, spacing: 20, content: {
+                Divider()
+                Text("Account")
+                    .font(.custom("Poppins-SemiBold", size: 30.0))
+                if checkLoginStatus.isLoggedIn{
+                    NavigationLink(destination: AddCardPage(), label: {
+                        Text("Add Card")
+                            .frame(width: UIScreen.main.bounds.width * 0.9, height: 40)
+                            .font(.custom("Poppins-SemiBold", size: 18))
+                            .foregroundColor(.white)
+                            .background(Color("traverse-blue"))
+                            .cornerRadius(10)
+                    })
+                }else{
+                    NavigationLink(destination: LoginHome(), label: {
+                        Text("Log in")
+                            .frame(width: UIScreen.main.bounds.width * 0.9, height: 40)
+                            .font(.custom("Poppins-SemiBold", size: 18))
+                            .foregroundColor(.white)
+                            .background(Color("traverse-blue"))
+                            .cornerRadius(10)
                     })
                 }
-            }.environmentObject(checkLoginStatus)
+            })
+                .frame(width: UIScreen.main.bounds.width * 0.90)
+                .navigationTitle("Settings")
         }
+        .environmentObject(checkLoginStatus)
+        .navigationViewStyle(.stack) //produces constraint error without this
     }
 }
 

@@ -12,31 +12,32 @@ struct AccountListingsView: View {
         ScrollView{
             if(exampleListings.count > 0){
                 ForEach(exampleListings, content: { listing in
-                    NavigationLink(destination: ProductInformationScrollView(listing: listing), label: {
-                        CategoryListingView(categoryListing: listing )
-                    })
+                    HStack(alignment: .center){
+                        NavigationLink(destination: ListingEditView(listing: listing, listingPrice: String(listing.price)), label: {
+                            CategoryListingView(categoryListing: listing )
+                        })
+                        Spacer()
+                        Image(systemName: "chevron.forward")
+                            .resizable()
+                            .foregroundColor(.gray)
+                            .frame(width: 10, height: 15, alignment: .center)
+                            .offset(x: -50, y: 0)
+                    }
                     Divider()
                 })
             }
             else {
                 VStack{
                     Spacer()
-                    Text("No listings from this account")
+                    Text("You haven't listed any products yet")
                         .font(.custom("Poppins-SemiBold", size: 20))
                         .foregroundColor(.gray)
                     Spacer()
                 }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.7, alignment: .center)
             }
         }
-        .toolbar{
-            ToolbarItemGroup(placement: .navigationBarTrailing, content: {
-                Button(action: {
-                    
-                }, label: {
-                    Text("Edit")
-                })
-            })
-        }
+        .navigationTitle("Your Listings")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
