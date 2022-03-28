@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingsPage: View {
-    @StateObject var checkLoginStatus = checkIfLoggedIn()
     @State var goToAddCard = false
+    @EnvironmentObject var checkLoginStatus : checkIfLoggedIn
     
     var body: some View {
         ScrollView(.vertical){
@@ -27,7 +27,7 @@ struct SettingsPage: View {
                             .cornerRadius(10)
                     })
                 }else{
-                    NavigationLink(destination: LoginHome(), label: {
+                    NavigationLink(destination: LoginHome().environmentObject(checkLoginStatus), label: {
                         Text("Log in")
                             .frame(width: UIScreen.main.bounds.width * 0.9, height: 40)
                             .font(.custom("Poppins-SemiBold", size: 18))
@@ -40,7 +40,6 @@ struct SettingsPage: View {
                 .frame(width: UIScreen.main.bounds.width * 0.90)
                 .navigationTitle("Settings")
         }
-        .environmentObject(checkLoginStatus)
         .navigationViewStyle(.stack) //produces constraint error without this
     }
 }

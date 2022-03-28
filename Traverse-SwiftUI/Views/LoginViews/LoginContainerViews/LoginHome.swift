@@ -82,7 +82,7 @@ struct LoginHome: View {
                             Text("Don't have an account?")
                                 .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
                             .font(.system(.footnote, design: .rounded).bold())
-                            NavigationLink(destination: SignUpView(), label: {
+                            NavigationLink(destination: SignUpView().environmentObject(checkLoginStatus), label: {
                                 Text("Sign Up")
                                 .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
 

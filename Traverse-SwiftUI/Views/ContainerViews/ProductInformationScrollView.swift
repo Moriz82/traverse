@@ -223,9 +223,9 @@ struct ProductInformationScrollView: View {
                         .padding(.bottom, 6)
                 })
                 Spacer()
-                Button(action: {
-                    //MARK: RENT PRODUCT ACTION
-                }, label: {
+                
+                //MARK: RENT PRODUCT ACTION
+                NavigationLink(destination: RentProductDetailView(listing: listing), label: {
                     Text("Rent Now")
                         .font(.custom("Poppins-SemiBold", size: headingFontSize - 7))
                         .frame(width: 150, height: 40, alignment: .center)

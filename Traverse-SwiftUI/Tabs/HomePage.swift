@@ -41,6 +41,7 @@ struct HomePage: View {
                 }
                 VStack{
                     SearchBarView()
+                        .environmentObject(settings)
                         .shadow(color: .gray, radius: 10, x: 0, y: 0)
                     if !settings.showSearchBarResults{
                         MiniProductTypeLabelScrollView()
@@ -53,7 +54,7 @@ struct HomePage: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.9)
             }
             .navigationBarHidden(true)
-            .environmentObject(settings)
+            
         }
     }
 }

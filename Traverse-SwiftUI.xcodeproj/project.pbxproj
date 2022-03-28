@@ -46,6 +46,8 @@
 		06D00F7F27BDAF9000044550 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7E27BDAF9000044550 /* SearchResultView.swift */; };
 		06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F8027BDAFA000044550 /* SearchBarView.swift */; };
 		06D00F8427BDAFDB00044550 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F8327BDAFDB00044550 /* Search.swift */; };
+		06EE767827F1540E00176837 /* RentProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE767727F1540E00176837 /* RentProductDetailView.swift */; };
+		06EE767A27F1544400176837 /* ConfirmRentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE767927F1544400176837 /* ConfirmRentView.swift */; };
 		06FE9A6B27EE56B900F06C5A /* ListingEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE9A6A27EE56B900F06C5A /* ListingEditView.swift */; };
 		06FE9A6D27EEA48F00F06C5A /* AddressEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE9A6C27EEA48F00F06C5A /* AddressEditView.swift */; };
 		06FE9A6F27EEA4C900F06C5A /* AddressMiniSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE9A6E27EEA4C900F06C5A /* AddressMiniSubView.swift */; };
@@ -96,6 +98,8 @@
 		06D00F7E27BDAF9000044550 /* SearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		06D00F8027BDAFA000044550 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		06D00F8327BDAFDB00044550 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		06EE767727F1540E00176837 /* RentProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentProductDetailView.swift; sourceTree = "<group>"; };
+		06EE767927F1544400176837 /* ConfirmRentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRentView.swift; sourceTree = "<group>"; };
 		06FE9A6A27EE56B900F06C5A /* ListingEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingEditView.swift; sourceTree = "<group>"; };
 		06FE9A6C27EEA48F00F06C5A /* AddressEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressEditView.swift; sourceTree = "<group>"; };
 		06FE9A6E27EEA4C900F06C5A /* AddressMiniSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressMiniSubView.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				0650A47E27DA8B82009BA304 /* ProfilePage.swift */,
 				06D00F8027BDAFA000044550 /* SearchBarView.swift */,
 				0633000527ECFB21004BD077 /* AddProductView.swift */,
+				06EE767727F1540E00176837 /* RentProductDetailView.swift */,
+				06EE767927F1544400176837 /* ConfirmRentView.swift */,
 				06FE9A6C27EEA48F00F06C5A /* AddressEditView.swift */,
 				06FE9A6A27EE56B900F06C5A /* ListingEditView.swift */,
 				0633000327ECF8EF004BD077 /* AccountListingsView.swift */,
@@ -338,11 +344,13 @@
 				06D00F7827BDAE5600044550 /* Database.swift in Sources */,
 				067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */,
 				06D00F7527BDAE1100044550 /* ProductPostView.swift in Sources */,
+				06EE767827F1540E00176837 /* RentProductDetailView.swift in Sources */,
 				0619535B27C6E39D007A01F5 /* MiniProductTypeLabel.swift in Sources */,
 				06450D1B27D9C2E100AB8E39 /* annotation.swift in Sources */,
 				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
 				067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
+				06EE767A27F1544400176837 /* ConfirmRentView.swift in Sources */,
 				8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */,
 				8A3340A727DAC9E6008965E7 /* CategoryListingView.swift in Sources */,
 				0633000427ECF8EF004BD077 /* AccountListingsView.swift in Sources */,

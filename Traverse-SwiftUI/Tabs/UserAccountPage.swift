@@ -12,6 +12,8 @@ struct UserAccountPage: View {
     var nameFontSize = 28.0
     var bodyFontSize = 15.0
     var postHeight: Double = 120.0
+    
+    @StateObject var checkLoginStatus = checkIfLoggedIn()
 
     var body: some View {
         NavigationView{
@@ -150,12 +152,14 @@ struct UserAccountPage: View {
             }
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
-                    NavigationLink(destination: SettingsPage(), label: {
+                    NavigationLink(destination: SettingsPage().environmentObject(checkLoginStatus), label: {
                         Image(systemName: "gear")
                     })
                 })
             }
+            
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
