@@ -9,7 +9,9 @@ import SwiftUI
 
 struct AddressEditView: View {
     var body: some View {
-        Text("Enter Address Text Fields etc")
+        VStack{
+            Text("Enter Address Text Fields etc")
+        }
     }
 }
 

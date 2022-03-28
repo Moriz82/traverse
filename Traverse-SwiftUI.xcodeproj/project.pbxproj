@@ -167,7 +167,6 @@
 			children = (
 				067B0AD327C81E9300A26801 /* LoginHome.swift */,
 				067B0ACD27C81E4800A26801 /* SignUpView.swift */,
-				06FE9A6E27EEA4C900F06C5A /* AddressMiniSubView.swift */,
 				067B0ACF27C81E4F00A26801 /* AddCardPage.swift */,
 				067B0AD127C81E5900A26801 /* CardPaymentPage.swift */,
 			);
@@ -252,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				06D00F7427BDAE1100044550 /* ProductPostView.swift */,
+				06FE9A6E27EEA4C900F06C5A /* AddressMiniSubView.swift */,
 				06D00F7E27BDAF9000044550 /* SearchResultView.swift */,
 				0619535A27C6E39D007A01F5 /* MiniProductTypeLabel.swift */,
 				06853C9527CB0ED900C2F7EE /* OwnerInformationSubView.swift */,
