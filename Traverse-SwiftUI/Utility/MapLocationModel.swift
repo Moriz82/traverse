@@ -37,7 +37,9 @@ final class MapLocationModel: NSObject, ObservableObject, CLLocationManagerDeleg
         case .denied:
             print("you have denied this app locatino permission")
         case .authorizedAlways, .authorizedWhenInUse:
-            region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25))
+            if locationManager.location?.coordinate != nil{
+                region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25))
+            }
         @unknown default:
             break
         }

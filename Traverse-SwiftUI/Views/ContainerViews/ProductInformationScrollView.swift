@@ -14,6 +14,9 @@ struct ProductInformationScrollView: View {
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     @State var listing: listing
     
+    @State var isProductCurrentlyBeingRented = true //TODO: update to database
+
+    
     var locationFontSize = 15.0
     var titleFontSize = 30.0
     var headingFontSize = 25.0
@@ -207,8 +210,6 @@ struct ProductInformationScrollView: View {
                             })
                         }
                     }
-                    
-
                 })
                     .frame(width: UIScreen.main.bounds.width * 0.9)
             }
@@ -226,10 +227,10 @@ struct ProductInformationScrollView: View {
                 
                 //MARK: RENT PRODUCT ACTION
                 NavigationLink(destination: RentProductDetailView(listing: listing), label: {
-                    Text("Rent Now")
+                    Text(isProductCurrentlyBeingRented ? "Unavailable" : "Rent Now")
                         .font(.custom("Poppins-SemiBold", size: headingFontSize - 7))
                         .frame(width: 150, height: 40, alignment: .center)
-                        .background(Color("traverse-blue"))
+                        .background(isProductCurrentlyBeingRented ? .gray : Color("traverse-blue"))
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 })
