@@ -17,7 +17,7 @@ struct SignUpView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    @EnvironmentObject var checkLoginStatus: checkIfLoggedIn
+    @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
         ScrollView{
@@ -56,9 +56,17 @@ struct SignUpView: View {
                 // Sign Up Button
                 FilledInButton(title: "Sign Up", size: size, action: {
                     withAnimation(.easeIn(duration: 0.5)){
-                        checkLoginStatus.isLoggedIn = true
+                        //checkLoginStatus.isLoggedIn = true
                     }
                     //MARK: CREATE ACCOUNT REQUEST
+                    guard !name.isEmpty, !email.isEmpty, !password.isEmpty, confirmPassword == password else{
+                        print("check is passwords match and fields aren't empty")
+                        return
+                    }
+                    
+                    viewModel.signup(name: name, email: email, password: password)
+                    
+                    
                     self.presentationMode.wrappedValue.dismiss()
                 })
             

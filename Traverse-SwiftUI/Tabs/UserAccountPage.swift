@@ -14,6 +14,8 @@ struct UserAccountPage: View {
     var postHeight: Double = 120.0
     
     @StateObject var checkLoginStatus = checkIfLoggedIn()
+    
+    @EnvironmentObject var viewModel: AppViewModel
 
     var body: some View {
         NavigationView{
@@ -152,7 +154,7 @@ struct UserAccountPage: View {
             }
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
-                    NavigationLink(destination: SettingsPage().environmentObject(checkLoginStatus), label: {
+                    NavigationLink(destination: SettingsPage(), label: {
                         Image(systemName: "gear")
                     })
                 })

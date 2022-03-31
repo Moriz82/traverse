@@ -14,7 +14,7 @@ struct LoginHome: View {
     @ScaledMetric var size: CGFloat = 1
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var checkLoginStatus: checkIfLoggedIn
+    @EnvironmentObject var viewModel: AppViewModel
 
     var body: some View {
         ScrollView{
@@ -59,10 +59,13 @@ struct LoginHome: View {
                     // Log In Button
                     FilledInButton(title: "Log In", size: size, action: {
                         withAnimation(.easeIn(duration: 0.5)){
-                            checkLoginStatus.isLoggedIn = true
+                            //viewModel.isSignedIn = true
                         }
                         //MARK: LOG IN REQUEST
-                        
+                        guard !email.isEmpty, !password.isEmpty else{
+                            return
+                        }
+                        viewModel.login(email: email, password: password)
                         
                         self.presentationMode.wrappedValue.dismiss()
                     })
@@ -82,7 +85,7 @@ struct LoginHome: View {
                             Text("Don't have an account?")
                                 .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
                             .font(.system(.footnote, design: .rounded).bold())
-                            NavigationLink(destination: SignUpView().environmentObject(checkLoginStatus), label: {
+                            NavigationLink(destination: SignUpView(), label: {
                                 Text("Sign Up")
                                 .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
 

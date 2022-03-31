@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AppViewModel
+    
     var body: some View {
         TabView{
             HomePage()
@@ -15,16 +17,12 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
-//            SettingsPage()
-//                .tabItem{
-//                    Image(systemName: "gear")
-//                    Text("Settings")
-//                }
             UserAccountPage(account: exampleAccounts[0])
                 .tabItem{
                     Image(systemName: "person.fill")
                     Text("Account")
                 }
+                .environmentObject(viewModel)
 
         }
         .onAppear {

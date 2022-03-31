@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsPage: View {
     @State var goToAddCard = false
-    @EnvironmentObject var checkLoginStatus : checkIfLoggedIn
+    @EnvironmentObject var viewModel : AppViewModel
     
     var body: some View {
         ScrollView(.vertical){
@@ -17,7 +17,7 @@ struct SettingsPage: View {
                 Divider()
                 Text("Account")
                     .font(.custom("Poppins-SemiBold", size: 30.0))
-                if checkLoginStatus.isLoggedIn{
+                if viewModel.isSignedIn{
                     NavigationLink(destination: AddCardPage(), label: {
                         Text("Add Card")
                             .frame(width: UIScreen.main.bounds.width * 0.9, height: 40)
@@ -27,7 +27,7 @@ struct SettingsPage: View {
                             .cornerRadius(10)
                     })
                 }else{
-                    NavigationLink(destination: LoginHome().environmentObject(checkLoginStatus), label: {
+                    NavigationLink(destination: LoginHome(), label: {
                         Text("Log in")
                             .frame(width: UIScreen.main.bounds.width * 0.9, height: 40)
                             .font(.custom("Poppins-SemiBold", size: 18))
