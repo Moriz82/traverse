@@ -19,7 +19,7 @@ struct HomePage: View {
                     Color.blue.ignoresSafeArea()
                 }
                 if !settings.showSearchBarResults{
-                    Map(coordinateRegion: $mapViewModel.region, annotationItems: exampleAnnotations){ place in
+                    Map(coordinateRegion: $mapViewModel.region, annotationItems: exampleMapAnnotations){ place in
                         MapAnnotation(coordinate: place.coordinate, content: {
                             Button(action: {
                                 
@@ -44,7 +44,7 @@ struct HomePage: View {
                         .environmentObject(settings)
                         .shadow(color: .gray, radius: 10, x: 0, y: 0)
                     if !settings.showSearchBarResults{
-                        MiniProductTypeLabelScrollView()
+                        CategoryLabelScrollView()
                     }
                     Spacer()
                     if !settings.showSearchBarResults{

@@ -180,7 +180,7 @@ struct ProductInformationScrollView: View {
                                 .font(.custom("Poppins-SemiBold", size: headingFontSize))
                             Spacer()
                         }
-                        OwnerInformationSubView(ownerAccountInfo: listing.owner)
+                        ListingOwnerInfoSubView(ownerAccountInfo: listing.owner)
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                     })
                     
@@ -196,7 +196,7 @@ struct ProductInformationScrollView: View {
                             LazyHStack(alignment: .center, spacing: 15, content: {
                                 ForEach(categoryListings, id: \.self){ categoryListing in
                                     NavigationLink(destination: ProductInformationScrollView(listing: categoryListing), label: {
-                                        ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: categoryListing)
+                                        MiniProductView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: categoryListing)
                                             .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
                                     })
                                 }

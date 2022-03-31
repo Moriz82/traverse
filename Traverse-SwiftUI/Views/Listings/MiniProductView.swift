@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProductPostView: View {
+struct MiniProductView: View {
     
     @State var UISettings: UserInterfaceSettings
     @State var post: listing
@@ -89,7 +89,7 @@ struct ProductPostView_Previews: PreviewProvider {
     static var post1: listing = listing(price: 17.00, rating: 4.75, name: "Power Washer", description: "Small but loud", address: "1600 Pennsylvania", imageName: "01", verified: false, owner: account(firstName: "", lastName: "", verification: false, email: "", dateJoined: Date()))
     
     static var previews: some View {
-        ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 18.0, hScrollViewPostBodyFont: 12.0), post: post1)
+        MiniProductView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 200.0, hScrollViewPostHeight: 200.0, hScrollViewPostTitleFont: 18.0, hScrollViewPostBodyFont: 12.0), post: post1)
             .previewLayout(.sizeThatFits)
             
     }

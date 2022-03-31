@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OwnerInformationSubView: View {
+struct ListingOwnerInfoSubView: View {
     var nameFontSize = 15.0
     var bodyFontSize = 12.0
     
@@ -58,7 +58,7 @@ struct OwnerInformationSubView: View {
 
 struct OwnerInformationSubView_Previews: PreviewProvider {
     static var previews: some View {
-        OwnerInformationSubView(ownerAccountInfo: exampleAccounts[3])
+        ListingOwnerInfoSubView(ownerAccountInfo: exampleAccounts[3])
             .previewLayout(.sizeThatFits)
     }
 }

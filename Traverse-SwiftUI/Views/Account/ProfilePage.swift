@@ -123,7 +123,7 @@ struct ProfilePage: View {
                     LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), alignment: .center, spacing: 10, content: {
                         ForEach(Util.getOwnerListings(owner: account), content: { ownerListing in
                             NavigationLink(destination: ProductInformationScrollView(listing: ownerListing), label: {
-                                ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: ownerListing)
+                                MiniProductView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: ownerListing)
                             })
 
                         })

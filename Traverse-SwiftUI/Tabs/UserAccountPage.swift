@@ -128,7 +128,7 @@ struct UserAccountPage: View {
                         LazyHStack(alignment: .center, spacing: 10, content: {
                             ForEach(exampleListings, id: \.self, content: { newpost in
                                 NavigationLink(destination: ListingEditView(listing: newpost, listingPrice: String(newpost.price)), label: {
-                                    ProductPostView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: postHeight, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
+                                    MiniProductView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: postHeight, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
                                         .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
 
                                 })

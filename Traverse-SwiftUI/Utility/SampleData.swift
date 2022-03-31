@@ -1,77 +1,13 @@
 //
-//  Database.swift
-//  Mobile Makers Test
+//  SampleData.swift
+//  Traverse-SwiftUI
 //
-//  Created by Cesar Andres on 12/3/21.
+//  Created by Aiden Seibel on 3/31/22.
 //
 
 import Foundation
 import MapKit
-
-struct listing: Identifiable, Hashable {
-    var id = UUID()
-    
-    var price, rating: Double
-    var name, description, address, imageName: String
-    var verified: Bool
-    
-    var owner: account
-    
-    var cancelationTimeInHours: Int?
-    
-    var inclusions: [String]?
-    var reviews: [review]?
-    var category: String?
-    
-    //necessary for ForEach function in HorizontalProductScrollView.swift
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-struct account: Identifiable, Hashable{
-    var id = UUID()
-    var firstName, lastName: String
-    var verification: Bool
-    var email: String
-    var dateJoined: Date
-    
-    var phoneNumber: String?
-    var profilePicture: String?
-    
-    var responseRate: Double?
-    var responseTimeInMinutes: Int?
-    var numberOfItemsRented: Int?
-    var numberOfItemsListed: Int?
-    
-    //necessary for ForEach function in HorizontalProductScrollView.swift
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-struct review: Identifiable, Hashable{
-    var id = UUID()
-    var reviewAccount: account
-    var dateReviewed: Date
-    var numberOfStars: Int
-    var description: String
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-struct address: Identifiable, Hashable{
-    var id = UUID()
-    var streetAddress, city, country, zipCode: String
-    var usState: String?
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
+import CoreLocation
 
 var exampleAccounts: [account] = [
     account(firstName: "Yash", lastName: "Shah", verification: true, email: "yash.shah@ys.com", dateJoined: Date(), phoneNumber: "5129276152", numberOfItemsRented: 5, numberOfItemsListed: 3),
@@ -116,4 +52,17 @@ var exampleProductTypes: [String] = ["Drones", "Power Tools", "Pool Equipment", 
 
 var exampleAddresses: [address] = [
     address(streetAddress: "1600 Pennsylvania Drive", city: "Washington", country: "United States", zipCode: "190101", usState: "District of Columbia")
+]
+
+
+
+var exampleMapAnnotations: [mapAnnotation] = [
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(price: Double.random(in: 10.0..<100.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7)))
 ]
