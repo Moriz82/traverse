@@ -21,13 +21,13 @@ struct TextInputView: View {
     
     var body: some View {
         TextField(self.title , text: $text)
-                    .focused($fieldIsFocused)
-                    .padding()
-                    .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(fieldIsFocused ? Color.accentColor : Color.gray, lineWidth: fieldIsFocused ? 2 : 1.1))
-                    .foregroundColor(.primary)
+            .focused($fieldIsFocused)
+            .padding()
+            .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
+            .textFieldStyle(PlainTextFieldStyle())
+            .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(fieldIsFocused ? Color.accentColor : Color.gray, lineWidth: fieldIsFocused ? 2 : 1.1))
+            .foregroundColor(.primary)
     }
 }
 

@@ -12,9 +12,7 @@ struct UserAccountPage: View {
     var nameFontSize = 28.0
     var bodyFontSize = 15.0
     var postHeight: Double = 120.0
-    
-    @StateObject var checkLoginStatus = checkIfLoggedIn()
-    
+        
     @EnvironmentObject var viewModel: AppViewModel
 
     var body: some View {

@@ -34,11 +34,7 @@ class showBarResults: ObservableObject{
     @Published var showProductInformationView: Bool = false
 }
 
-class checkIfLoggedIn: ObservableObject{
-    @Published var isLoggedIn: Bool = false
-}
-
-
+//MARK: APPVIEWMODEL
 class AppViewModel: ObservableObject {
     
     let auth = Auth.auth()
@@ -76,7 +72,7 @@ class AppViewModel: ObservableObject {
 }
 
 
-
+//MARK: MAPLOCATIONMODEL
 final class MapLocationModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     var locationManager: CLLocationManager?
     

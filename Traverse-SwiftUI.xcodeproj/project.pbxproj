@@ -21,7 +21,6 @@
 		067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD327C81E9300A26801 /* LoginHome.swift */; };
 		067B0ADC27C81EFE00A26801 /* TopRightLogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD627C81EFD00A26801 /* TopRightLogoImage.swift */; };
 		067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD727C81EFD00A26801 /* FilledInButton.swift */; };
-		067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD827C81EFD00A26801 /* orDividerImage.swift */; };
 		067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */; };
 		067B0AE027C81EFE00A26801 /* SignInWithGoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */; };
 		067B0AE127C81EFE00A26801 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ADB27C81EFE00A26801 /* TextInputView.swift */; };
@@ -70,7 +69,6 @@
 		067B0AD327C81E9300A26801 /* LoginHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHome.swift; sourceTree = "<group>"; };
 		067B0AD627C81EFD00A26801 /* TopRightLogoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopRightLogoImage.swift; sourceTree = "<group>"; };
 		067B0AD727C81EFD00A26801 /* FilledInButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledInButton.swift; sourceTree = "<group>"; };
-		067B0AD827C81EFD00A26801 /* orDividerImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orDividerImage.swift; sourceTree = "<group>"; };
 		067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextInputView.swift; sourceTree = "<group>"; };
 		067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithGoogleButton.swift; sourceTree = "<group>"; };
 		067B0ADB27C81EFE00A26801 /* TextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				067B0AD727C81EFD00A26801 /* FilledInButton.swift */,
-				067B0AD827C81EFD00A26801 /* orDividerImage.swift */,
 				067B0AD927C81EFD00A26801 /* SecureTextInputView.swift */,
 				067B0ADA27C81EFD00A26801 /* SignInWithGoogleButton.swift */,
 				067B0ADB27C81EFE00A26801 /* TextInputView.swift */,
@@ -269,9 +266,9 @@
 		06D00F7327BDAC2400044550 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				06D00F7127BDAC1300044550 /* SettingsPage.swift */,
 				06D00F6F27BDAC0A00044550 /* HomePage.swift */,
 				0633000127ECC40C004BD077 /* UserAccountPage.swift */,
+				06D00F7127BDAC1300044550 /* SettingsPage.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -444,7 +441,6 @@
 				06853C9427CB0E9600C2F7EE /* ProductInformationScrollView.swift in Sources */,
 				067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */,
 				06D00F7827BDAE5600044550 /* DataStructures.swift in Sources */,
-				067B0ADE27C81EFE00A26801 /* orDividerImage.swift in Sources */,
 				06D00F7527BDAE1100044550 /* MiniProductView.swift in Sources */,
 				06EE767827F1540E00176837 /* RentProductDetailView.swift in Sources */,
 				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
