@@ -15,16 +15,16 @@ struct SignInWithGoogleButton: View {
     }
     
     var body: some View {
-                        Button(action: {}){
-                          HStack {
-                              Image("GoogleLogo")
-                              Text("Continue With Google")
-                          }
-                              .foregroundColor(Color.black)
-                              .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
-                              .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
-                              .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1.5))
-                        }
+        Button(action: {}){
+          HStack {
+              Image("GoogleLogo")
+              Text("Continue With Google")
+          }
+              .foregroundColor(Color.black)
+              .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
+              .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
+              .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1.5))
+        }
     }
 }
 

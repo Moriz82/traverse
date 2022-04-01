@@ -21,34 +21,34 @@ struct SecureTextInputView: View {
     }
     
     var body: some View {
-                    HStack {
-                        if isSecured {
-                            SecureField(title, text: $password)
-                                .focused($passwordFieldIsFocused)
-                                .padding()
-                                .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
-                                .textFieldStyle(PlainTextFieldStyle())
-                                .foregroundColor(.primary)
-                                .autocapitalization(.none)
-                          }
-                        else {
-                            TextField(title, text: $password)
-                                .focused($passwordFieldIsFocused)
-                                .padding()
-                                .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
-                                .textFieldStyle(PlainTextFieldStyle())
-                                .foregroundColor(.primary)
-                                .autocapitalization(.none)
-                        }
-                        Button(action: {
-                            isSecured.toggle()
-                        }){
-                            Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                .accentColor(self.passwordFieldIsFocused ? Color.accentColor : Color.gray)
-                        }.padding()
-                    }
-                    .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(passwordFieldIsFocused ? Color.accentColor : Color.gray, lineWidth: passwordFieldIsFocused ? 2 : 1.1))
+        HStack {
+            if isSecured {
+                SecureField(title, text: $password)
+                    .focused($passwordFieldIsFocused)
+                    .padding()
+                    .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .foregroundColor(.primary)
+                    .autocapitalization(.none)
+              }
+            else {
+                TextField(title, text: $password)
+                    .focused($passwordFieldIsFocused)
+                    .padding()
+                    .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .foregroundColor(.primary)
+                    .autocapitalization(.none)
+            }
+            Button(action: {
+                isSecured.toggle()
+            }){
+                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                    .accentColor(self.passwordFieldIsFocused ? Color.accentColor : Color.gray)
+            }.padding()
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
+        .overlay(RoundedRectangle(cornerRadius: 10).stroke(passwordFieldIsFocused ? Color.accentColor : Color.gray, lineWidth: passwordFieldIsFocused ? 2 : 1.1))
     }
 }
 
