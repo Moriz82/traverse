@@ -163,7 +163,6 @@
 			children = (
 				8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */,
 				0650A47E27DA8B82009BA304 /* ProfilePage.swift */,
-				0633000527ECFB21004BD077 /* AddProductView.swift */,
 				0633000327ECF8EF004BD077 /* AccountListingsView.swift */,
 			);
 			path = Account;
@@ -219,6 +218,23 @@
 			path = LoginContainerViews;
 			sourceTree = "<group>";
 		};
+		069327A627F679F1009FED29 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */,
+				06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		069327A727F67AF9009FED29 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F7127BDAC1300044550 /* SettingsPage.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		06D00F5027BDA95100044550 = {
 			isa = PBXGroup;
 			children = (
@@ -242,8 +258,7 @@
 			children = (
 				06D00F6E27BDAAA800044550 /* Info.plist */,
 				067C648C27F2512500DA88FC /* GoogleService-Info.plist */,
-				06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */,
-				06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */,
+				069327A627F679F1009FED29 /* Fonts */,
 				06D00F7327BDAC2400044550 /* Tabs */,
 				06D00F7627BDAE3400044550 /* Views */,
 				06D00F7927BDAE7600044550 /* Utility */,
@@ -268,7 +283,7 @@
 			children = (
 				06D00F6F27BDAC0A00044550 /* HomePage.swift */,
 				0633000127ECC40C004BD077 /* UserAccountPage.swift */,
-				06D00F7127BDAC1300044550 /* SettingsPage.swift */,
+				0633000527ECFB21004BD077 /* AddProductView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -284,6 +299,7 @@
 				063FD0F327F6733E00EB5775 /* Renting */,
 				063FD0F227F6732600EB5775 /* Reviews */,
 				063FD0F727F6756A00EB5775 /* SearchBar */,
+				069327A727F67AF9009FED29 /* Settings */,
 				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
 			);
 			path = Views;

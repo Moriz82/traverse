@@ -23,13 +23,9 @@ struct SignUpView: View {
         ScrollView{
             VStack(alignment: .leading) {
                 // Top Logo
-                if !shouldShowLogo {
-                    TopRightLogoImage()
-                }
-                else {
+                if !shouldShowLogo { TopRightLogoImage() } else {
                     Spacer(minLength: UIScreen.main.bounds.height * 0.0912)
                 }
-                
                 
                 // Sign Up Label
                 Spacer()
@@ -39,47 +35,50 @@ struct SignUpView: View {
                     .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
 
                 
-                let nameTextField = TextInputView(title: "Name...", size: self.size, text: name)
-                nameTextField.focused($shouldShowLogo)
-                
-                let emailTextField = TextInputView(title: "Email...", size: self.size, text: email)
-                emailTextField.focused($shouldShowLogo)
-                
-                let passwordTextField = SecureTextInputView(title: "Password...", size: self.size, password: self.password)
-                passwordTextField.focused($shouldShowLogo)
-                
-                // Confirm Password Text Field
-                let confirmPasswordTextField = SecureTextInputView(title: "Confirm Password...", size: self.size, password: self.confirmPassword)
-                confirmPasswordTextField.focused($shouldShowLogo)
                 
                 
-                // Sign Up Button
+                //MARK: TEXT FIELDS
+                VStack(alignment: .center, spacing: 0){
+                    let nameTextField = TextInputView(title: "Name...", size: self.size, text: name)
+                    nameTextField.focused($shouldShowLogo)
+                    
+                    let emailTextField = TextInputView(title: "Email...", size: self.size, text: email)
+                    emailTextField.focused($shouldShowLogo)
+                    
+                    let passwordTextField = SecureTextInputView(title: "Password...", size: self.size, password: self.password)
+                    passwordTextField.focused($shouldShowLogo)
+                    
+                    // Confirm Password Text Field
+                    let confirmPasswordTextField = SecureTextInputView(title: "Confirm Password...", size: self.size, password: self.confirmPassword)
+                    confirmPasswordTextField.focused($shouldShowLogo)
+                }
+                
+                
+                
+                
+                //MARK: Sign Up Button
                 FilledInButton(title: "Sign Up", size: size, action: {
-                    withAnimation(.easeIn(duration: 0.5)){
-                        //checkLoginStatus.isLoggedIn = true
-                    }
-                    //MARK: CREATE ACCOUNT REQUEST
+                    //passwords match and fields aren't empty
                     guard !name.isEmpty, !email.isEmpty, !password.isEmpty, confirmPassword == password else{
                         print("check is passwords match and fields aren't empty")
                         return
                     }
                     
+                    //MARK: CREATE ACCOUNT REQUEST
                     viewModel.signup(name: name, email: email, password: password)
                     
-                    
+                    //dimisses view
                     self.presentationMode.wrappedValue.dismiss()
                 })
             
+            //MARK: FOOTER
                 VStack(spacing: UIScreen.main.bounds.width * 0.031) {
+                    Image("orImage") // Or divider
+                        .resizable()
+                        .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.040)
+                        .aspectRatio(contentMode: .fit)
                     
-                    // Or divider
-                    orDividerImage()
-                    
-                    VStack(spacing: UIScreen.main.bounds.height * 0.07) {
-                        
-                        // Sign in with Google Button
-                        SignInWithGoogleButton(size: size)
-                    }
+                    SignInWithGoogleButton(size: size)
                 }
             }.padding()
             .background(ignoresSafeAreaEdges: Edge.Set.top)

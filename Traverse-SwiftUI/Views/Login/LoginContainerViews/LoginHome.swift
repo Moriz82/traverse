@@ -21,13 +21,9 @@ struct LoginHome: View {
             VStack(alignment: .leading) {
                 
                 // Top Logo
-                if !shouldShowLogo {
-                    TopRightLogoImage()
-                }
-                else {
+                if !shouldShowLogo { TopRightLogoImage() } else {
                     Spacer(minLength: UIScreen.main.bounds.height * 0.0912)
                 }
-                
                 
                 // Log In Label
                 Spacer()
@@ -36,6 +32,7 @@ struct LoginHome: View {
                     .font(.system(.largeTitle, design: .rounded).bold())
                     .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
                 
+                //MARK: EMAIL TEXT FIELD
                 let emailTextField = TextInputView(title: "Email...", size: self.size, text: email)
                 emailTextField.focused($shouldShowLogo)
                 
@@ -73,10 +70,11 @@ struct LoginHome: View {
                     // Or divider
                     Image("orImage")
                         .resizable()
-                            .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.040)
-                            .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.040)
+                        .aspectRatio(contentMode: .fit)
                     
                     
+                    //MARK: FOOTER
                     VStack(spacing: UIScreen.main.bounds.height * 0.07) {
                         
                         // Sign in with Google Button

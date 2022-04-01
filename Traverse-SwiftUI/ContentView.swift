@@ -17,6 +17,11 @@ struct ContentView: View {
                     Image(systemName: "house")
                     Text("Home")
                 }
+            AddProductView()
+                .tabItem{
+                    Image(systemName: "plus.circle")
+                    Text("Add Product")
+                }
             UserAccountPage(account: exampleAccounts[0])
                 .tabItem{
                     Image(systemName: "person.fill")

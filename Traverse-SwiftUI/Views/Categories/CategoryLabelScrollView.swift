@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: SCROLL VIEW
 struct CategoryLabelScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
@@ -23,7 +24,7 @@ struct CategoryLabelScrollView: View {
     }
 }
 
-//MARK: LABEL
+//MARK: INDIVIDUAL LABEL
 struct MiniProductTypeLabel: View {
     var productTypeString: String
     var body: some View {

@@ -42,7 +42,12 @@ struct CardPaymentPage: View {
             TextInputView(title: "MM/YY", size: 1, text: date)
             TextInputView(title: "CVV", size: 1, text: cvv)
                 .keyboardType(.numberPad)
-            orDividerImage()
+            
+            Image("orImage")
+                .resizable()
+                .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.040)
+                .aspectRatio(contentMode: .fit)
+            
             VStack {
                 Button(action: {}){
                   HStack {
