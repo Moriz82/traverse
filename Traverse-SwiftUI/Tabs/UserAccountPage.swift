@@ -138,14 +138,6 @@ struct UserAccountPage: View {
                     
                     Divider()
                     
-                    //MARK: ADD PRODUCT
-                    NavigationLink(destination: AddProductView(), label: {
-                        Text("Add a Product")
-                            .frame(width: UIScreen.main.bounds.width * 0.9, height: 50, alignment: .center)
-                            .background(Color("traverse-blue"))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    })
                 }
                 .navigationTitle("Your Account")
                 .navigationBarTitleDisplayMode(.inline)

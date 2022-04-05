@@ -22,7 +22,7 @@ struct FilledInButton: View {
         Button(action: action){
             Text(title)
                 .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
-                .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
+                .font(.custom("Poppins-SemiBold", size: 25))
                 .foregroundColor(Color.white)
                 .background(Color(UIColor(red: 0, green: 0.365, blue: 1, alpha: 1).cgColor  ))
                 .cornerRadius(10)

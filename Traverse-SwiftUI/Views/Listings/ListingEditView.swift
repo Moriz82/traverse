@@ -185,7 +185,7 @@ struct ListingEditView: View {
 
 struct ListingEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ListingEditView(listing: listing(price: 42.00, rating: 4.0, name: "Power Washer", description: "yeo", address: "hi", imageName: "01", verified: true, owner: exampleAccounts[0]))
+        ListingEditView(listing: listing(price: 42.00, rating: 4.0, name: "Power Washer", description: "yeo", address: "hi", imageName: "01", verified: true, owner: exampleAccounts[0], isAvailable: true))
             .previewLayout(.sizeThatFits)
             .frame(height: 1200)
     }

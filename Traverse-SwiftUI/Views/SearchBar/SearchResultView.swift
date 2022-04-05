@@ -43,7 +43,7 @@ struct SearchResultView: View {
 
 struct SearchResultView_Previews: PreviewProvider {
     
-    static var exampleResult: listing = listing(price: 17.00, rating: 4.75, name: "Power Washer", description: "Small but loud", address: "1600 Pennsylvania", imageName: "01", verified: false, owner: account(firstName: "", lastName: "", verification: false, email: "", dateJoined: Date()))
+    static var exampleResult: listing = listing(price: 17.00, rating: 4.75, name: "Power Washer", description: "Small but loud", address: "1600 Pennsylvania", imageName: "01", verified: false, owner: account(firstName: "", lastName: "", verification: false, email: "", dateJoined: Date()), isAvailable: true)
 
     static var previews: some View {
         SearchResultView(searchResult: exampleResult)

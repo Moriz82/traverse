@@ -14,7 +14,6 @@ struct ProductInformationScrollView: View {
     @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     @State var listing: listing
     
-    @State var isProductCurrentlyBeingRented = true //TODO: update to database
 
     
     var locationFontSize = 15.0
@@ -227,13 +226,13 @@ struct ProductInformationScrollView: View {
                 
                 //MARK: RENT PRODUCT ACTION
                 NavigationLink(destination: RentProductDetailView(listing: listing), label: {
-                    Text(isProductCurrentlyBeingRented ? "Unavailable" : "Rent Now")
+                    Text(listing.isAvailable ? "Unavailable" : "Rent Now")
                         .font(.custom("Poppins-SemiBold", size: headingFontSize - 7))
                         .frame(width: 150, height: 40, alignment: .center)
-                        .background(isProductCurrentlyBeingRented ? .gray : Color("traverse-blue"))
+                        .background(listing.isAvailable ? .gray : Color("traverse-blue"))
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                })
+                }).disabled(listing.isAvailable)
             })
                 .padding()
                 .border(.gray, width: 1)
@@ -246,7 +245,7 @@ struct ProductInformationScrollView: View {
 
 struct ProductInformationScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductInformationScrollView(listing: listing(id: UUID(), price: 35.00, rating: 4.78, name: "Power Washer", description: "Lorem ipsum lorem ipsum", address: "1600 Pennsylvania Avenue", imageName: "01", verified: true, owner: account(firstName: "", lastName: "", verification: false, email: "", dateJoined: Date()), reviews: [exampleReviews[1], exampleReviews[2], exampleReviews[3]]))
+        ProductInformationScrollView(listing: listing(id: UUID(), price: 35.00, rating: 4.78, name: "Power Washer", description: "Lorem ipsum lorem ipsum", address: "1600 Pennsylvania Avenue", imageName: "01", verified: true, owner: account(firstName: "", lastName: "", verification: false, email: "", dateJoined: Date()), reviews: [exampleReviews[1], exampleReviews[2], exampleReviews[3]], isAvailable: false))
             .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 1700))
     }
 }

@@ -23,6 +23,8 @@ struct listing: Identifiable, Hashable {
     var reviews: [review]?
     var category: String?
     
+    var isAvailable: Bool
+    
     //necessary for ForEach function in HorizontalProductScrollView.swift
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
