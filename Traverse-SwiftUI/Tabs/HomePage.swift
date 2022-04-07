@@ -108,10 +108,8 @@ struct HomePage: View {
                                     withAnimation(.easeInOut(duration: 0.3)){
                                         if currentDragOffsetY < -100 {
                                             endingOffsetY = -startingOffsetY - 20
-                                            print(currentDragOffsetY)
                                         } else if endingOffsetY != 0 && currentDragOffsetY > 100 {
                                             endingOffsetY = 0
-                                            print(currentDragOffsetY)
                                         }
                                         currentDragOffsetY = 0
                                     }
