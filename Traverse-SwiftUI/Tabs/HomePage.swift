@@ -11,6 +11,12 @@ import MapKit
 struct HomePage: View {
     @StateObject var settings = showBarResults()
     @StateObject private var mapViewModel = MapLocationModel()
+    
+    //offsets
+    @State var startingOffsetY: CGFloat = UIScreen.main.bounds.height * 0.3
+    @State var currentDragOffsetY: CGFloat = 0
+    @State var endingOffsetY: CGFloat = 0
+
         
     var body: some View {
         NavigationView{
@@ -48,10 +54,73 @@ struct HomePage: View {
                     }
                     Spacer()
                     if !settings.showSearchBarResults{
-                        HorizontalProductScrollView()
+                        VStack(alignment: .center, spacing: 0){
+                            RoundedRectangle(cornerRadius: 2)
+                                .frame(width: UIScreen.main.bounds.width * 0.10, height: 4)
+                                .foregroundColor(Color("light-gray"))
+                                .padding(.top, 10)
+                            VStack(alignment: .leading, spacing: 5){
+                                Text("Listings Nearby")
+                                    .font(.custom("Poppins-SemiBold", size: 24))
+                                    .padding(EdgeInsets(top: 10, leading: 15, bottom: 0, trailing: 0))
+                                ScrollView(.horizontal, showsIndicators: false){
+                                    LazyHStack(alignment: .center, spacing: 0, content: {
+                                        ForEach(exampleListings, id: \.self){ newpost in
+                                            NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
+                                                MiniProductView(post: newpost)
+                                                    .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
+                                                    .padding(.leading, 15)
+
+                                            })
+                                        }
+                                    })
+                                }.frame(height: 200)
+                            }
+                        }
+                        .padding(.bottom, 50)
+                        .background(.white)
+                        .cornerRadius(18)
+                        .offset(y: startingOffsetY)
+                        .offset(y: currentDragOffsetY)
+                        .offset(y: endingOffsetY)
+                        .gesture(
+                            DragGesture()
+                                .onChanged{ value in
+                                    withAnimation(.easeInOut(duration: 0.3)){
+                                        var limitOffset = value.translation.height
+                                        //if positive
+                                        if endingOffsetY == (-startingOffsetY - 20){
+                                            //only allow positive
+                                            if limitOffset < 0{
+                                                limitOffset = 0;
+                                            }
+                                        }
+                                        
+                                        //if negative
+                                        if limitOffset < (-startingOffsetY - 20){
+                                            limitOffset = -startingOffsetY - 20
+                                        }
+                                        currentDragOffsetY = limitOffset
+                                        
+                                    }
+                                }
+                                .onEnded{ value in
+                                    withAnimation(.easeInOut(duration: 0.3)){
+                                        if currentDragOffsetY < -100 {
+                                            endingOffsetY = -startingOffsetY - 20
+                                            print(currentDragOffsetY)
+                                        } else if endingOffsetY != 0 && currentDragOffsetY > 100 {
+                                            endingOffsetY = 0
+                                            print(currentDragOffsetY)
+                                        }
+                                        currentDragOffsetY = 0
+                                    }
+                                })
                     }
                 }
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.9)
+                .frame(height: UIScreen.main.bounds.height * 0.9)
+                .ignoresSafeArea(edges: .bottom)
+
             }
             .navigationBarHidden(true)
             

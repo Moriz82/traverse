@@ -195,7 +195,7 @@ struct ProductInformationScrollView: View {
                             LazyHStack(alignment: .center, spacing: 15, content: {
                                 ForEach(categoryListings, id: \.self){ categoryListing in
                                     NavigationLink(destination: ProductInformationScrollView(listing: categoryListing), label: {
-                                        MiniProductView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: categoryListing)
+                                        MiniProductView(post: categoryListing)
                                             .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
                                     })
                                 }

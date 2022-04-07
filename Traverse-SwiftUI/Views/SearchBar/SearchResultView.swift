@@ -33,10 +33,8 @@ struct SearchResultView: View {
             Spacer()
             
         })
-            .padding(.leading, 20)
-            .padding(.trailing, 20)
             .background(.white)
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.10, alignment: .leading)
+            .frame(height: UIScreen.main.bounds.height * 0.10, alignment: .leading)
 
     }
 }

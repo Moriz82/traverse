@@ -8,8 +8,105 @@
 import SwiftUI
 
 struct AddProductView: View {
+    @FocusState private var shouldShowLogo: Bool
+    @State var productName: String = ""
+    
+    @ObservedObject var dollars = NumbersOnly()
+    @ObservedObject var cents = NumbersOnly()
+
+    
+    @State var priceDollars: String = ""
+    @State var priceCents: String = ""
+    
+    @State var productNameIsValid: Bool = false
+    @State var priceFieldDollarsIsValid: Bool = false
+    @State var priceFieldCentsIsValid: Bool = false
+
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView{
+                VStack(alignment: .leading, spacing: 10){
+                    TopRightLogoImage()
+                    
+                    Text("Add a Product")
+                        .font(.custom("Poppins-SemiBold", size: 32))
+                    
+                    if !productNameIsValid{
+                        Text("Product name not valid!")
+                            .font(.custom("Poppins-SemiBold", size: 16))
+                            .foregroundColor(.red)
+                    }
+                    TextField("Product Name..." , text: $productName, onEditingChanged: {_ in
+                        productNameIsValid = Util.checkString(string: productName)
+                    })
+                        .padding()
+                        .font(.custom("Poppins-Regular", size: 20))
+                        .frame(width: UIScreen.main.bounds.width * 0.90)
+                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2))
+                    
+                    if !priceFieldDollarsIsValid || !priceFieldCentsIsValid{
+                        Text("Price not valid!")
+                            .font(.custom("Poppins-SemiBold", size: 16))
+                            .foregroundColor(.red)
+                    }
+                    HStack{
+                        Text("$")
+                            .font(.custom("Poppins-SemiBold", size: 18))
+
+                        TextField("0" , text: $dollars.value, onEditingChanged: {_ in
+                            priceFieldDollarsIsValid = Util.checkDollarPrice(price: priceDollars)
+                        })
+                            .padding()
+                            .keyboardType(.numberPad)
+                            .font(.custom("Poppins-Regular", size: 20))
+                            .frame(width: UIScreen.main.bounds.width * 0.2)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2))
+                        
+                        Text(".")
+                            .font(.custom("Poppins-SemiBold", size: 18))
+
+                        TextField("00" , text: $cents.value, onEditingChanged: {_ in
+                            priceFieldCentsIsValid = Util.checkCentsPrice(price: priceDollars)
+                        })
+                            .padding()
+                            .keyboardType(.numberPad)
+                            .font(.custom("Poppins-Regular", size: 20))
+                            .frame(width: UIScreen.main.bounds.width * 0.2)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2))
+
+                        Text("per day")
+                            .font(.custom("Poppins-SemiBold", size: 18))
+
+                    }
+                    NavigationLink(destination: SecondAddProductView(productName: productName, productPrice: makePrice(dollars: dollars.value, cents: cents.value)), isActive: $productNameIsValid, label: {
+                        Text("next")
+                            .font(.custom("Poppins-SemiBold", size: 18))
+                            .foregroundColor(Color("traverse-blue"))
+                    })
+                }
+                .onTapGesture {
+                    self.hideKeyboard()
+                }
+            }
+        }
+    }
+    private func makePrice(dollars: String, cents: String) -> Double{
+        return 0.00
+    }
+}
+
+
+//price only numbers
+class NumbersOnly: ObservableObject {
+    @Published var value = "" {
+        didSet {
+            let filtered = value.filter { $0.isNumber }
+            
+            if value != filtered {
+                value = filtered
+            }
+        }
     }
 }
 

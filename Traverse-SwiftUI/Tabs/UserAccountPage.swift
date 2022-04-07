@@ -10,15 +10,14 @@ import SwiftUI
 struct UserAccountPage: View {
     var account: account
     var nameFontSize = 28.0
-    var bodyFontSize = 15.0
-    var postHeight: Double = 120.0
+    var bodyFontSize = 12.0
         
     @EnvironmentObject var viewModel: AppViewModel
 
     var body: some View {
         NavigationView{
             ScrollView{
-                VStack(spacing: 20){
+                VStack(alignment: .leading, spacing: 20){
                     Divider()
                     
                     //MARK: IMAGE/NAME
@@ -32,20 +31,24 @@ struct UserAccountPage: View {
                             Text("\(account.firstName) \(account.lastName)")
                                 .font(.custom("Poppins-SemiBold", size: nameFontSize))
                             Text("Joined \(account.dateJoined.addingTimeInterval(600), style: .date)")
-                                .font(.custom("Poppins-Regular", size: bodyFontSize - 2))
+                                .font(.custom("Poppins-Regular", size: bodyFontSize))
                                 .foregroundColor(.gray)
                         })
                         Spacer()
-                    }).padding()
+                    })
+                        .padding(.leading)
                         
                     Divider()
                     
                     //MARK: MY STATS
+                    Text("Stats")
+                        .font(.custom("Poppins-SemiBold", size: nameFontSize - 2))
+                        .padding(.leading)
                     LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 2), alignment: .center, spacing: 5, content: {
                         VStack(alignment: .center, spacing: 0, content: {
                             Text(String(format: "%.0f",(account.responseRate ?? 0.0)*100)+"%")
                                 .font(.custom("Poppins-SemiBold", size: bodyFontSize))
-                                .frame(width: 75, height: 30, alignment: .center)
+                                .frame(width: 75, height: 25, alignment: .center)
                                 .background(Color("product-info-green"))
                                 .foregroundColor(.white)
                                 .cornerRadius(5.0)
@@ -57,7 +60,7 @@ struct UserAccountPage: View {
                         VStack(alignment: .center, spacing: 0, content: {
                             Text(String(account.responseTimeInMinutes ?? 0)+" minutes")
                                 .font(.custom("Poppins-SemiBold", size: bodyFontSize))
-                                .frame(width: 90, height: 30, alignment: .center)
+                                .frame(width: 90, height: 25, alignment: .center)
                                 .background(Color("product-info-green"))
                                 .foregroundColor(.white)
                                 .cornerRadius(5.0)
@@ -69,15 +72,16 @@ struct UserAccountPage: View {
                         VStack(alignment: .center, spacing: 0, content: {
                             Text(account.verification ? "Verified" : "Not Verified")
                                 .font(.custom("Poppins-SemiBold", size: bodyFontSize))
-                                .frame(width: 75, height: 30, alignment: .center)
+                                .frame(width: 75, height: 25, alignment: .center)
                                 .background(Color("product-info-green"))
                                 .foregroundColor(.white)
                                 .cornerRadius(5.0)
                             Text("Verification")
-                                .frame(width: 120, height: 50)
+                                .frame(width: 120, height: 40)
                                 .multilineTextAlignment(.center)
                                 .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                         }).frame(width: UIScreen.main.bounds.width * 0.44, height: 100, alignment: .center)
+
                         //MARK: LISTED / RENTED
                         HStack{
                             VStack(alignment: .center, spacing: 0, content: {
@@ -104,40 +108,38 @@ struct UserAccountPage: View {
                                     .font(.custom("Poppins-SemiBold", size: bodyFontSize))
                             }).frame(width: UIScreen.main.bounds.width * 0.15, height: 100, alignment: .center)
                         }
-                    }).padding(.top, 5)
+                    })
+                        .padding(.top, 5)
+                        .overlay{
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1)
+                                .frame(width: UIScreen.main.bounds.width * 0.90)
+                        }
+
                     
                     Divider()
                     
                     //MARK: MY PRODUCTS
                     HStack{
-                        Text("My Products")
-                            .font(.title)
-                            .bold()
+                        Text("Products")
+                            .font(.custom("Poppins-SemiBold", size: nameFontSize - 2))
                         Spacer()
                         NavigationLink(destination: AccountListingsView(), label: {
                             Text("see all")
                                 .font(.custom("Poppins-Regular", size: bodyFontSize + 5))
                                 .foregroundColor(.blue)
-                                .padding(.trailing, 10)
+                                .padding(.trailing, 20)
                         })
                     }
                     .padding(.leading)
-                    ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(alignment: .center, spacing: 10, content: {
-                            ForEach(exampleListings, id: \.self, content: { newpost in
-                                NavigationLink(destination: ListingEditView(listing: newpost, listingPrice: String(newpost.price)), label: {
-                                    MiniProductView(UISettings: UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: postHeight, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0), post: newpost)
-                                        .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
+                    VStack(alignment: .center, spacing: 10, content: {
+                        ForEach(exampleListings[0..<3], id: \.self, content: { newpost in
+                            NavigationLink(destination: ListingEditView(listing: newpost, listingPrice: String(newpost.price)), label: {
+                                SearchResultView(searchResult: newpost)
+                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
 
-                                })
                             })
-                            
                         })
-                    }
-                    .padding()
-                    
-                    Divider()
-                    
+                    })
                 }
                 .navigationTitle("Your Account")
                 .navigationBarTitleDisplayMode(.inline)

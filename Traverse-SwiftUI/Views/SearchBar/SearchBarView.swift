@@ -93,6 +93,7 @@ struct SearchBarView: View {
                         ForEach(searchResults, id: \.self){ newTerm in
                             NavigationLink(destination: ProductInformationScrollView(listing: newTerm), label: {
                                 SearchResultView(searchResult: newTerm)
+                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                             })
                         }
                         //MARK: RECOMMENDED
@@ -103,6 +104,7 @@ struct SearchBarView: View {
                         ForEach(exampleListings, id: \.self){ recommendedResult in
                             NavigationLink(destination: ProductInformationScrollView(listing: recommendedResult), label: {
                                 SearchResultView(searchResult: recommendedResult)
+                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                             })
                         }
                     })
