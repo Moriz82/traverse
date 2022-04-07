@@ -19,18 +19,17 @@ struct LoginHome: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .leading) {
-                
+                TopRightLogoImage()
                 // Top Logo
-                if !shouldShowLogo { TopRightLogoImage() } else {
-                    Spacer(minLength: UIScreen.main.bounds.height * 0.0912)
-                }
+//                if !shouldShowLogo { TopRightLogoImage() } else {
+//                    Spacer(minLength: UIScreen.main.bounds.height * 0.0912)
+//                }
                 
                 // Log In Label
-                Spacer()
                 Label("Log in", systemImage: "book.fill")
                     .labelStyle(TitleOnlyLabelStyle())
                     .font(.system(.largeTitle, design: .rounded).bold())
-                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.016, leading: 0, bottom: 0, trailing: 0))
                 
                 //MARK: EMAIL TEXT FIELD
                 let emailTextField = TextInputView(title: "Email...", size: self.size, text: email)
@@ -54,17 +53,20 @@ struct LoginHome: View {
 
                     
                     // Log In Button
-                    FilledInButton(title: "Log In", size: size, action: {
-                        withAnimation(.easeIn(duration: 0.5)){
-                            //viewModel.isSignedIn = true
-                        }
-                        //MARK: LOG IN REQUEST
-                        guard !email.isEmpty, !password.isEmpty else{
-                            return
-                        }
+                    NavigationLink(destination: HomePage(), label: {
+                        FilledInButton(title: "Log In", size: size, action: {
+                            withAnimation(.easeIn(duration: 0.5)){
+                                //viewModel.isSignedIn = true
+                            }
+                            //MARK: LOG IN REQUEST
+                            guard !email.isEmpty, !password.isEmpty else{
+                                return
+                            }
                         viewModel.login(email: email, password: password)
                         
                         self.presentationMode.wrappedValue.dismiss()
+                    })
+                        
                     })
                     
                     // Or divider
