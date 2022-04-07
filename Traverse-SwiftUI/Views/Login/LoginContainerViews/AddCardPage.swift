@@ -10,10 +10,10 @@ import SwiftUI
 struct AddCardPage: View {
     
     var body: some View {
-        NavigationView{
             VStack {
                 HStack {
                     TopRightLogoImage()
+                        .padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
                     Spacer()
                 }
                 Spacer()
@@ -34,15 +34,14 @@ struct AddCardPage: View {
                     FilledInButton(title: "Verify", size: 1, action: {})
                 })
                 
-                Button(action: {
-                    
-                }){
+                NavigationLink(destination: HomePage(), label: {
                     Text("Skip for now")
                         .font(.system(.callout, design: .default).bold())
                         .foregroundColor(Color.black)
-                }.padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
-            }
-        }
+                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 5, trailing: 0))
+                })
+                
+            }.navigationBarHidden(true)
     }
 }
 

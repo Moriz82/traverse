@@ -22,23 +22,20 @@ struct SignUpView: View {
     var body: some View {
         ScrollView{
             VStack(alignment: .leading) {
+                TopRightLogoImage()
                 // Top Logo
-                if !shouldShowLogo { TopRightLogoImage() } else {
-                    Spacer(minLength: UIScreen.main.bounds.height * 0.0912)
-                }
-                
+//                if !shouldShowLogo {
+//                    TopRightLogoImage()
+//                }
                 // Sign Up Label
-                Spacer()
                 Label("Sign Up", systemImage: "book.fill")
                     .labelStyle(TitleOnlyLabelStyle())
                     .font(.system(.largeTitle, design: .rounded).bold())
-                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.016, leading: 0, bottom: 0, trailing: 0))
 
                 
-                
-                
                 //MARK: TEXT FIELDS
-                VStack(alignment: .center, spacing: 0){
+                VStack(alignment: .center, spacing: UIScreen.main.bounds.width * 0.031){
                     let nameTextField = TextInputView(title: "Name...", size: self.size, text: name)
                     nameTextField.focused($shouldShowLogo)
                     
@@ -57,18 +54,19 @@ struct SignUpView: View {
                 
                 
                 //MARK: Sign Up Button
-                FilledInButton(title: "Sign Up", size: size, action: {
-                    //passwords match and fields aren't empty
-                    guard !name.isEmpty, !email.isEmpty, !password.isEmpty, confirmPassword == password else{
-                        print("check is passwords match and fields aren't empty")
-                        return
-                    }
+                NavigationLink(destination: AddCardPage(), label: {
+                    FilledInButton(title: "Sign Up", size: size, action: {
+                        //passwords match and fields aren't empty
+                        guard !name.isEmpty, !email.isEmpty, !password.isEmpty, confirmPassword == password else{
+                            print("check is passwords match and fields aren't empty")
+                            return
+                        }
+                        
+                        //MARK: CREATE ACCOUNT REQUEST
+                        viewModel.signup(name: name, email: email, password: password)
+                        
+                    })
                     
-                    //MARK: CREATE ACCOUNT REQUEST
-                    viewModel.signup(name: name, email: email, password: password)
-                    
-                    //dimisses view
-                    self.presentationMode.wrappedValue.dismiss()
                 })
             
             //MARK: FOOTER
@@ -79,9 +77,27 @@ struct SignUpView: View {
                         .aspectRatio(contentMode: .fit)
                     
                     SignInWithGoogleButton(size: size)
+                    VStack {
+                        Spacer()
+                        HStack{
+                            Text("Already have an account?")
+                                .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
+                            .font(.system(.footnote, design: .rounded).bold())
+                            NavigationLink(destination: LoginHome(), label: {
+                                Text("Log In")
+                                .font(.system(size: 17 + size, weight: .semibold, design: .rounded))
+
+                            })
+                        }
+                        Spacer()
+                    }
                 }
             }.padding()
-            .background(ignoresSafeAreaEdges: Edge.Set.top)
+//            .background(ignoresSafeAreaEdges: Edge.Set.top)
+//            if(shouldShowLogo){
+//                    Spacer(minLength: UIScreen.main.bounds.height * 0.095)
+//            }
+
         }
     }
 }

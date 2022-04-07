@@ -11,7 +11,7 @@ struct SecureTextInputView: View {
     private var title = ""
     private var size: CGFloat
     @State var password: String
-    @FocusState private var passwordFieldIsFocused: Bool
+    @FocusState public var passwordFieldIsFocused: Bool
     @State private var isSecured: Bool = true
     
     public init(title: String, size: CGFloat, password: String){

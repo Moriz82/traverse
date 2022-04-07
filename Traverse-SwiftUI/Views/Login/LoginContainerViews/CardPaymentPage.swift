@@ -14,6 +14,7 @@ struct CardPaymentPage: View {
     private var cvv: String = ""
     
     var body: some View {
+        ScrollView{
         VStack {
             HStack {
                 Text("Payment")
@@ -61,24 +62,24 @@ struct CardPaymentPage: View {
                       .frame(width: UIScreen.main.bounds.width * 0.923, height: UIScreen.main.bounds.height * 0.06)
                       .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1.5))
                 }
-                Spacer()
-                FilledInButton(title: "Submit", size: 1, action: {
-                    
-                    
-                })
-                Button(action: {
-                    
-                    
-                }){
+                
+                NavigationLink(destination: HomePage(), label: {
+                    FilledInButton(title: "Submit", size: 1, action: {})
+                }).padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
+
+                NavigationLink(destination: HomePage(), label: {
                     Text("Skip for now")
                         .font(.system(.callout, design: .default).bold())
                         .foregroundColor(Color.black)
-                }.padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0))
+                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                })
             }
             Spacer()
-        }
+        }.navigationBarHidden(true)
     }
 }
+}
+    
 
 struct CardPaymentPage_Previews: PreviewProvider {
     static var previews: some View {
