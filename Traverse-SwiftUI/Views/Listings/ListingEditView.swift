@@ -13,6 +13,9 @@ struct ListingEditView: View {
     
     @State var addTrueEditFalse: Bool = true //TODO: remove default
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    
     var body: some View {
         VStack {
             ScrollView{
@@ -121,26 +124,28 @@ struct ListingEditView: View {
                     
                     //MARK: DELETE BUTTON
                     Button(action: {
-                        
-                    }, label: {
-                        HStack{
-                            Spacer()
-                            Text("Delete this product")
-                                .font(.custom("Poppins-SemiBold", size: 20))
-                                .frame(height: 50, alignment: .center)
-                                .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-                                .background(.red)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                            Spacer()
+                        if let index = exampleListings.firstIndex(of: listing){
+                            exampleListings.remove(at: index)
                         }
+                        self.presentationMode.wrappedValue.dismiss()
+
+                    }, label: {
+                        Text("Delete this product")
+                            .font(.custom("Poppins-SemiBold", size: 20))
+                            .frame(height: 50, alignment: .center)
+                            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                            .background(.red)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     })
                 }
             }
         //MARK: CANCEL / SAVE
+            
+            /*
             HStack{
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Save")
                         .font(.custom("Poppins-SemiBold", size: 20))
@@ -151,7 +156,7 @@ struct ListingEditView: View {
 
                 })
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Cancel")
                         .font(.custom("Poppins-SemiBold", size: 20))
@@ -162,19 +167,23 @@ struct ListingEditView: View {
 
                 })
             }
+            .padding()
+            .border(.gray, width: 1)
+            */
+            
         }
         .navigationTitle("Edit Product")
         //MARK: CANCEL / SAVE ON TOP
         .toolbar{
             ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Save")
                 })
                 
                 Button(action: {
-                    
+                    self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Cancel")
                 })

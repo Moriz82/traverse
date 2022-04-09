@@ -28,6 +28,9 @@
 		06853C9427CB0E9600C2F7EE /* ProductInformationScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06853C9327CB0E9600C2F7EE /* ProductInformationScrollView.swift */; };
 		06853C9627CB0ED900C2F7EE /* ListingOwnerInfoSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06853C9527CB0ED900C2F7EE /* ListingOwnerInfoSubView.swift */; };
 		06853C9827CB0EFD00C2F7EE /* ProductReviewSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */; };
+		06B3138228013AB500DA3D2B /* AddListingImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3138128013AB500DA3D2B /* AddListingImagesView.swift */; };
+		06B313842801412500DA3D2B /* AddListingReviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B313832801412500DA3D2B /* AddListingReviewPage.swift */; };
+		06B313862801525A00DA3D2B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B313852801525A00DA3D2B /* ImagePicker.swift */; };
 		06BAA51327FDD06F002D474A /* SecondAddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BAA51227FDD06F002D474A /* SecondAddProductView.swift */; };
 		06BD1FD227BEE4D7008851FC /* ObservableObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD1FD127BEE4D7008851FC /* ObservableObjects.swift */; };
 		06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F5C27BDA95100044550 /* Traverse_SwiftUIApp.swift */; };
@@ -77,6 +80,9 @@
 		06853C9327CB0E9600C2F7EE /* ProductInformationScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationScrollView.swift; sourceTree = "<group>"; };
 		06853C9527CB0ED900C2F7EE /* ListingOwnerInfoSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingOwnerInfoSubView.swift; sourceTree = "<group>"; };
 		06853C9727CB0EFD00C2F7EE /* ProductReviewSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewSubView.swift; sourceTree = "<group>"; };
+		06B3138128013AB500DA3D2B /* AddListingImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingImagesView.swift; sourceTree = "<group>"; };
+		06B313832801412500DA3D2B /* AddListingReviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingReviewPage.swift; sourceTree = "<group>"; };
+		06B313852801525A00DA3D2B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		06BAA51227FDD06F002D474A /* SecondAddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAddProductView.swift; sourceTree = "<group>"; };
 		06BD1FD127BEE4D7008851FC /* ObservableObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjects.swift; sourceTree = "<group>"; };
 		06D00F5927BDA95100044550 /* Traverse-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Traverse-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +162,8 @@
 				06D00F7427BDAE1100044550 /* MiniProductView.swift */,
 				06FE9A6A27EE56B900F06C5A /* ListingEditView.swift */,
 				06BAA51227FDD06F002D474A /* SecondAddProductView.swift */,
+				06B3138128013AB500DA3D2B /* AddListingImagesView.swift */,
+				06B313832801412500DA3D2B /* AddListingReviewPage.swift */,
 			);
 			path = Listings;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				06D00F7727BDAE5500044550 /* DataStructures.swift */,
 				063FD0ED27F6705400EB5775 /* SampleData.swift */,
 				06D00F7A27BDAE8800044550 /* UtilFunctions.swift */,
+				06B313852801525A00DA3D2B /* ImagePicker.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -455,6 +464,8 @@
 			files = (
 				06853C9827CB0EFD00C2F7EE /* ProductReviewSubView.swift in Sources */,
 				06BD1FD227BEE4D7008851FC /* ObservableObjects.swift in Sources */,
+				06B3138228013AB500DA3D2B /* AddListingImagesView.swift in Sources */,
+				06B313842801412500DA3D2B /* AddListingReviewPage.swift in Sources */,
 				8A288C6627FCCD9100ABEACD /* AddPhoneNumberView.swift in Sources */,
 				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
 				067B0ADC27C81EFE00A26801 /* TopRightLogoImage.swift in Sources */,
@@ -481,6 +492,7 @@
 				0633000627ECFB21004BD077 /* AddProductView.swift in Sources */,
 				06D00F7B27BDAE8800044550 /* UtilFunctions.swift in Sources */,
 				067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */,
+				06B313862801525A00DA3D2B /* ImagePicker.swift in Sources */,
 				06D00F5D27BDA95100044550 /* Traverse_SwiftUIApp.swift in Sources */,
 				067B0AE127C81EFE00A26801 /* TextInputView.swift in Sources */,
 				0633000227ECC40C004BD077 /* UserAccountPage.swift in Sources */,

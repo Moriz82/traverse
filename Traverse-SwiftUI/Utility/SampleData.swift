@@ -47,7 +47,7 @@ var exampleListings: [listing] = [
 ]
 
 
-var exampleProductTypes: [String] = ["Drones", "Power Tools", "Pool Equipment", "Outdoors", "Lighting", "Kitchen", "Basketball", "Drugs"]
+var exampleCategories: [String] = ["Drones", "Power Tools", "Pool Equipment", "Outdoors", "Lighting", "Kitchen", "Sports", "Board Games"]
 
 
 var exampleAddresses: [address] = [

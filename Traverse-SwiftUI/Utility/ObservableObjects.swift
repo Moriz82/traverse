@@ -31,6 +31,7 @@ class UserInterfaceSettings: ObservableObject{
 class showBarResults: ObservableObject{
     @Published var showSearchBarResults: Bool = false
     @Published var showProductInformationView: Bool = false
+    @Published var showAnnotationsOnMap: Bool = false
 }
 
 //MARK: APPVIEWMODEL

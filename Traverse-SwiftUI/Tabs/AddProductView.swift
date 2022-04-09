@@ -26,17 +26,18 @@ struct AddProductView: View {
     var body: some View {
         NavigationView{
             ScrollView{
-                VStack(alignment: .leading, spacing: 10){
+                VStack(alignment: .leading, spacing: 20){
                     TopRightLogoImage()
                     
                     Text("Add a Product")
                         .font(.custom("Poppins-SemiBold", size: 32))
-                    
+                    /*
                     if !productNameIsValid{
                         Text("Product name not valid!")
                             .font(.custom("Poppins-SemiBold", size: 16))
                             .foregroundColor(.red)
-                    }
+                    }*/
+            
                     TextField("Product Name..." , text: $productName, onEditingChanged: {_ in
                         productNameIsValid = Util.checkString(string: productName)
                     })
@@ -45,14 +46,16 @@ struct AddProductView: View {
                         .frame(width: UIScreen.main.bounds.width * 0.90)
                         .overlay(RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2))
                     
+                    /*
                     if !priceFieldDollarsIsValid || !priceFieldCentsIsValid{
                         Text("Price not valid!")
                             .font(.custom("Poppins-SemiBold", size: 16))
                             .foregroundColor(.red)
                     }
+                     */
                     HStack{
                         Text("$")
-                            .font(.custom("Poppins-SemiBold", size: 18))
+                            .font(.custom("Poppins-SemiBold", size: 28))
 
                         TextField("0" , text: $dollars.value, onEditingChanged: {_ in
                             priceFieldDollarsIsValid = Util.checkDollarPrice(price: priceDollars)
@@ -64,7 +67,7 @@ struct AddProductView: View {
                             .overlay(RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2))
                         
                         Text(".")
-                            .font(.custom("Poppins-SemiBold", size: 18))
+                            .font(.custom("Poppins-SemiBold", size: 28))
 
                         TextField("00" , text: $cents.value, onEditingChanged: {_ in
                             priceFieldCentsIsValid = Util.checkCentsPrice(price: priceDollars)
@@ -79,19 +82,29 @@ struct AddProductView: View {
                             .font(.custom("Poppins-SemiBold", size: 18))
 
                     }
-                    NavigationLink(destination: SecondAddProductView(productName: productName, productPrice: makePrice(dollars: dollars.value, cents: cents.value)), isActive: $productNameIsValid, label: {
-                        Text("next")
+                    .padding(.bottom, 40)
+                    NavigationLink(destination: SecondAddProductView(productName: productName, productPrice: makePrice(dollars: dollars.value, cents: cents.value)), label: {
+                        Text("Next")
                             .font(.custom("Poppins-SemiBold", size: 18))
-                            .foregroundColor(Color("traverse-blue"))
+                            .frame(height: 40, alignment: .center)
+                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                            .background(Color("traverse-blue"))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     })
-                }
-                .onTapGesture {
-                    self.hideKeyboard()
                 }
             }
         }
+        .onTapGesture {
+            self.hideKeyboard()
+        }
     }
     private func makePrice(dollars: String, cents: String) -> Double{
+        if let doubleDollars = Double(dollars), let doubleCents = Double(cents){
+            let p = doubleDollars + doubleCents * 0.01
+            print(p)
+            return p
+        }
         return 0.00
     }
 }

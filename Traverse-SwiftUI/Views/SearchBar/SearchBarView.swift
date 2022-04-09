@@ -54,6 +54,8 @@ struct SearchBarView: View {
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.50)){
                             settings.showSearchBarResults.toggle()
+                            settings.showAnnotationsOnMap = false
+                            productSearchString = ""
                             isFocused = true
                         }
                     }, label: {
@@ -77,6 +79,7 @@ struct SearchBarView: View {
                             Button(action: {
                                 withAnimation(.easeInOut(duration: 0.50)){
                                     settings.showSearchBarResults = false
+                                    settings.showAnnotationsOnMap = true
                                 }
                             }, label: {
                                 Text(searchResults.isEmpty ? " No results. Search map for \"\(productSearchString)\"" : "Search map for \"\(productSearchString)\"")
