@@ -17,7 +17,7 @@ struct AccountListingsView: View {
                 if(exampleListings.count > 0){
                     ForEach(exampleListings, content: { listing in
                         NavigationLink(destination: ListingEditView(listing: listing, listingPrice: String(listing.price)), label: {
-                            CategoryListingView(categoryListing: listing )
+                            CategoryListingSubView(categoryListing: listing )
                         })
                         Divider()
                     })

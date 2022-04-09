@@ -22,13 +22,16 @@ struct ContentView: View {
                     Image(systemName: "plus.circle")
                     Text("Add Product")
                 }
-            UserAccountPage(account: exampleAccounts[0])
-                .tabItem{
-                    Image(systemName: "person.fill")
-                    Text("Account")
-                }
-                .environmentObject(viewModel)
-
+            if viewModel.isSignedIn{
+                UserAccountPage(account: exampleAccounts[0])
+                    .tabItem{
+                        Image(systemName: "person.fill")
+                        Text("Account")
+                    }
+                    .environmentObject(viewModel)
+            }else{
+                LoginHome()
+            }
         }
         .onAppear {
             if #available(iOS 15.0, *){

@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ListingsInCategoryView: View {
     var category: String
+    @EnvironmentObject var settings: showBarResults
+
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         ScrollView{
@@ -20,10 +23,19 @@ struct ListingsInCategoryView: View {
                 
                 let categoryListings = Util.getCategoryListings(category: category)
                 
+                Button(action: {
+                    settings.showAnnotationsOnMap = true
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Search map for \"\(category)\"")
+                        .font(.custom("Poppins-SemiBold", size: 18))
+                        .padding(20)
+                })
+                
                 if(categoryListings.count > 0){
                     ForEach(categoryListings, content: { listing in
                         NavigationLink(destination: ProductInformationScrollView(listing: listing), label: {
-                            CategoryListingView(categoryListing: listing )
+                            CategoryListingSubView(categoryListing: listing )
                         })
                         Divider()
                     })
@@ -31,7 +43,7 @@ struct ListingsInCategoryView: View {
                 else {
                     VStack{
                         Spacer()
-                        Text("No listings in this category")
+                        Text("No listings in this category nearby.")
                             .font(.custom("Poppins-SemiBold", size: 20))
                             .foregroundColor(.gray)
                         Spacer()

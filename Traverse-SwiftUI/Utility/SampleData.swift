@@ -75,12 +75,19 @@ var exampleAddresses: [address] = [
 
 
 var exampleMapAnnotations: [mapAnnotation] = [
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
-    mapAnnotation(price: Double.random(in: 10.0..<30.0), productType: "Drone", coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7)))
+    mapAnnotation(listing: exampleListings[0], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[1], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[2], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[3], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[4], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[5], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[6], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[7], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[8], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[9], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[10], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[11], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[12], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[13], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7))),
+    mapAnnotation(listing: exampleListings[14], coordinate: CLLocationCoordinate2D(latitude: Double.random(in: 30.4..<30.6), longitude: Double.random(in: -97.9 ..< -97.7)))
 ]

@@ -29,7 +29,7 @@ struct HomePage: View {
                     Map(coordinateRegion: $mapViewModel.region, annotationItems: settings.showAnnotationsOnMap ?  exampleMapAnnotations : emptyArray){ place in
                         MapAnnotation(coordinate: place.coordinate, content: {
                             NavigationLink(destination: ProductInformationScrollView(listing: exampleListings[0]), label: {
-                                Text("$"+String(format: "%.0f", place.price))
+                                Text("$"+String(format: "%.0f", place.listing.price))
                                     .font(.custom("Poppins-SemiBold", size: 16.0))
                                     .frame(width: 65, height: 30, alignment: .center)
                                     .background(Color("traverse-blue"))
@@ -51,6 +51,7 @@ struct HomePage: View {
                         .shadow(color: .gray, radius: 10, x: 0, y: 0)
                     if !settings.showSearchBarResults{
                         CategoryLabelScrollView()
+                            .environmentObject(settings)
                     }
                     Spacer()
                     if !settings.showSearchBarResults{

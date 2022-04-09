@@ -76,7 +76,6 @@ struct address: Identifiable, Hashable{
 
 struct mapAnnotation: Identifiable{
     let id = UUID()
-    var price: Double
-    var productType: String
+    var listing: listing
     var coordinate: CLLocationCoordinate2D
 }

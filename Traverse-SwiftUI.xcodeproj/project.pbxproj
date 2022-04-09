@@ -54,7 +54,7 @@
 		545A77DB428B826E66BF8E4D /* Pods_Traverse_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BD94ECAF705A08AC1CE274 /* Pods_Traverse_SwiftUI.framework */; };
 		8A288C6627FCCD9100ABEACD /* AddPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A288C6527FCCD9100ABEACD /* AddPhoneNumberView.swift */; };
 		8A3340A527DAAC55008965E7 /* ListingsInCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */; };
-		8A3340A727DAC9E6008965E7 /* CategoryListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A627DAC9E6008965E7 /* CategoryListingView.swift */; };
+		8A3340A727DAC9E6008965E7 /* CategoryListingSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */; };
 		8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,7 +109,7 @@
 		6C547F992FEE71CF9C43BDD6 /* Pods-Traverse-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traverse-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-Traverse-SwiftUI/Pods-Traverse-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		8A288C6527FCCD9100ABEACD /* AddPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoneNumberView.swift; sourceTree = "<group>"; };
 		8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsInCategoryView.swift; sourceTree = "<group>"; };
-		8A3340A627DAC9E6008965E7 /* CategoryListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListingView.swift; sourceTree = "<group>"; };
+		8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListingSubView.swift; sourceTree = "<group>"; };
 		8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButtonView.swift; sourceTree = "<group>"; };
 		E9454995610D8E13AC523B73 /* Pods-Traverse-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traverse-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Traverse-SwiftUI/Pods-Traverse-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				062F3B6A27C72E200008333A /* CategoryLabelScrollView.swift */,
-				8A3340A627DAC9E6008965E7 /* CategoryListingView.swift */,
+				8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */,
 				8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */,
 			);
 			path = Categories;
@@ -479,7 +479,7 @@
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,
 				06EE767A27F1544400176837 /* ConfirmRentView.swift in Sources */,
 				8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */,
-				8A3340A727DAC9E6008965E7 /* CategoryListingView.swift in Sources */,
+				8A3340A727DAC9E6008965E7 /* CategoryListingSubView.swift in Sources */,
 				0633000427ECF8EF004BD077 /* AccountListingsView.swift in Sources */,
 				062F3B6B27C72E200008333A /* CategoryLabelScrollView.swift in Sources */,
 				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
