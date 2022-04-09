@@ -120,7 +120,7 @@ struct UserAccountPage: View {
                     
                     //MARK: MY PRODUCTS
                     HStack{
-                        Text("Products")
+                        Text("Listings")
                             .font(.custom("Poppins-SemiBold", size: nameFontSize - 2))
                         Spacer()
                         NavigationLink(destination: AccountListingsView(), label: {

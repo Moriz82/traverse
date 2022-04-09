@@ -17,6 +17,7 @@ struct HomePage: View {
     @State var currentDragOffsetY: CGFloat = 0
     @State var endingOffsetY: CGFloat = 0
 
+    var emptyArray: [mapAnnotation] = []
         
     var body: some View {
         NavigationView{
@@ -25,11 +26,9 @@ struct HomePage: View {
                     Color.blue.ignoresSafeArea()
                 }
                 if !settings.showSearchBarResults{
-                    Map(coordinateRegion: $mapViewModel.region, annotationItems: exampleMapAnnotations){ place in
+                    Map(coordinateRegion: $mapViewModel.region, annotationItems: settings.showAnnotationsOnMap ?  exampleMapAnnotations : emptyArray){ place in
                         MapAnnotation(coordinate: place.coordinate, content: {
-                            Button(action: {
-                                
-                            }, label: {
+                            NavigationLink(destination: ProductInformationScrollView(listing: exampleListings[0]), label: {
                                 Text("$"+String(format: "%.0f", place.price))
                                     .font(.custom("Poppins-SemiBold", size: 16.0))
                                     .frame(width: 65, height: 30, alignment: .center)
@@ -37,6 +36,7 @@ struct HomePage: View {
                                     .accentColor(.white)
                                     .cornerRadius(15.0)
                                     .overlay(RoundedRectangle(cornerRadius: 15.0).stroke(Color.white, lineWidth: 1))
+
                             })
                         })
                     }

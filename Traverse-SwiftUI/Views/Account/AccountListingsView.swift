@@ -10,30 +10,28 @@ import SwiftUI
 struct AccountListingsView: View {
     var body: some View {
         ScrollView{
-            if(exampleListings.count > 0){
-                ForEach(exampleListings, content: { listing in
-                    HStack(alignment: .center){
+            VStack(alignment: .leading){
+                Text("Your listings")
+                    .font(.custom("Poppins-SemiBold", size: 28))
+                    .padding()
+                if(exampleListings.count > 0){
+                    ForEach(exampleListings, content: { listing in
                         NavigationLink(destination: ListingEditView(listing: listing, listingPrice: String(listing.price)), label: {
                             CategoryListingView(categoryListing: listing )
                         })
+                        Divider()
+                    })
+                }
+                else {
+                    VStack{
                         Spacer()
-                        Image(systemName: "chevron.forward")
-                            .resizable()
+                        Text("You haven't listed any products yet")
+                            .font(.custom("Poppins-SemiBold", size: 20))
                             .foregroundColor(.gray)
-                            .frame(width: 10, height: 15, alignment: .center)
-                            .offset(x: -50, y: 0)
-                    }
-                    Divider()
-                })
-            }
-            else {
-                VStack{
-                    Spacer()
-                    Text("You haven't listed any products yet")
-                        .font(.custom("Poppins-SemiBold", size: 20))
-                        .foregroundColor(.gray)
-                    Spacer()
-                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.7, alignment: .center)
+                        Spacer()
+                    }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.7, alignment: .center)
+                }
+
             }
         }
         .navigationTitle("Your Listings")

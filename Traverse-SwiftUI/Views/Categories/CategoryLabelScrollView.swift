@@ -12,7 +12,7 @@ struct CategoryLabelScrollView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
             LazyHStack(alignment: .center, spacing: 0, content: {
-                ForEach(exampleProductTypes, id: \.self){ newpost in
+                ForEach(exampleCategories, id: \.self){ newpost in
                     MiniProductTypeLabel(productTypeString: newpost)
                         .padding(.leading, 15)
                     
