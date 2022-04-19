@@ -53,7 +53,7 @@ struct LoginHome: View {
 
                     
                     // Log In Button
-                    NavigationLink(destination: HomePage(), label: {
+                    NavigationLink(destination: MapPage(), label: {
                         FilledInButton(title: "Log In", size: size, action: {
                             withAnimation(.easeIn(duration: 0.5)){
                                 //viewModel.isSignedIn = true

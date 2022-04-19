@@ -40,7 +40,7 @@
 		06D00F6427BDA95400044550 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6327BDA95400044550 /* Preview Assets.xcassets */; };
 		06D00F6C27BDAA6700044550 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */; };
 		06D00F6D27BDAA6700044550 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */; };
-		06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F6F27BDAC0A00044550 /* HomePage.swift */; };
+		06D00F7027BDAC0A00044550 /* MapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F6F27BDAC0A00044550 /* MapPage.swift */; };
 		06D00F7227BDAC1300044550 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7127BDAC1300044550 /* SettingsPage.swift */; };
 		06D00F7527BDAE1100044550 /* MiniProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7427BDAE1100044550 /* MiniProductView.swift */; };
 		06D00F7827BDAE5600044550 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F7727BDAE5500044550 /* DataStructures.swift */; };
@@ -95,7 +95,7 @@
 		06D00F6A27BDAA6700044550 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		06D00F6B27BDAA6700044550 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		06D00F6E27BDAAA800044550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		06D00F6F27BDAC0A00044550 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		06D00F6F27BDAC0A00044550 /* MapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPage.swift; sourceTree = "<group>"; };
 		06D00F7127BDAC1300044550 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		06D00F7427BDAE1100044550 /* MiniProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniProductView.swift; sourceTree = "<group>"; };
 		06D00F7727BDAE5500044550 /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 		06D00F7327BDAC2400044550 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				06D00F6F27BDAC0A00044550 /* HomePage.swift */,
+				06D00F6F27BDAC0A00044550 /* MapPage.swift */,
 				0633000127ECC40C004BD077 /* UserAccountPage.swift */,
 				0633000527ECFB21004BD077 /* AddProductView.swift */,
 			);
@@ -486,7 +486,7 @@
 				8A3340A727DAC9E6008965E7 /* CategoryListingSubView.swift in Sources */,
 				0633000427ECF8EF004BD077 /* AccountListingsView.swift in Sources */,
 				062F3B6B27C72E200008333A /* CategoryLabelScrollView.swift in Sources */,
-				06D00F7027BDAC0A00044550 /* HomePage.swift in Sources */,
+				06D00F7027BDAC0A00044550 /* MapPage.swift in Sources */,
 				8A3340A527DAAC55008965E7 /* ListingsInCategoryView.swift in Sources */,
 				0650A47F27DA8B82009BA304 /* ProfilePage.swift in Sources */,
 				06FE9A6D27EEA48F00F06C5A /* AddressEditView.swift in Sources */,

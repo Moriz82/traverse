@@ -8,7 +8,7 @@
 import SwiftUI
 import MapKit
 
-struct HomePage: View {
+struct MapPage: View {
     @StateObject var settings = showBarResults()
     @StateObject private var mapViewModel = MapLocationModel()
     
@@ -129,6 +129,6 @@ struct HomePage: View {
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage()
+        MapPage()
     }
 }

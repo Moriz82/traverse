@@ -11,7 +11,7 @@ struct MiniProductView: View {
     
     @State var post: listing
     
-    var UISettings = UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 120.0, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0)
+    var UISettings = UserInterfaceSettings(hScrollViewPostWidth: 150.0, hScrollViewPostHeight: 140.0, hScrollViewPostTitleFont: 15.0, hScrollViewPostBodyFont: 12.0)
 
     
     var body: some View {
@@ -23,8 +23,9 @@ struct MiniProductView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: UISettings.hScrollViewPostWidth, height: UISettings.hScrollViewPostHeight, alignment: .center)
+                    .clipped()
                     .cornerRadius(28)
-                //.shadow(color: .gray, radius: 10, x: 0, y: 0)
+                    .shadow(color: .gray, radius: 10, x: 0, y: 0)
                 
                 //MARK: PRICE
                 
@@ -61,7 +62,7 @@ struct MiniProductView: View {
                     //MARK: STAR
                     Image(systemName: "star.fill")
                         .resizable()
-                        .frame(width: 15, height: 15, alignment: .center)
+                        .frame(width: 11, height: 10, alignment: .center)
                         .foregroundColor(.blue)
                         .padding(.leading, 7)
                         .padding(.bottom, 2) //small correction to vertical center

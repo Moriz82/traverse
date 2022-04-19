@@ -63,11 +63,11 @@ struct CardPaymentPage: View {
                       .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1.5))
                 }
                 
-                NavigationLink(destination: HomePage(), label: {
+                NavigationLink(destination: MapPage(), label: {
                     FilledInButton(title: "Submit", size: 1, action: {})
                 }).padding(EdgeInsets(top: UIScreen.main.bounds.height * 0.1, leading: 0, bottom: 0, trailing: 0))
 
-                NavigationLink(destination: HomePage(), label: {
+                NavigationLink(destination: MapPage(), label: {
                     Text("Skip for now")
                         .font(.system(.callout, design: .default).bold())
                         .foregroundColor(Color.black)

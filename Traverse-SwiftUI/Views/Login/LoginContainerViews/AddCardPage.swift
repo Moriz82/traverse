@@ -34,7 +34,7 @@ struct AddCardPage: View {
                     FilledInButton(title: "Verify", size: 1, action: {})
                 })
                 
-                NavigationLink(destination: HomePage(), label: {
+                NavigationLink(destination: MapPage(), label: {
                     Text("Skip for now")
                         .font(.system(.callout, design: .default).bold())
                         .foregroundColor(Color.black)
