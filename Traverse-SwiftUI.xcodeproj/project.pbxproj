@@ -15,6 +15,7 @@
 		063FD0EE27F6705400EB5775 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FD0ED27F6705400EB5775 /* SampleData.swift */; };
 		0650A47D27DA8B70009BA304 /* ReviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650A47C27DA8B70009BA304 /* ReviewPage.swift */; };
 		0650A47F27DA8B82009BA304 /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650A47E27DA8B82009BA304 /* ProfilePage.swift */; };
+		06515CF8280F34C100427564 /* MapBoxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06515CF7280F34C100427564 /* MapBoxMapView.swift */; };
 		067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACD27C81E4800A26801 /* SignUpView.swift */; };
 		067B0AD027C81E4F00A26801 /* AddCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0ACF27C81E4F00A26801 /* AddCardPage.swift */; };
 		067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B0AD127C81E5900A26801 /* CardPaymentPage.swift */; };
@@ -67,6 +68,7 @@
 		063FD0ED27F6705400EB5775 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		0650A47C27DA8B70009BA304 /* ReviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPage.swift; sourceTree = "<group>"; };
 		0650A47E27DA8B82009BA304 /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
+		06515CF7280F34C100427564 /* MapBoxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxMapView.swift; sourceTree = "<group>"; };
 		067B0ACD27C81E4800A26801 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		067B0ACF27C81E4F00A26801 /* AddCardPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardPage.swift; sourceTree = "<group>"; };
 		067B0AD127C81E5900A26801 /* CardPaymentPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPaymentPage.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				063FD0ED27F6705400EB5775 /* SampleData.swift */,
 				06D00F7A27BDAE8800044550 /* UtilFunctions.swift */,
 				06B313852801525A00DA3D2B /* ImagePicker.swift */,
+				06515CF7280F34C100427564 /* MapBoxMapView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			files = (
 				06853C9827CB0EFD00C2F7EE /* ProductReviewSubView.swift in Sources */,
 				06BD1FD227BEE4D7008851FC /* ObservableObjects.swift in Sources */,
+				06515CF8280F34C100427564 /* MapBoxMapView.swift in Sources */,
 				06B3138228013AB500DA3D2B /* AddListingImagesView.swift in Sources */,
 				06B313842801412500DA3D2B /* AddListingReviewPage.swift in Sources */,
 				8A288C6627FCCD9100ABEACD /* AddPhoneNumberView.swift in Sources */,
@@ -640,12 +644,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Traverse-SwiftUI/Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"In order to find products near you.\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -672,12 +679,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Traverse-SwiftUI/Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "\"In order to find products near you.\"";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>traverse-swiftui-test.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:327949233817:ios:3887d3f4b92bf9f00e1208</string>
+	<key>MBXAccessToken</key>
+	<string>pk.eyJ1IjoiY2VzYXJnODEiLCJhIjoiY2tsdTNnMHdzMGtoZjJubzVqMXh0YXRyMiJ9.6yuNFkMxjBlgAqFBJTu_aA</string>
 </dict>
 </plist>

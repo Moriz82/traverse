@@ -9,5 +9,6 @@ target 'Traverse-SwiftUI' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'MapboxMaps'
 
 end

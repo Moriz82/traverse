@@ -74,6 +74,34 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>MapboxCommon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>MapboxCoreMaps.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
+		<key>MapboxMaps.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>MapboxMobileEvents.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>Pods-Traverse-SwiftUI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,6 +115,13 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
+		</dict>
+		<key>Turf.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>17</integer>
 		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
