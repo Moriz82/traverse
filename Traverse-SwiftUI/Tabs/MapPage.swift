@@ -26,24 +26,26 @@ struct MapPage: View {
                     Color.blue.ignoresSafeArea()
                 }
                 if !settings.showSearchBarResults{
-                    Map(coordinateRegion: $mapViewModel.region, annotationItems: settings.showAnnotationsOnMap ?  exampleMapAnnotations : emptyArray){ place in
-                        MapAnnotation(coordinate: place.coordinate, content: {
-                            NavigationLink(destination: ProductInformationScrollView(listing: exampleListings[0]), label: {
-                                Text("$"+String(format: "%.0f", place.listing.price))
-                                    .font(.custom("Poppins-SemiBold", size: 16.0))
-                                    .frame(width: 65, height: 30, alignment: .center)
-                                    .background(Color("traverse-blue"))
-                                    .accentColor(.white)
-                                    .cornerRadius(15.0)
-                                    .overlay(RoundedRectangle(cornerRadius: 15.0).stroke(Color.white, lineWidth: 1))
-
-                            })
-                        })
-                    }
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                        .onAppear{
-                            mapViewModel.checkIfLocationisEnabled()
-                        }
+                    MapBoxMapView()
+                        .ignoresSafeArea()
+//                    Map(coordinateRegion: $mapViewModel.region, annotationItems: settings.showAnnotationsOnMap ?  exampleMapAnnotations : emptyArray){ place in
+//                        MapAnnotation(coordinate: place.coordinate, content: {
+//                            NavigationLink(destination: ProductInformationScrollView(listing: exampleListings[0]), label: {
+//                                Text("$"+String(format: "%.0f", place.listing.price))
+//                                    .font(.custom("Poppins-SemiBold", size: 16.0))
+//                                    .frame(width: 65, height: 30, alignment: .center)
+//                                    .background(Color("traverse-blue"))
+//                                    .accentColor(.white)
+//                                    .cornerRadius(15.0)
+//                                    .overlay(RoundedRectangle(cornerRadius: 15.0).stroke(Color.white, lineWidth: 1))
+//
+//                            })
+//                        })
+//                    }
+//                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                        .onAppear{
+//                            mapViewModel.checkIfLocationisEnabled()
+//                        }
                 }
                 VStack{
                     SearchBarView()

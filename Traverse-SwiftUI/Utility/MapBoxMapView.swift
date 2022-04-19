@@ -22,8 +22,8 @@ class MapViewController: UIViewController{
     internal var mapView: MapView!
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1IjoiYWlkZW5zZWliZWwiLCJhIjoiY2wyNTNmcjdnMjZteTNpcWQ1NzV6ZnRzdyJ9.TVSXezx6c75IixfOorzLwg")
-        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions)
+        let myResourceOptions = ResourceOptions(accessToken: "pk.eyJ1IjoieWFzaHMxOCIsImEiOiJjbDF2MHkzMm0wcnE5M2pudHA5MjBqZ3l4In0.IkIOXbAJhopXC4KvGmslLg")
+        let myMapInitOptions = MapInitOptions(resourceOptions: myResourceOptions, styleURI: StyleURI(url: URL(string: "mapbox://styles/yashs18/cl26jf795006616mv0cd67qi6")!))
         
         mapView = MapView(frame: view.bounds, mapInitOptions: myMapInitOptions)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
