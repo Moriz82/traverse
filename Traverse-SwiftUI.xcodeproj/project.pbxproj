@@ -56,6 +56,7 @@
 		8A288C6627FCCD9100ABEACD /* AddPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A288C6527FCCD9100ABEACD /* AddPhoneNumberView.swift */; };
 		8A3340A527DAAC55008965E7 /* ListingsInCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */; };
 		8A3340A727DAC9E6008965E7 /* CategoryListingSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */; };
+		8ADDE4B8280F50A50062D876 /* MapBoxAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDE4B7280F50A40062D876 /* MapBoxAnnotationView.swift */; };
 		8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		8A288C6527FCCD9100ABEACD /* AddPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoneNumberView.swift; sourceTree = "<group>"; };
 		8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsInCategoryView.swift; sourceTree = "<group>"; };
 		8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListingSubView.swift; sourceTree = "<group>"; };
+		8ADDE4B7280F50A40062D876 /* MapBoxAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxAnnotationView.swift; sourceTree = "<group>"; };
 		8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButtonView.swift; sourceTree = "<group>"; };
 		E9454995610D8E13AC523B73 /* Pods-Traverse-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traverse-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Traverse-SwiftUI/Pods-Traverse-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -327,6 +329,7 @@
 				06D00F7A27BDAE8800044550 /* UtilFunctions.swift */,
 				06B313852801525A00DA3D2B /* ImagePicker.swift */,
 				06515CF7280F34C100427564 /* MapBoxMapView.swift */,
+				8ADDE4B7280F50A40062D876 /* MapBoxAnnotationView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				06D00F7827BDAE5600044550 /* DataStructures.swift in Sources */,
 				06D00F7527BDAE1100044550 /* MiniProductView.swift in Sources */,
 				06EE767827F1540E00176837 /* RentProductDetailView.swift in Sources */,
+				8ADDE4B8280F50A50062D876 /* MapBoxAnnotationView.swift in Sources */,
 				0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */,
 				067B0AD427C81E9300A26801 /* LoginHome.swift in Sources */,
 				06D00F5F27BDA95100044550 /* ContentView.swift in Sources */,

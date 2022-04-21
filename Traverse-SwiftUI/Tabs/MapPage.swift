@@ -10,8 +10,6 @@ import MapKit
 
 struct MapPage: View {
     @StateObject var settings = showBarResults()
-    @StateObject private var mapViewModel = MapLocationModel()
-    
     //offsets
     @State var startingOffsetY: CGFloat = UIScreen.main.bounds.height * 0.3
     @State var currentDragOffsetY: CGFloat = 0
