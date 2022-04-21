@@ -16,6 +16,11 @@ struct MapPage: View {
     @State var endingOffsetY: CGFloat = 0
 
     var emptyArray: [mapAnnotation] = []
+    
+//    let productViewWidth = UIScreen.main.bounds.width * 0.8
+//    let totalCanvasWidth: CGFloat = (productViewWidth * CGFloat(exampleListings.count)) + 15
+//    let xOffsetToShift = (totalCanvasWidth - UIScreen.main.bounds.width) / 2
+    
         
     var body: some View {
         NavigationView{
@@ -60,7 +65,7 @@ struct MapPage: View {
                             ForEach(exampleListings, id: \.self){ newpost in
                                 NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
                                     WideMiniProductView(post: newpost)
-                                        .shadow(radius: 10)
+                                        .shadow(radius: 15)
 //                                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.gray, lineWidth: 1))
                                         .padding(.leading, 15)
 

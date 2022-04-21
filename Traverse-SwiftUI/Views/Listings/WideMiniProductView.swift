@@ -54,21 +54,6 @@ struct WideMiniProductView: View {
                             .cornerRadius(3)
                         
                     }
-                    
-//                    //MARK: STAR
-//                    Image(systemName: "star.fill")
-//                        .resizable()
-//                        .frame(width: 11, height: 10, alignment: .center)
-//                        .foregroundColor(.blue)
-//                        .padding(.leading, 7)
-//                        .padding(.bottom, 2) //small correction to vertical center
-//
-//
-//                    //MARK: RATING
-//                    Text("\(String(format: "%.2f", post.rating))")
-//                        .font(.custom("Poppins-SemiBold", size: UISettings.hScrollViewPostBodyFont))
-//                        .foregroundColor(.black)
-
                 })
                     .padding(.trailing, 6)
                 HStack(spacing: 3){
