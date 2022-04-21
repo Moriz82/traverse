@@ -34,6 +34,7 @@ struct listing: Identifiable, Hashable {
 struct account: Identifiable, Hashable{
     var id = UUID()
     var firstName, lastName: String
+    var name: String?
     var verification: Bool
     var email: String
     var dateJoined: Date

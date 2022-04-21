@@ -57,6 +57,7 @@
 		8A3340A527DAAC55008965E7 /* ListingsInCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */; };
 		8A3340A727DAC9E6008965E7 /* CategoryListingSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */; };
 		8ADDE4B8280F50A50062D876 /* MapBoxAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDE4B7280F50A40062D876 /* MapBoxAnnotationView.swift */; };
+		8ADDE4D42811D7050062D876 /* WideMiniProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADDE4D32811D7050062D876 /* WideMiniProductView.swift */; };
 		8AE15D6627DC4DFD002B6EAB /* SendMessageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		8A3340A427DAAC55008965E7 /* ListingsInCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsInCategoryView.swift; sourceTree = "<group>"; };
 		8A3340A627DAC9E6008965E7 /* CategoryListingSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListingSubView.swift; sourceTree = "<group>"; };
 		8ADDE4B7280F50A40062D876 /* MapBoxAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxAnnotationView.swift; sourceTree = "<group>"; };
+		8ADDE4D32811D7050062D876 /* WideMiniProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideMiniProductView.swift; sourceTree = "<group>"; };
 		8AE15D6527DC4DFC002B6EAB /* SendMessageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButtonView.swift; sourceTree = "<group>"; };
 		E9454995610D8E13AC523B73 /* Pods-Traverse-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Traverse-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Traverse-SwiftUI/Pods-Traverse-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +170,7 @@
 				06BAA51227FDD06F002D474A /* SecondAddProductView.swift */,
 				06B3138128013AB500DA3D2B /* AddListingImagesView.swift */,
 				06B313832801412500DA3D2B /* AddListingReviewPage.swift */,
+				8ADDE4D32811D7050062D876 /* WideMiniProductView.swift */,
 			);
 			path = Listings;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				06FE9A6D27EEA48F00F06C5A /* AddressEditView.swift in Sources */,
 				06FE9A6F27EEA4C900F06C5A /* AddressMiniSubView.swift in Sources */,
 				067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */,
+				8ADDE4D42811D7050062D876 /* WideMiniProductView.swift in Sources */,
 				067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */,
 				0633000627ECFB21004BD077 /* AddProductView.swift in Sources */,
 				06D00F7B27BDAE8800044550 /* UtilFunctions.swift in Sources */,
@@ -662,7 +666,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mms.Traverse-SwiftU";
+				PRODUCT_BUNDLE_IDENTIFIER = "mms.Traverse-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -697,7 +701,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mms.Traverse-SwiftU";
+				PRODUCT_BUNDLE_IDENTIFIER = "mms.Traverse-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

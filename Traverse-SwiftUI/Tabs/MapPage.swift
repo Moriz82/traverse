@@ -54,6 +54,22 @@ struct MapPage: View {
                             .environmentObject(settings)
                     }
                     Spacer()
+                    
+                    ScrollView(.horizontal, showsIndicators: false){
+                        LazyHStack(alignment: .center, spacing: 0, content: {
+                            ForEach(exampleListings, id: \.self){ newpost in
+                                NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
+                                    WideMiniProductView(post: newpost)
+                                        .shadow(radius: 10)
+//                                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.gray, lineWidth: 1))
+                                        .padding(.leading, 15)
+
+                                })
+                            }
+                        })
+                    }.frame(height: 200)
+                    
+                    /*
                     if !settings.showSearchBarResults{
                         VStack(alignment: .center, spacing: 0){
                             RoundedRectangle(cornerRadius: 2)
@@ -64,23 +80,12 @@ struct MapPage: View {
                                 Text("Listings Nearby")
                                     .font(.custom("Poppins-SemiBold", size: 24))
                                     .padding(EdgeInsets(top: 10, leading: 15, bottom: 0, trailing: 0))
-                                ScrollView(.horizontal, showsIndicators: false){
-                                    LazyHStack(alignment: .center, spacing: 0, content: {
-                                        ForEach(exampleListings, id: \.self){ newpost in
-                                            NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
-                                                MiniProductView(post: newpost)
-                                                    .overlay(RoundedRectangle(cornerRadius: 36).stroke(Color.gray, lineWidth: 1))
-                                                    .padding(.leading, 15)
-
-                                            })
-                                        }
-                                    })
-                                }.frame(height: 200)
+                                
                             }
                         }
                         .padding(.bottom, 50)
                         .background(.white)
-                        .cornerRadius(18)
+                        .cornerRadius(15)
                         .offset(y: startingOffsetY)
                         .offset(y: currentDragOffsetY)
                         .offset(y: endingOffsetY)
@@ -115,7 +120,7 @@ struct MapPage: View {
                                         currentDragOffsetY = 0
                                     }
                                 })
-                    }
+                    } */
                 }
                 .frame(height: UIScreen.main.bounds.height * 0.9)
                 .ignoresSafeArea(edges: .bottom)
