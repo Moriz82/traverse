@@ -10,17 +10,10 @@ import MapKit
 
 struct MapPage: View {
     @StateObject var settings = showBarResults()
-    //offsets
-    @State var startingOffsetY: CGFloat = UIScreen.main.bounds.height * 0.3
-    @State var currentDragOffsetY: CGFloat = 0
-    @State var endingOffsetY: CGFloat = 0
-
     var emptyArray: [mapAnnotation] = []
     
-//    let productViewWidth = UIScreen.main.bounds.width * 0.8
-//    let totalCanvasWidth: CGFloat = (productViewWidth * CGFloat(exampleListings.count)) + 15
-//    let xOffsetToShift = (totalCanvasWidth - UIScreen.main.bounds.width) / 2
-    
+    @GestureState var offset: CGFloat = 0
+    @State var currentIndex: Int = 0
         
     var body: some View {
         NavigationView{
@@ -31,24 +24,6 @@ struct MapPage: View {
                 if !settings.showSearchBarResults{
                     MapBoxMapView()
                         .ignoresSafeArea()
-//                    Map(coordinateRegion: $mapViewModel.region, annotationItems: settings.showAnnotationsOnMap ?  exampleMapAnnotations : emptyArray){ place in
-//                        MapAnnotation(coordinate: place.coordinate, content: {
-//                            NavigationLink(destination: ProductInformationScrollView(listing: exampleListings[0]), label: {
-//                                Text("$"+String(format: "%.0f", place.listing.price))
-//                                    .font(.custom("Poppins-SemiBold", size: 16.0))
-//                                    .frame(width: 65, height: 30, alignment: .center)
-//                                    .background(Color("traverse-blue"))
-//                                    .accentColor(.white)
-//                                    .cornerRadius(15.0)
-//                                    .overlay(RoundedRectangle(cornerRadius: 15.0).stroke(Color.white, lineWidth: 1))
-//
-//                            })
-//                        })
-//                    }
-//                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//                        .onAppear{
-//                            mapViewModel.checkIfLocationisEnabled()
-//                        }
                 }
                 VStack{
                     SearchBarView()
@@ -61,74 +36,32 @@ struct MapPage: View {
                     Spacer()
                     
                     if(!settings.showSearchBarResults){
-                        ScrollView(.horizontal, showsIndicators: false){
-                            LazyHStack(alignment: .center, spacing: 0, content: {
+                        GeometryReader{ proxy in
+                            HStack(spacing: 0){
                                 ForEach(exampleListings, id: \.self){ newpost in
-                                    NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
-                                        WideMiniProductView(post: newpost)
-                                            .shadow(radius: 15)
-    //                                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.gray, lineWidth: 1))
-                                            .padding(.leading, 15)
-
-                                    })
+                                    WideMiniProductView(post: newpost)
+                                        .shadow(radius: 15)
                                 }
-                            })
-                        }.frame(height: 200)
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: UIScreen.main.bounds.height * 0.07, trailing: 0))
-                    }
-                    
-                    /*
-                    if !settings.showSearchBarResults{
-                        VStack(alignment: .center, spacing: 0){
-                            RoundedRectangle(cornerRadius: 2)
-                                .frame(width: UIScreen.main.bounds.width * 0.10, height: 4)
-                                .foregroundColor(Color("light-gray"))
-                                .padding(.top, 10)
-                            VStack(alignment: .leading, spacing: 5){
-                                Text("Listings Nearby")
-                                    .font(.custom("Poppins-SemiBold", size: 24))
-                                    .padding(EdgeInsets(top: 10, leading: 15, bottom: 0, trailing: 0))
-                                
                             }
+                            .offset(x: offset, y: UIScreen.main.bounds.height*0.47)
+                            .offset(x: CGFloat(currentIndex) * UIScreen.main.bounds.width * -1.0)
+                            .gesture(
+                                DragGesture()
+                                    .updating($offset, body: { value, out, _ in
+                                        out = value.translation.width
+                                    })
+                                    .onEnded({ value in
+                                        let endingOffset = value.translation.width
+                                        if endingOffset < UIScreen.main.bounds.width * -0.3{
+                                            currentIndex += 1
+                                        }else if endingOffset > UIScreen.main.bounds.width * 0.3 && currentIndex > 0{
+                                            currentIndex -= 1
+                                        }
+                                    })
+                            )
                         }
-                        .padding(.bottom, 50)
-                        .background(.white)
-                        .cornerRadius(15)
-                        .offset(y: startingOffsetY)
-                        .offset(y: currentDragOffsetY)
-                        .offset(y: endingOffsetY)
-                        .gesture(
-                            DragGesture()
-                                .onChanged{ value in
-                                    withAnimation(.easeInOut(duration: 0.3)){
-                                        var limitOffset = value.translation.height
-                                        //if positive
-                                        if endingOffsetY == (-startingOffsetY - 20){
-                                            //only allow positive
-                                            if limitOffset < 0{
-                                                limitOffset = 0;
-                                            }
-                                        }
-                                        
-                                        //if negative
-                                        if limitOffset < (-startingOffsetY - 20){
-                                            limitOffset = -startingOffsetY - 20
-                                        }
-                                        currentDragOffsetY = limitOffset
-                                        
-                                    }
-                                }
-                                .onEnded{ value in
-                                    withAnimation(.easeInOut(duration: 0.3)){
-                                        if currentDragOffsetY < -100 {
-                                            endingOffsetY = -startingOffsetY - 20
-                                        } else if endingOffsetY != 0 && currentDragOffsetY > 100 {
-                                            endingOffsetY = 0
-                                        }
-                                        currentDragOffsetY = 0
-                                    }
-                                })
-                    } */
+                        .animation(.easeInOut, value: offset == 0)
+                    }
                 }
                 .frame(height: UIScreen.main.bounds.height * 0.9)
                 .ignoresSafeArea(edges: .bottom)
