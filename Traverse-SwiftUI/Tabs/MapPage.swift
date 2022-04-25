@@ -39,8 +39,10 @@ struct MapPage: View {
                         GeometryReader{ proxy in
                             HStack(spacing: 0){
                                 ForEach(exampleListings, id: \.self){ newpost in
-                                    WideMiniProductView(post: newpost)
-                                        .shadow(radius: 15)
+                                    NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
+                                        WideMiniProductView(post: newpost)
+                                            .shadow(radius: 15)
+                                    })
                                 }
                             }
                             .offset(x: offset, y: UIScreen.main.bounds.height*0.47)
