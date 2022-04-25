@@ -60,19 +60,21 @@ struct MapPage: View {
                     }
                     Spacer()
                     
-                    ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(alignment: .center, spacing: 0, content: {
-                            ForEach(exampleListings, id: \.self){ newpost in
-                                NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
-                                    WideMiniProductView(post: newpost)
-                                        .shadow(radius: 15)
-//                                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.gray, lineWidth: 1))
-                                        .padding(.leading, 15)
+                    if(!settings.showSearchBarResults){
+                        ScrollView(.horizontal, showsIndicators: false){
+                            LazyHStack(alignment: .center, spacing: 0, content: {
+                                ForEach(exampleListings, id: \.self){ newpost in
+                                    NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
+                                        WideMiniProductView(post: newpost)
+                                            .shadow(radius: 15)
+    //                                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.gray, lineWidth: 1))
+                                            .padding(.leading, 15)
 
-                                })
-                            }
-                        })
-                    }.frame(height: 200)
+                                    })
+                                }
+                            })
+                        }.frame(height: 200)
+                    }
                     
                     /*
                     if !settings.showSearchBarResults{
