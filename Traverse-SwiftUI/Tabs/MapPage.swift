@@ -39,10 +39,8 @@ struct MapPage: View {
                         GeometryReader{ proxy in
                             HStack(spacing: 0){
                                 ForEach(exampleListings, id: \.self){ newpost in
-                                    NavigationLink(destination: ProductInformationScrollView(listing: newpost), label: {
-                                        WideMiniProductView(post: newpost)
-                                            .shadow(radius: 15)
-                                    })
+                                    WideMiniProductView(post: newpost)
+                                        .shadow(radius: 15)
                                 }
                             }
                             .offset(x: offset, y: UIScreen.main.bounds.height*0.47)
@@ -54,7 +52,7 @@ struct MapPage: View {
                                     })
                                     .onEnded({ value in
                                         let endingOffset = value.translation.width
-                                        if endingOffset < UIScreen.main.bounds.width * -0.3{
+                                        if endingOffset < UIScreen.main.bounds.width * -0.3 && currentIndex < exampleListings.count{
                                             currentIndex += 1
                                         }else if endingOffset > UIScreen.main.bounds.width * 0.3 && currentIndex > 0{
                                             currentIndex -= 1

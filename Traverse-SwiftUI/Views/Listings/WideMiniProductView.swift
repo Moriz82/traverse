@@ -19,13 +19,15 @@ struct WideMiniProductView: View {
             
             //MARK: IMAGE
             ZStack(alignment: .trailing) {
-                Image(post.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .clipped()
-                    .cornerRadius(15)
-                    .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                NavigationLink(destination: ProductInformationScrollView(listing: post), label: {
+                    Image(post.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .clipped()
+                        .cornerRadius(15)
+                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                })
             }
             
             
