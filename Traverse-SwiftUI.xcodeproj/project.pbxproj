@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060A355628171ED700730E13 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A355528171ED700730E13 /* CustomTabView.swift */; };
 		0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535827C6E290007A01F5 /* LostConnectionScreen.swift */; };
 		062F3B6B27C72E200008333A /* CategoryLabelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F3B6A27C72E200008333A /* CategoryLabelScrollView.swift */; };
 		0633000227ECC40C004BD077 /* UserAccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0633000127ECC40C004BD077 /* UserAccountPage.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060A355528171ED700730E13 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		0619535827C6E290007A01F5 /* LostConnectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostConnectionScreen.swift; sourceTree = "<group>"; };
 		062F3B6A27C72E200008333A /* CategoryLabelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabelScrollView.swift; sourceTree = "<group>"; };
 		0633000127ECC40C004BD077 /* UserAccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountPage.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				063FD0F727F6756A00EB5775 /* SearchBar */,
 				069327A727F67AF9009FED29 /* Settings */,
 				0619535827C6E290007A01F5 /* LostConnectionScreen.swift */,
+				060A355528171ED700730E13 /* CustomTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				06B313842801412500DA3D2B /* AddListingReviewPage.swift in Sources */,
 				8A288C6627FCCD9100ABEACD /* AddPhoneNumberView.swift in Sources */,
 				06D00F8127BDAFA000044550 /* SearchBarView.swift in Sources */,
+				060A355628171ED700730E13 /* CustomTabView.swift in Sources */,
 				067B0ADC27C81EFE00A26801 /* TopRightLogoImage.swift in Sources */,
 				06853C9427CB0E9600C2F7EE /* ProductInformationScrollView.swift in Sources */,
 				067B0AD227C81E5900A26801 /* CardPaymentPage.swift in Sources */,
