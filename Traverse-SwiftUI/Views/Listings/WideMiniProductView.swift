@@ -91,6 +91,8 @@ struct WideMiniProductView: View {
             .padding(.all, 7)
             .background(.white)
             .cornerRadius(15)
+            .frame(width: UIScreen.main.bounds.width, height: 110)
+
 
 
     }
