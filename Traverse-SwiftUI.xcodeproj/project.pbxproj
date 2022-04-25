@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		060A355628171ED700730E13 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A355528171ED700730E13 /* CustomTabView.swift */; };
+		060A355828171FA700730E13 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A355728171FA700730E13 /* HomePage.swift */; };
 		0619535927C6E290007A01F5 /* LostConnectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0619535827C6E290007A01F5 /* LostConnectionScreen.swift */; };
 		062F3B6B27C72E200008333A /* CategoryLabelScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062F3B6A27C72E200008333A /* CategoryLabelScrollView.swift */; };
 		0633000227ECC40C004BD077 /* UserAccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0633000127ECC40C004BD077 /* UserAccountPage.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		060A355528171ED700730E13 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		060A355728171FA700730E13 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		0619535827C6E290007A01F5 /* LostConnectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostConnectionScreen.swift; sourceTree = "<group>"; };
 		062F3B6A27C72E200008333A /* CategoryLabelScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabelScrollView.swift; sourceTree = "<group>"; };
 		0633000127ECC40C004BD077 /* UserAccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountPage.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				06D00F6F27BDAC0A00044550 /* MapPage.swift */,
 				0633000127ECC40C004BD077 /* UserAccountPage.swift */,
 				0633000527ECFB21004BD077 /* AddProductView.swift */,
+				060A355728171FA700730E13 /* HomePage.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				067B0ADD27C81EFE00A26801 /* FilledInButton.swift in Sources */,
 				8ADDE4D42811D7050062D876 /* WideMiniProductView.swift in Sources */,
 				067B0ADF27C81EFE00A26801 /* SecureTextInputView.swift in Sources */,
+				060A355828171FA700730E13 /* HomePage.swift in Sources */,
 				0633000627ECFB21004BD077 /* AddProductView.swift in Sources */,
 				06D00F7B27BDAE8800044550 /* UtilFunctions.swift in Sources */,
 				067B0ACE27C81E4800A26801 /* SignUpView.swift in Sources */,

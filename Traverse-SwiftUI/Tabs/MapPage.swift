@@ -139,7 +139,7 @@ struct MapPage: View {
     }
 }
 
-struct HomePage_Previews: PreviewProvider {
+struct MapPage_Previews: PreviewProvider {
     static var previews: some View {
         MapPage()
     }
