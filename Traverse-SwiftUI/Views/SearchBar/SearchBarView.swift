@@ -120,7 +120,6 @@ struct SearchBarView: View {
             .padding(.top, 30)
             .padding(.top, settings.showSearchBarResults && isFocused ? UIScreen.main.bounds.height * 0.15 : 0)
             .padding(EdgeInsets(top: isOnHomeScreen && isFocused ? UIScreen.main.bounds.height * 0.21 : 0, leading: 0, bottom: 0, trailing: 0))
-            
     }
 }
 
