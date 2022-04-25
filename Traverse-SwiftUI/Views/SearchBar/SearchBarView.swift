@@ -13,6 +13,7 @@ struct SearchBarView: View {
     @State var beginSearch: Bool = false
     @EnvironmentObject var settings: showBarResults
     @FocusState private var isFocused: Bool
+    @State var isOnHomeScreen: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
@@ -118,6 +119,8 @@ struct SearchBarView: View {
             .cornerRadius(30)
             .padding(.top, 30)
             .padding(.top, settings.showSearchBarResults && isFocused ? UIScreen.main.bounds.height * 0.15 : 0)
+            .padding(EdgeInsets(top: isOnHomeScreen && isFocused ? UIScreen.main.bounds.height * 0.21 : 0, leading: 0, bottom: 0, trailing: 0))
+            
     }
 }
 
@@ -129,7 +132,7 @@ extension View {
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBarView()
+        SearchBarView(isOnHomeScreen: true)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -74,6 +74,7 @@ struct MapPage: View {
                                 }
                             })
                         }.frame(height: 200)
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: UIScreen.main.bounds.height * 0.07, trailing: 0))
                     }
                     
                     /*

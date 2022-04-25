@@ -59,7 +59,7 @@ struct HomePage: View {
                     }
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.7, alignment: .center)
                 }
-                SearchBarView()
+                SearchBarView(isOnHomeScreen: true)
                     .environmentObject(settings)
                     .shadow(color: .gray, radius: 10, x: 0, y: 0)
                     .offset(x: 0, y: UIScreen.main.bounds.height * -0.22)
