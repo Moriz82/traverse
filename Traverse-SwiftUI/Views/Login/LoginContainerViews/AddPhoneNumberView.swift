@@ -22,16 +22,30 @@ struct AddPhoneNumberView: View {
     var body: some View {
             VStack(alignment: .leading) {
                 // Top Logo
-                if !shouldShowLogo { TopRightLogoImage() } else {
+                if !shouldShowLogo {
+                    HStack{
+                        TopRightLogoImage()
+                        Spacer()
+                    }
+                } else {
                     Spacer(minLength: UIScreen.main.bounds.height * 0.0912)
                 }
                 
                 // Sign Up Label
+                VStack(spacing: 0){
+                    Spacer()
+                    Text("Add your phone number")
+                        .font(.custom("Poppins-SemiBold", size: 40.0))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 25, trailing: 50))
+                    TextInputView(title: "+1 (000) - 000 - 0000", size: 5, text: "")
+                        .padding()
+                        .keyboardType(UIKeyboardType.phonePad)
+                    NavigationLink(destination: AddCardPage(), label: {
+                        FilledInButton(title: "Next", size: 5, action: {})
+                    })
+                    Spacer()
+                }
                 Spacer()
-                Label("Add your phone number", systemImage: "book.fill")
-                    .labelStyle(TitleOnlyLabelStyle())
-                    .font(.system(.largeTitle, design: .rounded).bold())
-                    .padding(EdgeInsets(top: 40, leading: 0, bottom: 0, trailing: 0))
             }
 
     }
@@ -39,6 +53,9 @@ struct AddPhoneNumberView: View {
 
 struct AddPhoneNumberView_Previews: PreviewProvider {
     static var previews: some View {
+        ZStack{
         AddPhoneNumberView()
+            
+        }
     }
 }

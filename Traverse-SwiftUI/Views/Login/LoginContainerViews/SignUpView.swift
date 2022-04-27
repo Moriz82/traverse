@@ -54,7 +54,7 @@ struct SignUpView: View {
                 
                 
                 //MARK: Sign Up Button
-                NavigationLink(destination: AddCardPage(), label: {
+                NavigationLink(destination: AddPhoneNumberView(), label: {
                     FilledInButton(title: "Sign Up", size: size, action: {
                         //passwords match and fields aren't empty
                         guard !name.isEmpty, !email.isEmpty, !password.isEmpty, confirmPassword == password else{

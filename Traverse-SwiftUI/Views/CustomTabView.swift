@@ -80,7 +80,8 @@ struct CustomTabView: View {
 
 struct CustomTabView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabView(tab: .constant("Home"))
+        let extractedExpr = CustomTabView(tab: .constant("Home"))
+        extractedExpr
             .previewLayout(.sizeThatFits)
     }
 }
