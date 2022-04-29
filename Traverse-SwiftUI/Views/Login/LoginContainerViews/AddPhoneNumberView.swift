@@ -47,6 +47,7 @@ struct AddPhoneNumberView: View {
                 }
                 Spacer()
             }
+        
 
     }
 }
