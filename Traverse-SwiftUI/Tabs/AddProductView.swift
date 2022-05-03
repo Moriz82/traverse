@@ -13,7 +13,6 @@ struct AddProductView: View {
     
     @ObservedObject var dollars = NumbersOnly()
     @ObservedObject var cents = NumbersOnly()
-
     
     @State var priceDollars: String = ""
     @State var priceCents: String = ""
@@ -22,8 +21,8 @@ struct AddProductView: View {
     @State var priceFieldDollarsIsValid: Bool = false
     @State var priceFieldCentsIsValid: Bool = false
 
-    @Binding var showTabBar: Bool
-
+    @EnvironmentObject var settings: showBarResults
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -32,13 +31,7 @@ struct AddProductView: View {
                     
                     Text("Add a Product")
                         .font(.custom("Poppins-SemiBold", size: 32))
-                    /*
-                    if !productNameIsValid{
-                        Text("Product name not valid!")
-                            .font(.custom("Poppins-SemiBold", size: 16))
-                            .foregroundColor(.red)
-                    }*/
-            
+                    
                     TextField("Product Name..." , text: $productName, onEditingChanged: {_ in
                         productNameIsValid = Util.checkString(string: productName)
                     })
@@ -47,13 +40,6 @@ struct AddProductView: View {
                         .frame(width: UIScreen.main.bounds.width * 0.90)
                         .overlay(RoundedRectangle(cornerRadius: 15).stroke(.gray, lineWidth: 2))
                     
-                    /*
-                    if !priceFieldDollarsIsValid || !priceFieldCentsIsValid{
-                        Text("Price not valid!")
-                            .font(.custom("Poppins-SemiBold", size: 16))
-                            .foregroundColor(.red)
-                    }
-                     */
                     HStack{
                         Text("$")
                             .font(.custom("Poppins-SemiBold", size: 28))
@@ -93,10 +79,10 @@ struct AddProductView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     })
-                        //.simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
+                        .simultaneousGesture(TapGesture().onEnded({settings.showTabBar = false}))
                 }
             }
-            .onAppear(perform: {showTabBar = true})
+            .onAppear(perform: {settings.showTabBar = true})
         }
         .onTapGesture {
             self.hideKeyboard()
@@ -128,6 +114,6 @@ class NumbersOnly: ObservableObject {
 
 struct AddProductView_Previews: PreviewProvider {
     static var previews: some View {
-        AddProductView(showTabBar: .constant(true))
+        AddProductView()
     }
 }

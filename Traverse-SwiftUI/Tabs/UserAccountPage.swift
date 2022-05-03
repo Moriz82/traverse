@@ -12,9 +12,8 @@ struct UserAccountPage: View {
     var nameFontSize = 28.0
     var bodyFontSize = 12.0
     
-    @Binding var showTabBar: Bool
-
     @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var settings: showBarResults
 
     var body: some View {
         NavigationView{
@@ -131,7 +130,7 @@ struct UserAccountPage: View {
                                 .foregroundColor(.blue)
                                 .padding(.trailing, 20)
                         })
-                            .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
+                            .simultaneousGesture(TapGesture().onEnded({settings.showTabBar = false}))
 
                     }
                     .padding(.leading)
@@ -141,20 +140,20 @@ struct UserAccountPage: View {
                                 SearchResultView(searchResult: newpost)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                             })
-                                .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
+                                .simultaneousGesture(TapGesture().onEnded({settings.showTabBar = false}))
                         })
                     })
                 }
                 .navigationTitle("Your Account")
                 .navigationBarTitleDisplayMode(.inline)
             }
-            .onAppear(perform: {showTabBar = true})
+            .onAppear(perform: {settings.showTabBar = true})
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     NavigationLink(destination: SettingsPage(), label: {
                         Image(systemName: "gear")
                     })
-                        .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
+                        .simultaneousGesture(TapGesture().onEnded({settings.showTabBar = false}))
                 })
             }
             
@@ -165,6 +164,6 @@ struct UserAccountPage: View {
 
 struct UserAccountPage_Previews: PreviewProvider {
     static var previews: some View {
-        UserAccountPage(account: exampleAccounts[0], showTabBar: .constant(true))
+        UserAccountPage(account: exampleAccounts[0])
     }
 }
