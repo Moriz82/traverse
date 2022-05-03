@@ -22,6 +22,7 @@ struct AddProductView: View {
     @State var priceFieldDollarsIsValid: Bool = false
     @State var priceFieldCentsIsValid: Bool = false
 
+    @Binding var showTabBar: Bool
 
     var body: some View {
         NavigationView{
@@ -92,8 +93,10 @@ struct AddProductView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     })
+                        //.simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
                 }
             }
+            .onAppear(perform: {showTabBar = true})
         }
         .onTapGesture {
             self.hideKeyboard()
@@ -125,6 +128,6 @@ class NumbersOnly: ObservableObject {
 
 struct AddProductView_Previews: PreviewProvider {
     static var previews: some View {
-        AddProductView()
+        AddProductView(showTabBar: .constant(true))
     }
 }

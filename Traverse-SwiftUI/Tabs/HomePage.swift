@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomePage: View {
     @StateObject var settings = showBarResults()
+    @Binding var showTabBar: Bool
 
     var body: some View {
         NavigationView{
@@ -51,6 +52,7 @@ struct HomePage: View {
                                         NavigationLink(destination: ProductInformationScrollView(listing: listing), label: {
                                             SearchResultView(searchResult: listing)
                                         })
+                                            .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
                                     }
                                 }
                             }
@@ -63,10 +65,8 @@ struct HomePage: View {
                     .environmentObject(settings)
                     .shadow(color: .gray, radius: 10, x: 0, y: 0)
                     .offset(x: 0, y: UIScreen.main.bounds.height * -0.22)
-                
-                
-                
             }
+            .onAppear(perform: {showTabBar = true})
         }
         .navigationBarHidden(true)
     }
@@ -74,7 +74,7 @@ struct HomePage: View {
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage()
+        HomePage(showTabBar: .constant(true))
             .previewLayout(.sizeThatFits)
     }
 }

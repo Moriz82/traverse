@@ -11,26 +11,29 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AppViewModel
     
     @State var tabSelected = "Home"
+    @State var showTabBar: Bool = true
     
     var body: some View {
         VStack(alignment: .center, spacing: 0){
             ZStack{
                 switch tabSelected{
                 case "Home":
-                    HomePage()
+                    HomePage(showTabBar: $showTabBar)
                 case "Bookmark":
-                    AddProductView()
+                    AddProductView(showTabBar: $showTabBar)
                 case "Star":
                     MapPage()
                 case "Account":
-                    UserAccountPage(account: exampleAccounts[0])
+                    UserAccountPage(account: exampleAccounts[0], showTabBar: $showTabBar)
                 default:
-                    HomePage()
+                    HomePage(showTabBar: $showTabBar)
                 }
-                
-                CustomTabView(tab: $tabSelected)
-                    .offset(x: 0, y: UIScreen.main.bounds.height * 0.4)
-                    .shadow(color: .gray, radius: 20, x: 0, y: 0)
+                if showTabBar{
+                    CustomTabView(tab: $tabSelected)
+                        .offset(x: 0, y: UIScreen.main.bounds.height * 0.4)
+                        .shadow(color: .gray, radius: 20, x: 0, y: 0)
+
+                }
             }
         }
         

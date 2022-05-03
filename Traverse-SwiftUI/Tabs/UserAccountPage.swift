@@ -11,7 +11,9 @@ struct UserAccountPage: View {
     var account: account
     var nameFontSize = 28.0
     var bodyFontSize = 12.0
-        
+    
+    @Binding var showTabBar: Bool
+
     @EnvironmentObject var viewModel: AppViewModel
 
     var body: some View {
@@ -129,6 +131,8 @@ struct UserAccountPage: View {
                                 .foregroundColor(.blue)
                                 .padding(.trailing, 20)
                         })
+                            .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
+
                     }
                     .padding(.leading)
                     VStack(alignment: .center, spacing: 10, content: {
@@ -136,19 +140,21 @@ struct UserAccountPage: View {
                             NavigationLink(destination: ListingEditView(listing: newpost, listingPrice: String(newpost.price)), label: {
                                 SearchResultView(searchResult: newpost)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-
                             })
+                                .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
                         })
                     })
                 }
                 .navigationTitle("Your Account")
                 .navigationBarTitleDisplayMode(.inline)
             }
+            .onAppear(perform: {showTabBar = true})
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing, content: {
                     NavigationLink(destination: SettingsPage(), label: {
                         Image(systemName: "gear")
                     })
+                        .simultaneousGesture(TapGesture().onEnded({showTabBar = false}))
                 })
             }
             
@@ -159,6 +165,6 @@ struct UserAccountPage: View {
 
 struct UserAccountPage_Previews: PreviewProvider {
     static var previews: some View {
-        UserAccountPage(account: exampleAccounts[0])
+        UserAccountPage(account: exampleAccounts[0], showTabBar: .constant(true))
     }
 }
